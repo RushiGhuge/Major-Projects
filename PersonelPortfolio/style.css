@@ -277,7 +277,7 @@ body {
 .project-img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    height: 350px;
+    height: 300px;
     min-width: auto;
     overflow-y: scroll;
     position: relative;
