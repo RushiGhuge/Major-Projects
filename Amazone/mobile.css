@@ -1,0 +1,14 @@
+@media(max-width:700px){
+    .sec1 {
+        display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .sec-3{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .none{
+        display: none;
+    }
+}

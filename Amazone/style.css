@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative;
+    height: 60px;
+    background: #131921;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-logo img {
+    height: 60px;
+    /* width: 110px; */
+
+}
+
+.border {
+    border: 1px solid transparent;
+}
+
+.border:hover {
+    border: 1.5px solid white;
+}
+
+/* nav address
+
+*/
+.nav-address {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 10px;
+}
+
+.nav-address p {
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.nav-address h4 {
+    margin-left: 3px;
+}
+
+.location-icon {
+    display: flex;
+}
+
+.nav-address {
+    padding: 7px;
+}
+
+/* search  box start **************************************************/
+.nav-search {
+    height: 40px;
+    display: flex;
+    width: 620px;
+    border: none;
+    border-radius: 4px;
+    justify-content: space-evenly;
+}
+
+.nav-search input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    padding-left: 5px;
+}
+
+.nav-search i {
+    display: flex;
+    align-items: center;
+    width: 45px;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: #F3A847;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #0f1111;
+}
+
+.nav-search:hover {
+    border: 1px solid orange;
+}
+
+.search-select {
+    background: #f3f3f3;
+    width: 50px;
+    padding-left: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+}
+
+
+/* font size small and large classes */
+.l-font {
+    font-size: 0.95rem;
+    font-weight: bolder;
+}
+
+.s-font {
+    font-size: 0.80rem;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.cart i {
+    font-size: 2rem;
+}
+
+.cart p {
+    align-self: flex-end;
+    padding-bottom: 4px;
+}
+
+
+/* panel************************************ */
+.panel {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    height: 40px;
+    background: #232F3E;
+    color: white;
+    align-items: center;
+    font-size: 0.86rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.panel-all {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.panel i {
+    font-size: 1.3rem;
+}
+
+.panel-element {
+    display: flex;
+    gap: 20px;
+}
+
+/* hero section ************** */
+.hero img {
+    width: 100%;
+    -webkit-box-shadow: 12px 29px 81px 0px #FFD004;
+    -moz-box-shadow: 12px 29px 81px 0px #FFD004;
+    box-shadow: 12px 29px 81px 0px #FFD004;
+}
+
+/* this is a main section */
+main {
+    background: #E3E6E6;
+}
+
+.sec1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 380px 380px;
+    position: absolute;
+    top: 340px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box h3 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.box {
+    background: white;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+}
+
+.box p {
+    margin-left: 20px;
+    font-size: 0.85rem;
+
+}
+
+.box a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: green;
+    /* background: red; */
+    font-size: 0.85rem;
+    position: relative;
+    top: 30px;
+}
+
+.box img {
+    width: 100%;
+}
+
+.box-row {
+    display: flex;
+    gap: 15px;
+}
+
+.gap {
+    width: 100%;
+    background: transparent;
+    height: 500px;
+}
+
+/* Section 2 starts */
+.sec2 {
+    /* width: auto; */
+    /* height: 200px; */
+    background: white;
+    margin: 20px 20px;
+    padding: 20px;
+}
+
+
+.images-sec2 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    ;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.images-sec2::-webkit-scrollbar {
+    display: none;
+}
+
+.full-box-img img {
+    width: 100%
+}
+
+
+/* Section 3 starts */
+.sec-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: 20px;
+    margin-top: 20px;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.sec-3 img {
+    width: 100%;
+    height: 250px;
+    /* margin: 20px; */
+}
+
+.sec-3-box {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* margin: 10px; */
+}
+
+.sec-3-box a {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: green;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.footer-section-1 {
+    width: 100%;
+    height: 150px;
+    border: 1px solid rgb(206, 206, 206);
+    margin: 50px 0px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.s {
+    font-size: 0.9rem;
+}
+
+.sign-in {
+    width: 16%;
+    padding: 10px 0px;
+    margin: 7px 0;
+    background: #FFC530;
+    border: 1px solid rgb(255, 217, 0);
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.footer-section-1 a {
+    text-decoration: none;
+    color: green;
+}
+
+.back-to-top-section {
+    width: 100%;
+    height: 50px;
+    background: #37475A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.footer-section-2 {
+    background: #232F3E;
+    color: white;
+    width: 100%;
+    padding: 60px 180px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-section-2 h2 {
+    font-size: 0.99rem;
+}
+
+.box-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.box-footer a {
+    text-decoration: none;
+    color: #B8BABD;
+    font-size: 0.85rem;
+}
+
+.box-footer a:hover {
+    text-decoration: underline;
+}
+
+/* section of Product with price */
+.Products {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 380px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.Product-price {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.Product-price::-webkit-scrollbar {
+    display: none;
+}
+
+.box-product-price {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.box-product-price img {}
+
+.Prod-sec {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    background: #F7F8F8;
+    padding: 10px;
+}
+
+.head {
+    padding-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.head a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: green;
+}
+
+.offer-pink {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.offer-pink p {
+    color: #CC0C39;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.offer-pink button {
+    background: #CC0C39;
+    border: none;
+    color: white;
+    padding: 5px;
+}
+
+#name-of-product {
+    font-size: 0.90rem;
+}
+
+/* section 3 starts */
+.footer-section-3 {
+    border-top: 1px solid rgb(92, 92, 92);
+    background: #232F3E;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    padding: 30px 0;
+
+}
+
+.footer-section-3>img {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.white-border-box {
+    border: 1px solid rgb(114, 114, 114);
+    background: transparent;
+    color: white;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#india-flag {
+    width: 20px;
+}
+
+
+/* this is last footer  */
+
+.last-footer {
+    width: 100%;
+    height: 500px;
+    background: #131A22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last-footer {
+    padding: 40px 150px;
+}
+
+.last-sec {
+    color: #afafaf;
+    display: grid;
+    font-size: 0.85rem;
+    gap: 20px;
+    grid-template-columns: repeat(7, 1fr)
+}
+
+.last-sec h5 {
+    color: #D7D8D8;
+}
+
+.last-part {
+    display: flex;
+    justify-self: center;
+    gap: 20px;
+    color: white;
+    font-size: 0.85rem;
+    margin-top: 80px;
+}
+
+.copy-right {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 0.85rem;
+}
