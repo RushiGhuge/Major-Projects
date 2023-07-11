@@ -1,0 +1,420 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #F8F8F8;
+    
+}
+/* main hero section starts */
+.bg-shape{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.btn-register{
+    padding: 10px 15px;
+    background-color: #ff4d30;
+    border-radius: 3px;
+    box-shadow: 0 10px 15px 0 rgba(255,83,48,.35);
+    color: #fff;
+    /* padding: 1.5rem 3rem; */
+    transition: all .3s;
+    border: none;
+    margin-left:10px ;
+}
+.btn-register:hover{
+    background: #FA4226;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+.navbar a:hover{
+    transition: all .3s;
+    color: #ff4d30;
+}
+.navbar img{
+    width: 150px;
+}
+.hand-burger {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+.hero-main{
+   
+}
+
+.hero-sec1{
+    display: flex;
+}
+.hero-car-img img{
+    margin-top: 1rem;
+    position: absolute;
+    right: 0;
+    width: 60%;
+    z-index: -1;
+}
+.hero-content{
+    padding-left:30px;
+    padding-top: 50px;
+    max-width: 30rem;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-content h3{
+    font-weight: 900;
+}
+.hero-content h1{
+    font-weight:bolder;
+    font-size: 3rem;
+    line-height: 60px;
+}
+.hero-content span{
+    color: #ff4d30;
+}
+.hero-sec1 p{
+    color: #9C9CA4;
+}
+.book-ride-btn{
+    background-color: #ff4d30;
+    border: 2px solid #ff4d30;
+    border-radius: 0.3rem;
+    box-shadow: 0 10px 15px 0 rgba(255,83,48,.35);
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    transition: all .3s;
+}
+.hero-btns{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.learn-more-btn{
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    transition: all .3s;
+}
+.learn-more-btn:hover{
+    background: white;
+    color: black;
+}
+/* search box css  */
+.input-section{
+    background: white;
+    margin: 40px;
+    padding: 40px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+    margin-top: 100px;
+}
+.input-section h1{
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box > input{
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #ccd7e6;
+    color: #878585;
+    outline: none;
+}
+.boxs{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3,1fr);
+    border-radius: 5px;
+    background-color: #fff;
+}
+.box-btn{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+}
+#search{
+    width: 100%;
+    padding: 7px 10px;
+    background:#ff4d30;
+    color: white;
+    border: 1px solid #ff4d30;
+    box-shadow: 0 10px 15px rgba(255,83,48,.35);
+    transition: all .3s;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.box  h4{
+    font-size: 0.85rem;
+}
+.box i{
+    color: #ff4d30;
+}
+.detail-section{
+    margin-top: 100px;
+}
+.center{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.grid-container{
+    display: grid;
+    margin: 40px 80px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 40px;
+}
+.grid-box{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+    /* border: 1px solid black; */
+}
+.grid-box p{
+    color: #74737F;
+    font-size: 0.85rem;
+}
+.grid-box img{
+    width: 160px;
+}
+#orange{
+    color: #FA4226;
+}
+
+.black-bg{
+    background: #2D2D2D;
+    color: white;
+    padding: 40px 0;
+}
+.bg-jeep{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.bg-jeep img{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.colums-2 {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 30px 80px;
+}
+.row p{
+    color: #74737F;
+    font-size: 0.85rem;
+}
+.row-1{
+    width: 450px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.row-2{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.row-box{
+    display: flex;
+    gap: 20px;
+}
+.row-box h2{
+    font-size: 1.2rem;
+}
+.row-box img{
+    width: 100px;
+    height: 100px;
+}
+.para{
+    font-size: 0.85rem;
+    color:#74737F;
+}
+.review-container{
+    background: #F8F8F8;
+}
+.review-heading{
+    width: 600px;
+    margin: 100px auto;
+}
+.people-review{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.card-review{
+    background: white;
+    width: 400px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 1.1rem;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.08);
+}
+.person img{
+    width: 50px;
+    border-radius:50% ;
+}
+.person{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.name{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.address{
+    font-size: 0.9rem;
+}
+
+.faq-container{
+    width: 100%;
+    background: white;
+    margin-top: 100px;
+    padding-bottom: 100px;
+    /* background: red; */
+    background-image: url(https://car-rental-ten.vercel.app/static/media/car.5e21eedbea3280311aff.png);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.faq-heading{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding-top:100px ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.faq-heading h1{
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.question-box{
+    width: 700px;
+    margin: 80px auto;
+    background-color: #fff;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.1);
+    color: #010103;
+    cursor: pointer;
+}
+.question{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    transition: .15s ease;
+}
+.ans{
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 20px;
+    width: 700px;
+    color: #878585;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.1);
+
+}
+.question:hover{
+    background:#FA4226;
+    color: white;
+}
+.ans:hover{
+    display: block;
+}
+.question:hover + .ans{
+    display: block;
+}
+
+/* download-section starts */
+
+.download-section{
+    background-image: url(https://car-rental-ten.vercel.app/static/media/bg02.3efbc4567749d0a5671e.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: left;
+    width: 100%;
+    height: auto;
+}
+.download-section-containt{
+    width: 600px;
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* background: red; */
+}
+.download-section-containt h1{
+    font-size: 2.5rem;
+}
+.download-store{
+    display: flex;
+    gap: 30px;
+}
+.download-store img{
+    width: 200px;
+}
+.p{
+    font-size: 0.9rem;
+}
+
+/* footer section starts */
+
+.footer-grid-container{
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.footer-grid-item{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer-grid-item span{
+    font-weight: 200;
+}
+#footer-input{
+    border: none;
+    width: 100%;
+    padding: 15px 10px;
+}
