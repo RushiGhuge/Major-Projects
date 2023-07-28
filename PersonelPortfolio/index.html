@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,10 @@
                 <h2>Rushi.dev</h2>
             </div>
             <div class="right-nav">
-                <div>Home</div>
-                <div>About</div>
-                <div>Projects</div>
-                <div>Contacts</div>
+                <div onclick="scrollNow(0,0)" >Home</div>
+                <div onclick="scrollNow(0,600)" >About</div>
+                <div onclick="scrollNow(0,1200)" >Projects</div>
+                <div onclick="scrollNow(0,2500)" >Contacts</div>
                 <label id="label-dark" for="Theme"><i
                         class="fa-solid fa-circle-half-stroke"></i></label>
                 <select id="Themes" name="Theme">
@@ -46,10 +46,10 @@
         <div id="mobileNav">
             <i onclick="closeNav()" class="fa-solid fa-xmark"></i>
             <div id="mobile-nav-menu">
-                <div>Home</div>
-                <div>About</div>
-                <div>Projects</div>
-                <div>Contacts</div>
+                <div onclick="scrollNow(0,0),closeNav()" >Home</div>
+                <div onclick="scrollNow(0,1100),closeNav()" >About</div>
+                <div onclick="scrollNow(0,2100),closeNav()" >Projects</div>
+                <div onclick="scrollNow(0,4300),closeNav()" >Contacts</div>
 
                 <select id="Themes" name="Theme">
                     <option value="LIGHT">Light <i
@@ -103,7 +103,7 @@
         </div>
 
         <!-- this is about me section  -->
-        <div class="about-section">
+        <div id="aboutSec" class="about-section">
             <div class="about-img">
                 <img
                     src="https://stefantopalovicdev.vercel.app/static/media/about-img.62b47e7f183d4b4e9feb.webp"
@@ -112,7 +112,7 @@
             <div class="about-text">
                 <h3 id="aboutme">ABOUT ME</h3>
                 <h3 id="head-ab">A dedicated Front-end Developer😎</h3>
-                <p>As a Front-End Developer, I possess an impressive arsenal of
+                <p id="para-ab">As a Front-End Developer, I possess an impressive arsenal of
                     skills in HTML, CSS and JavaScript. I excel in designing and
                     maintaining responsive websites that offer a smooth user
                     experience. My expertise lies in crafting dynamic, engaging
@@ -132,7 +132,8 @@
         <!-- ********************************************************************************************************* -->
 
         <section class="projects-container">
-            <div class="project-head">
+
+            <div id="ProHead" class="project-head">
                 <h3>PORTFOLIO</h3>
                 <h1>Each project is a unique piece of development 🧩</h1>
             </div>
@@ -243,10 +244,10 @@
         <!-- ********************************************************************************************************* -->
 
         <!-- this is footer section  -->
-        <footer class="footer">
+        <footer id="footer">
             <div class="contact-head">
                 <h3>Contact</h3>
-                <h1>Don't be shy! Hit me up! 👇</h1>
+                <h1 class="center">Don't be shy! Hit me up! 👇</h1>
             </div>
             <div class="locationn-mail">
                 <div class="box">

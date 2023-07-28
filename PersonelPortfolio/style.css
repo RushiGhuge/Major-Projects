@@ -4,7 +4,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 body {
     background: #F9F9F9;
 }
@@ -229,8 +231,8 @@ body {
 
 .about-img img {
     padding-left: 10px;
-    width: 31rem;
-    height: 24rem;
+    width: 28rem;
+    height: 22rem;
     border-radius: 1.2rem;
 }
 
@@ -248,14 +250,15 @@ body {
     font-weight: bold;
 }
 
-.footer {
+#footer {
     /* width: 100%; */
     display: flex;
     flex-direction: column;
     /* margin-inline:150px ; */
     padding: 100px 0;
-    padding-left: 150px;
     background: white;
+    padding-left: 100px;
+    color: black;
 }
 
 .contact-head {
@@ -354,7 +357,7 @@ body {
     padding: 5px 10px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    color: #000 !important;
+    color: black;
 }
 
 .project-cart-demo {

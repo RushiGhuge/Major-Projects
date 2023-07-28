@@ -146,11 +146,12 @@
     }
 
     .hero-text>p {
-        width: 90%;
+        width: 100%;
     }
 
     .about-img img {
-        width: 100%;
+        width: 90%;
+        height: 250px;
     }
 
     .about-text {
@@ -174,10 +175,15 @@
 
     }
 
-    .footer {
-        width: 80%;
+    #footer {
+        width: 100%;
         margin: auto;
         text-align: center;
+        padding-left: 0px;
     }
 
+    .center{
+        text-align: center;
+    }
+    
 }
