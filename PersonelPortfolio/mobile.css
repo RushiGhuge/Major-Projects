@@ -34,16 +34,20 @@
         align-items: center;
         gap: 20px;
     }
-
+   
     .project-card {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         width: 500px;
         justify-content: center;
         align-items: center;
         gap: 30px;
+        height: auto;
     }
-
+    .odd{
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .project-head {
         width: auto;
         text-align: center;
@@ -155,7 +159,7 @@
     }
 
     .about-text {
-        width: 100%;
+        width: 90%;
         text-align: center;
         margin: auto;
     }
@@ -167,12 +171,10 @@
 
     .project-card {
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        width: 90%;
         justify-content: center;
         align-items: center;
         gap: 30px;
-
     }
 
     #footer {
@@ -185,5 +187,8 @@
     .center{
         text-align: center;
     }
-    
+    .odd{
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
