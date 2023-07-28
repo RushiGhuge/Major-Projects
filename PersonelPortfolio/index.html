@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rushikes Ghuge | Front-End dev</title>
-         <link rel="icon" href="./Rushi-removebg-preview.png">
+        <link rel="icon" href="./Rushi-removebg-preview.png">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="./mobile.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     </head>
     <body>
         <!-- nav bar section  -->
-        <nav class="navbar">
+        <nav class="navbar" id="navBar">
             <div class="left-nav">
                 <h2>Rushi.dev</h2>
             </div>
@@ -26,31 +26,49 @@
                 <div>About</div>
                 <div>Projects</div>
                 <div>Contacts</div>
+                <label id="label-dark" for="Theme"><i
+                        class="fa-solid fa-circle-half-stroke"></i></label>
+                <select id="Themes" name="Theme">
+                    <option value="LIGHT">Light <i
+                            class="fa-solid fa-circle-half-stroke"></i></option>
+                    <option value="DARK">Dark <i
+                            class="fa-solid fa-circle-half-stroke"></i></option>
+                </select>
             </div>
-            <div class="hand-burger">
+
+            <div onclick="DisplayNavBar()" id="hand-burger-icon"
+                class="hand-burger">
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <div class="mobile-nav">
+        </nav>
+
+        <div id="mobileNav">
+            <i onclick="closeNav()" class="fa-solid fa-xmark"></i>
+            <div id="mobile-nav-menu">
                 <div>Home</div>
                 <div>About</div>
                 <div>Projects</div>
                 <div>Contacts</div>
             </div>
-        </nav>
+        </div>
 
         <!-- this is hero section  -->
         <div class="hero-main">
             <div class="hero-text">
                 <div class="hero-heading">
-                    <h1>Front-End Developer <span id="hand-shake">🖐️</span> </h1>
+                    <h1 id="textColor">Front-End Developer <span id="hand-shake">🖐️</span>
+                    </h1>
 
                 </div>
-                <p>Hi, I'm Rushikesh Ghuge. A passionate Front-end Developer. 📍</p>
+                <p class="ParaTxtColorDark">Hi, I'm Rushikesh Ghuge. A
+                    passionate Front-end Developer. 📍</p>
                 <div class="share-icon">
-                    <a href="https://www.linkedin.com/in/rushikeshghuge/"><i
+                    <a class="ParaTxtColorDark"
+                        href="https://www.linkedin.com/in/rushikeshghuge/"><i
                             class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"> <i class="fa-brands fa-github"></i></a>
+                    <a class="ParaTxtColorDark" href="#"> <i
+                            class="fa-brands fa-github"></i></a>
                 </div>
             </div>
             <div class="hero-img">
@@ -58,7 +76,7 @@
         </div>
 
         <div class="techStack">
-            <h3>Tech Stack | </h3>
+            <h3 class="ParaTxtColorDark">Tech Stack | </h3>
             <div class="logos">
                 <ul>
                     <li><img
@@ -106,8 +124,6 @@
         <!-- ********************************************************************************************************* -->
         <!-- ********************************************************************************************************* -->
 
-
-
         <section class="projects-container">
             <div class="project-head">
                 <h3>PORTFOLIO</h3>
@@ -122,28 +138,38 @@
             <div class="project-card">
                 <div class="project-content">
                     <h2>Car Rental 🚗</h2>
-                    <p>Through my expertise in web development, I've crafted a visually appealing and user-friendly online pizza restaurant website, providing a delightful browsing experience and making ordering your favorite pizzas a breeze.</p>
+                    <p>Through my expertise in web development, I've crafted a
+                        visually appealing and user-friendly online pizza
+                        restaurant website, providing a delightful browsing
+                        experience and making ordering your favorite pizzas a
+                        breeze.</p>
                     <div class="project-card-buttons">
                         <p>HTML5</p>
                         <p>CSS3</p>
                     </div>
 
                     <div class="project-cart-demo">
-                        <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Car-Rental" target="_blank" >Code <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Car-Rental/index.html"  target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank"
+                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Car-Rental"
+                            target="_blank">Code <i class="fa-brands fa-github"></i></a>
+                        <a target="_blank"
+                            href="https://rushighuge.github.io/Major-Projects/Car-Rental/index.html"
+                            target="_blank">Live Demo <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
                 <div class="project-img">
-                    <img src="./screencapture-rushighuge-github-io-Major-Projects-Car-Rental-index-html-2023-07-11-10_14_50.png" alt="">
+                    <img
+                        src="./screencapture-rushighuge-github-io-Major-Projects-Car-Rental-index-html-2023-07-11-10_14_50.png"
+                        alt>
                 </div>
             </div>
-
 
             <div class="project-card">
 
                 <div class="project-img">
-                    <img src="./amazon-clone.png" alt="">
+                    <img src="./amazon-clone.png" alt>
                 </div>
 
                 <div class="project-content">
@@ -157,8 +183,13 @@
                     </div>
 
                     <div class="project-cart-demo">
-                        <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Amazone">Code <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Amazone/index.html">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank"
+                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Amazone">Code
+                            <i class="fa-brands fa-github"></i></a>
+                        <a target="_blank"
+                            href="https://rushighuge.github.io/Major-Projects/Amazone/index.html">Live
+                            Demo <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
@@ -169,35 +200,40 @@
             <div class="project-card">
                 <div class="project-content">
                     <h2>Pizza Hut 🍕</h2>
-                    <p>Through my expertise in web development, I've crafted a visually appealing and user-friendly online pizza restaurant website, providing a delightful browsing experience and making ordering your favorite pizzas a breeze.</p>
+                    <p>Through my expertise in web development, I've crafted a
+                        visually appealing and user-friendly online pizza
+                        restaurant website, providing a delightful browsing
+                        experience and making ordering your favorite pizzas a
+                        breeze.</p>
                     <div class="project-card-buttons">
                         <p>HTML5</p>
                         <p>CSS3</p>
                     </div>
 
                     <div class="project-cart-demo">
-                        <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Pizza-Restauarant-Cotext">Code <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Pizza-Restauarant-Cotext/index.html">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank"
+                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Pizza-Restauarant-Cotext">Code
+                            <i class="fa-brands fa-github"></i></a>
+                        <a target="_blank"
+                            href="https://rushighuge.github.io/Major-Projects/Pizza-Restauarant-Cotext/index.html">Live
+                            Demo <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
                 <div class="project-img">
-                    <img src="./screencapture-rushighuge-github-io-Projects-Pizza-Restauarant-Cotext-index-html-2023-07-09-20_45_18.png" alt="">
+                    <img
+                        src="./screencapture-rushighuge-github-io-Projects-Pizza-Restauarant-Cotext-index-html-2023-07-09-20_45_18.png"
+                        alt>
                 </div>
             </div>
 
         </section>
 
-          <!-- ********************************************************************************************************* -->
         <!-- ********************************************************************************************************* -->
         <!-- ********************************************************************************************************* -->
         <!-- ********************************************************************************************************* -->
-
-
-
-
-
-
+        <!-- ********************************************************************************************************* -->
 
         <!-- this is footer section  -->
         <footer class="footer">
@@ -216,19 +252,22 @@
                     </div>
                 </div>
 
-               
-                    <div class="box">
-                        <div class="circle">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div class="rows">
-                            <h3>Mail</h2>
-                            <p>rushikeshghuge993@gmail.com</p>
-                        </div>
+                <div class="box">
+                    <div class="circle">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
-            
+                    <div class="rows">
+                        <h3>Mail</h2>
+                        <p id="mail">rushikeshghuge993@gmail.com</p>
+                    </div>
+                </div>
+
             </div>
         </footer>
+
+        <script src="./script.js">
+
+        </script>
 
     </body>
 </html>

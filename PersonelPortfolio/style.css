@@ -31,6 +31,7 @@ body {
     padding-right: 60px;
     font-size: 1.15rem;
     gap: 20px;
+    position: relative;
 }
 
 .right-nav div:hover {
@@ -45,11 +46,55 @@ body {
 .hand-burger {
     display: none;
 }
-
-.mobile-nav {
-    display: none;
+#label-dark{
+    position: absolute;
+    top: 0px;
+    left: 345px;
 }
+#mobileNav {
+    display: none;
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    transform: translate(-1000px) ;
+    transition: all 0.4s ease-in-out;
+    
+}
+#mobile-nav-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    /* transition: all 6s; */
 
+}
+#mobileNav .fa-xmark{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 30px;
+    font-size: 2rem;
+}
+#Themes{
+    border: none;
+    background: transparent;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#Themes option{
+    background: black;
+    color: white;
+    padding: 4px;
+
+}
 .close {
     display: none;
 }
@@ -73,7 +118,6 @@ body {
 
 .hero-text h1 {
     font-size: 3rem;
-    font-weight: ;
     color: #2d2e32;
 }
 
@@ -294,7 +338,6 @@ body {
 
 .project-content {
     max-width: 400px;
-    min-width: 300px;
     text-align: center;
     display: flex;
     flex-direction: column;
