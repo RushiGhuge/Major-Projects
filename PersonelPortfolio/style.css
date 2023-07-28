@@ -109,6 +109,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 120px;
+
+
 }
 
 .hero-text {
@@ -154,10 +156,12 @@ body {
     background-size: cover;
     border: 3px solid black;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    animation: morfh 8s ease-in-out infinite;
+    -webkit-animation: morfh  8s ease-in-out infinite;
+
 }
 
-@keyframes morfh {
+
+@-webkit-keyframes morfh {
     0% {
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     }
@@ -170,6 +174,7 @@ body {
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     }
 }
+
 
 .techStack {
     margin-top: 60px;
@@ -315,8 +320,10 @@ body {
     background: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 950px;
     margin: 50px auto;
+    height: 360px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
@@ -324,7 +331,7 @@ body {
 .project-img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    height: 300px;
+    height: 330px;
     min-width: auto;
     overflow-y: scroll;
     position: relative;
@@ -344,6 +351,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    gap: 15px;
     justify-content: space-around;
 }
 
