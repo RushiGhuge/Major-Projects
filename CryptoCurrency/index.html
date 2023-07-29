@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto-Currency</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a6a0cd4ae6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- nav bar -->
+    <nav id="nav">
+        <div class="leftNav">
+            <h2>CryptoTracker<span>.</span></h2>
+        </div>
+        <div class="rightNav">
+            <a href="">Home</a>
+            <a href="">Compare</a>
+            <a href="">Watchlist</a>
+            <div id="Dashbord">Dashbord</div>
+        </div>
+        <div onclick="DisplayNavBar()" id="hand-burger-icon"
+        class="hand-burger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+
+    <!-- this mobile view nav bar -->
+    <div id="mobileNav">
+        <i onclick="closeNav()" class="fa-solid fa-xmark"></i>
+        <div id="mobile-nav-menu">
+            <a href="">Home</a>
+            <a href="">Compare</a>
+            <a href="">Watchlist</a>
+            <div id="Dashbord">Dashbord</div>
+        </div>
+    </div>
+
+    <div class="selectOption">
+        <div id="grid">
+            <h4>Grid</h4>
+        </div>
+        <div id="list">
+            <h4>List</h4>
+        </div>
+    </div>
+
+   
+
+    <div class="list-container">
+        <table>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+@media (max-width:600px) {
+    .rightNav {
+        display: none;
+    }
+
+    #mobileNav {
+        display: block;
+        position: fixed;
+    }
+
+    .hand-burger {
+        display: block;
+        padding-right: 40px;
+        font-size: 1.4rem;
+    }
+
+    #nav {
+        padding-right: 0;
+    }
+}
+
+@media (max-width:1100px) {
+    .grid-container {
+       
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        
+    }
+}
+
+@media (max-width:820px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+    }
+    table{
+        margin-left:20px;
+    }
+}
+
+@media (max-width:550px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 250px);
+    }
+    .per{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #val{
+        font-size: 1.1rem;
+    }
+    tr, td{
+        padding: 6px;
+
+    }
+}
