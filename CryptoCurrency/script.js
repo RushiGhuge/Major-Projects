@@ -94,8 +94,8 @@ function createGrid(arr) {
         <div class="grid-col">
             <div class="persentage ${GgreenRed} ${GborderRed} ">${arr[i].price_change_percentage_24h}</div>
             <div class="value ${GgreenRed}">${"$" + arr[i].current_price}</div>
-            <div class="total-val gray bold">${arr[i].total_volume}</div>
-            <div class="market-cap gray bold">${arr[i].market_cap}</div>
+            <div class="total-val gray bold">Total Valume: ${arr[i].total_volume}</div>
+            <div class="market-cap gray bold">Market Cap: ${arr[i].market_cap}</div>
         </div>`
         gridContainer.appendChild(grid)
     }

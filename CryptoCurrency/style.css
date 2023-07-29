@@ -180,11 +180,12 @@ body {
 
 .value {
     color: #7CC678;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .gray {
     color: #868686;
+    font-size: 0.9rem;
 }
 
 .bold {
@@ -254,5 +255,8 @@ td>img {
 }
 
 #val {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+}
+.market-cap{
+    font-size: 0.9rem;
 }
