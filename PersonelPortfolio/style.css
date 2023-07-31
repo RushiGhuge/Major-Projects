@@ -183,6 +183,7 @@ body {
     gap: 50px;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .logos img {
@@ -236,16 +237,19 @@ body {
 .about-img img {
     padding-left: 10px;
     width: 28rem;
-    height: 22rem;
+    /* height: 22rem; */
     border-radius: 1.2rem;
 }
 
 .about-text p {
     margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 #aboutme {
     color: rgb(0, 102, 255);
+    font-weight: bolder;
 }
 
 #head-ab {
@@ -317,21 +321,25 @@ body {
 .project-card {
     padding: 15px;
     background: white;
+    background: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 950px;
     margin: 50px auto;
-    height: 360px;
+    height: 420px;
     border-radius: 15px;
+    font-size: 1.1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
 .project-img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    height: 330px;
-    min-width: auto;
+    height: 400px;
+    /* max-width: 600px; */
+    width: 580px;
+    /* min-width: auto; */
     overflow-y: scroll;
     position: relative;
 }
@@ -341,7 +349,7 @@ body {
 }
 
 .project-img img {
-    width: 450px;
+    width:520px;
     border-radius: 10px;
 }
 
@@ -384,3 +392,7 @@ body {
 } */
 
 
+.footerHeading{
+    font-size: 1.5rem;
+
+}
