@@ -1,0 +1,44 @@
+
+
+
+@media (max-width:900px){
+  .menu-box > p{
+    display: none;
+  }
+  .left-container{
+    width: 70px;
+    height: 100vh;
+  }
+  .boxs{
+    padding: 0px;
+    margin: 10px;
+  }
+}
+@media (max-width:800px){
+ 
+  #home-video-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+  }
+  .mick{
+    display: none;
+  }
+}
+@media (max-width:500px){
+  .menu-box > p{
+    display: none;
+  }
+  .left-container{
+    width: 50px;
+    height: 100vh;
+  }
+  .boxs{
+    padding: 0px;
+    margin: 5px;
+  }
+  #home-video-container{
+    display: grid;
+    grid-template-columns: 1fr ;
+  
+  }
+}
