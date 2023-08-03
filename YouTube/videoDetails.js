@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyAO_6L4BeLNTAxFaJLKuVmijX0NUflft9E';
+const apiKey = 'AIzaSyBqS3_eoVwSb0y5JgkWETj6gGWyVOo28hQ';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
@@ -201,5 +201,4 @@ barIcon.addEventListener('click', () => {
 innerBar.addEventListener('click', () => {
     SideBar.style.transform = "translate(-300px)"
     document.getElementById('Innerbody').style.opacity = '1';
-
 })

@@ -1,7 +1,7 @@
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
 //this is youtube v3 base url
-const apiKey = 'AIzaSyAO_6L4BeLNTAxFaJLKuVmijX0NUflft9E';
+const apiKey = 'AIzaSyBqS3_eoVwSb0y5JgkWETj6gGWyVOo28hQ';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const rightContainer = document.getElementById('right-container');
 
