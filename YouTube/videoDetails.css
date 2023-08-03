@@ -1,10 +1,16 @@
 body{
   font-size: 14px;
 }
+.nav-bar{
+  z-index: 100;
+}
 .video-frame{
   /* margin-top: 60px; */
   margin-left: 20px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  width: 900px;
+  /* border:1px solid red; */
+  box-shadow: rgba(83, 107, 110, 0.56) 0px 22px 70px 4px;
 }
 #videoContainer{
   display: flex;
@@ -19,10 +25,29 @@ body{
   /* background: red; */
   /* justify-content: center; */
 }
-/* .container-left iframe{
+/* .container-left iframe
   width: 100%;
   margin: auto;
 } */
+.iframe-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.iframe-embed-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.iframe-embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
 .video-card-details{
   /* background: red; */
   display: flex;
@@ -280,7 +305,7 @@ iframe{
   position: fixed;
   top: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 101;
   background: #0F0F0F;
   width: 230px;
   color: white;
