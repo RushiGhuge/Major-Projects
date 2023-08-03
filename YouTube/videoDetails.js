@@ -4,7 +4,8 @@ const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
 let data = JSON.parse(localStorage.getItem('video'));
 let videoID = data.id.videoId;
-let iframe = document.getElementsByTagName('iframe')[0]
+
+let iframe = document.getElementsByTagName('iframe')[1]
 iframe.src = `http://www.youtube.com/embed/${videoID}?start=90`;
 
 searchBtn.addEventListener('click', () => {
