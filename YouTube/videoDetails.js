@@ -6,7 +6,7 @@ let data = JSON.parse(localStorage.getItem('video'));
 let videoID = data.id.videoId;
 
 let iframe = document.getElementsByTagName('iframe')[0]
-iframe.src = `http://www.youtube.com/embed/${videoID}?start=0`;
+iframe.src = `https://www.youtube.com/embed/${videoID}?start=0`;
 
 searchBtn.addEventListener('click', () => {
     let searchStr = searchString.value.trim()
