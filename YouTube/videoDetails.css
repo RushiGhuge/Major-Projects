@@ -283,14 +283,12 @@ body{
   font-size: 1em;
   
 }
-
 .video-description {
     color: #E0E0E0;
     font-size: 1em;
 
 }
 iframe{
-  /* border: 2px solid blueviolet; */
   box-shadow: rgba(66, 66, 66, 0.56) 0px 22px 70px 4px;
 }
 .bars{
