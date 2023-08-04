@@ -12,13 +12,31 @@ body{
   background: #0F0F0F;
   font-size: 14px;
 }
+#lodingBar{
+  animation: lodingBar 0.7s ease-in-out;
+  background: red;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+@keyframes lodingBar{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
 .nav-bar{
   width: 100%;
   background: #0F0F0F;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 20px;
+  padding: 4px 30px;
   position: fixed;
   top: 0;
 }
@@ -31,7 +49,7 @@ body{
   gap: 20px;
 }
 .left-navbar > img{
-  width: 11vmax;
+  width: 9vmax;
 }
 .center-navbar{
   display: flex;

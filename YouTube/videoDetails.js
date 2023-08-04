@@ -203,3 +203,10 @@ innerBar.addEventListener('click', () => {
     SideBar.style.transform = "translate(-300px)"
     document.getElementById('Innerbody').style.opacity = '1';
 })
+
+
+//loding bar ----> hide after 2s;
+let lodingBar = document.getElementById('lodingBar');
+setTimeout(()=>{
+  lodingBar.style.display = 'none'
+},1000)

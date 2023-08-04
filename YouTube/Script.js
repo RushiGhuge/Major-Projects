@@ -7,20 +7,29 @@ const rightContainer = document.getElementById('right-container');
 
 let VideoDetailsSearchItem = JSON.parse(localStorage.getItem('searchItem'))
 
+//loding bar ----> hide after 2s;
+let lodingBar = document.getElementById('lodingBar');
+setTimeout(() => {
+  lodingBar.style.display = 'none'
+}, 1000)
 
 
-if(VideoDetailsSearchItem != null){
+if (VideoDetailsSearchItem != null) {
   getSearchResults(VideoDetailsSearchItem.searchStr);
   console.log(VideoDetailsSearchItem);
   localStorage.removeItem('searchItem');
 }
-else{
+else {
   console.log("home");
   getHomeVideos();
 }
 
 // search the string that user typed--->
 searchBtn.addEventListener('click', () => {
+  lodingBar.style.display = 'block'
+  setTimeout(() => {
+    lodingBar.style.display = 'none'
+  }, 1000)
   let searchStr = searchString.value.trim()
   if (searchStr === ' ') {
     return;
@@ -28,8 +37,12 @@ searchBtn.addEventListener('click', () => {
   getSearchResults(searchStr);
 })
 // when user press enter for serching --->
-searchString.addEventListener('keypress',(event)=>{
-  if(event.key == 'Enter'){
+searchString.addEventListener('keypress', (event) => {
+  lodingBar.style.display = 'block'
+  setTimeout(() => {
+    lodingBar.style.display = 'none'
+  }, 1000)
+  if (event.key == 'Enter') {
     event.preventDefault();
     searchBtn.click();
   }
@@ -80,14 +93,14 @@ function appendVideoInContainer(list) {
                         <p class="video-description">${snippet.description}</p>
                     </div>
       `
-      videoCon.appendChild(vCard);
-      rightContainer.appendChild(videoCon);
+    videoCon.appendChild(vCard);
+    rightContainer.appendChild(videoCon);
 
-      let localData = {
-        snippet,id,
-      }
-    vCard.addEventListener('click',()=>{
-      localStorage.setItem('video',JSON.stringify(localData));
+    let localData = {
+      snippet, id,
+    }
+    vCard.addEventListener('click', () => {
+      localStorage.setItem('video', JSON.stringify(localData));
       location.href = 'videoDetails.html'
     })
   })
@@ -125,26 +138,34 @@ function homeContainer(list) {
           <p class="channelTitel">${snippet.channelTitle}</p>
         </div>
      </div>`
-     homeContainer.appendChild(homeCard);
+    homeContainer.appendChild(homeCard);
 
     //  homeCard.addEventListener('click',()=>{
     //   console.log("click");
     //  })
     let localData = {
-      snippet,id,
+      snippet, id,
     }
-    homeCard.addEventListener('click',()=>{
-      localStorage.setItem('video',JSON.stringify(localData));
+    homeCard.addEventListener('click', () => {
+      lodingBar.style.display = 'block'
+      setTimeout(() => {
+        lodingBar.style.display = 'none'
+      }, 1000)
+      localStorage.setItem('video', JSON.stringify(localData));
       location.href = 'videoDetails.html'
     })
-     
+
 
   })
   rightContainer.appendChild(homeContainer);
 
 }
 
-document.getElementById('home').addEventListener('click',()=>{
+document.getElementById('home').addEventListener('click', () => {
+  lodingBar.style.display = 'block'
+  setTimeout(() => {
+    lodingBar.style.display = 'none'
+  }, 1000)
   getHomeVideos();
 })
 
@@ -154,14 +175,14 @@ const smSideBar = document.getElementById('small-left-container');
 const bgSideBar = document.getElementById('bg-side-bar');
 const barBtn = document.getElementById('barLeft');
 bgSideBar.style.display = 'block';
-barBtn.addEventListener('click',()=>{
+barBtn.addEventListener('click', () => {
 
-  if(bgSideBar.style.display == 'block'){
-    bgSideBar.style.display= 'none';
+  if (bgSideBar.style.display == 'block') {
+    bgSideBar.style.display = 'none';
     smSideBar.style.display = 'block'
   }
-  else{
-    bgSideBar.style.display= 'block';
+  else {
+    bgSideBar.style.display = 'block';
     smSideBar.style.display = 'none'
   }
 })
@@ -169,19 +190,20 @@ barBtn.addEventListener('click',()=>{
 //make the default search on the top bar
 // when user click that tab then search for the results getSearchResults
 const defaultItemBox = document.getElementsByClassName('item');
-for(let i = 0;i<defaultItemBox.length;i++){
-  defaultItemBox[i].addEventListener('click',(event)=>{
+for (let i = 0; i < defaultItemBox.length; i++) {
+  defaultItemBox[i].addEventListener('click', (event) => {
+    lodingBar.style.display = 'block'
+    setTimeout(() => {
+      lodingBar.style.display = 'none'
+    }, 1000)
     getSearchResults(event.target.innerText)
-    for(let j = 0;j<defaultItemBox.length;j++){
+    for (let j = 0; j < defaultItemBox.length; j++) {
       defaultItemBox[j].style.background = '#222222'
       defaultItemBox[j].style.color = 'white';
     }
     event.target.style.background = "white";
     event.target.style.color = 'black'
-   })
+  })
 }
-// defaultItemBox.forEach(item=>{
-//   item.addEventListener('click',(event)=>{
-//     console.log(event.target);
-//   })
-// })
+
+
