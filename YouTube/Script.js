@@ -1,7 +1,7 @@
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
 //this is youtube v3 base url
-const apiKey = 'AIzaSyBYd855c8RIVH45Nox6w3PaD-GSB4r6-Kc';
+const apiKey = 'AIzaSyCuQCfNQ_cK4EsJdD7EhPt0KHqny9ikSyg';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const rightContainer = document.getElementById('right-container');
 
@@ -19,13 +19,20 @@ else{
   getHomeVideos();
 }
 
-
+// search the string that user typed--->
 searchBtn.addEventListener('click', () => {
   let searchStr = searchString.value.trim()
   if (searchStr === ' ') {
     return;
   }
   getSearchResults(searchStr);
+})
+// when user press enter for serching --->
+searchString.addEventListener('keypress',(event)=>{
+  if(event.key == 'Enter'){
+    event.preventDefault();
+    searchBtn.click();
+  }
 })
 
 async function getSearchResults(searchString) {
@@ -141,6 +148,40 @@ document.getElementById('home').addEventListener('click',()=>{
   getHomeVideos();
 })
 
-// side bar hide and unhide------------------->
-//by clicking the top left bar
-//get the top left bar first
+// make the side bar small and big when bar is pressed 
+
+const smSideBar = document.getElementById('small-left-container');
+const bgSideBar = document.getElementById('bg-side-bar');
+const barBtn = document.getElementById('barLeft');
+bgSideBar.style.display = 'block';
+barBtn.addEventListener('click',()=>{
+
+  if(bgSideBar.style.display == 'block'){
+    bgSideBar.style.display= 'none';
+    smSideBar.style.display = 'block'
+  }
+  else{
+    bgSideBar.style.display= 'block';
+    smSideBar.style.display = 'none'
+  }
+})
+
+//make the default search on the top bar
+// when user click that tab then search for the results getSearchResults
+const defaultItemBox = document.getElementsByClassName('item');
+for(let i = 0;i<defaultItemBox.length;i++){
+  defaultItemBox[i].addEventListener('click',(event)=>{
+    getSearchResults(event.target.innerText)
+    for(let j = 0;j<defaultItemBox.length;j++){
+      defaultItemBox[j].style.background = '#222222'
+      defaultItemBox[j].style.color = 'white';
+    }
+    event.target.style.background = "white";
+    event.target.style.color = 'black'
+   })
+}
+// defaultItemBox.forEach(item=>{
+//   item.addEventListener('click',(event)=>{
+//     console.log(event.target);
+//   })
+// })

@@ -27,6 +27,9 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
   }
+  #sm-side-container{
+    display: none;
+  }
 }
 @media (max-width:500px){
   body{

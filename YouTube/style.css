@@ -53,6 +53,27 @@ body{
   margin-right: 5px;
   width: 40vw
 }
+#small-left-container{
+  padding-top: 20px;
+  
+}
+
+.sm-left-box{
+ display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 3px;
+  margin: 0 8px;
+  border-radius: 10px;
+}
+.sm-left-box:hover{
+  background: rgb(34, 34, 34);
+}
+.sm-left-box > p{
+  font-size: 0.8em;
+}
 
 #profile, .bell-icon,.create{
   display: flex;
@@ -78,7 +99,6 @@ body{
   cursor: pointer;
  
 }
-
 .mick{
   background: #222222;
   display: flex;
@@ -101,7 +121,7 @@ body{
   padding: 10px;
   border-bottom: 1px solid gray;
   margin: 10px;
-
+  cursor: pointer;
 }
 .menu-box{
   margin-top: 3px;
@@ -117,7 +137,6 @@ body{
   width: 30px;
   /* background: red; */
 }
-
 .menu-box:hover{
   background:#222222;
 }
@@ -134,6 +153,10 @@ body{
 #right-container{
   width: 100%;
   overflow-y: scroll;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 30px; */
 }
 .nav-items{
   display: flex;
@@ -150,6 +173,9 @@ body{
   background: white;
   color: rgb(7, 7, 7);
 }
+.material-symbols-outlined{
+  cursor: pointer;
+}
 .item{
   /* width: 200px; */
   background:#222222;
@@ -158,6 +184,10 @@ body{
   border-radius: 8px;
   font-size: 0.9em;
   cursor: pointer;
+  transition: 0.2s;
+}
+.item:hover{
+  background: rgb(87, 87, 87);
 }
 .material-symbols-outlined {
   font-variation-settings:
@@ -212,9 +242,9 @@ body{
 }
 #home-video-container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
-  padding: 15px;
+  /* padding: 15px; */
   margin-top: 0px;
 }
 .cardDetails{
@@ -239,4 +269,16 @@ body{
 }
 .menu-box p{
   display: block;
+}
+
+#small-left-container{
+  display: none;
+}
+#bg-side-bar{
+  display: block;
+}
+#sm-side-container{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyBYd855c8RIVH45Nox6w3PaD-GSB4r6-Kc';
+const apiKey = 'AIzaSyCuQCfNQ_cK4EsJdD7EhPt0KHqny9ikSyg';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
