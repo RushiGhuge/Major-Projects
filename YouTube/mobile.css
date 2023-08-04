@@ -8,6 +8,7 @@
   .left-container{
     width: 70px;
     height: 100vh;
+    display: none;
   }
   .boxs{
     padding: 0px;
@@ -30,10 +31,30 @@
   #sm-side-container{
     display: none;
   }
+  .video-description{
+    display: none;
+  }
 }
 @media (max-width:500px){
   body{
     font-size: 14px;
+  }
+  .right-container {
+    padding: 10px 0;
+  }
+  
+  .video-description{
+    display: none;
+  }
+  .video-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10px;
+    padding: 20px;
+  }
+  #profile-none{
+    display: block;
   }
   .menu-box > p{
     display: none;
@@ -89,6 +110,9 @@
   }
   .video-details{
     padding: 10px;
+  }
+  #bg-side-bar{
+    display: none;
   }
 }
 

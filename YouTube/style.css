@@ -244,6 +244,10 @@ body{
   padding-top: 20px;
   gap: 10px;
   padding: 20px;
+  /* background: red; */
+}
+#profile-none{
+  display: none;
 }
 .channelTitel{
   font-size: 1em;

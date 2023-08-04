@@ -153,7 +153,6 @@ function appendCommentBox(array) {
     let profileImg = array[0].snippet.topLevelComment.snippet.authorProfileImageUrl
     let profile = document.getElementById('profileImgC');
     profile.src = profileImg;
-
     let commentContainer = document.createElement('div');
     commentContainer.id = 'comment-container';
     array.forEach(arr => {

@@ -88,9 +88,14 @@ function appendVideoInContainer(list) {
                         <img src="${snippet.thumbnails.high.url}" alt="">
                     </div>
                     <div class="video-details">
-                        <p class="title">${snippet.title}</p>
-                        <p class="channelTitel">${snippet.channelTitle}</p>
-                        <p class="video-description">${snippet.description}</p>
+                    <div class="profile-image">
+                      <img id='profile-none' src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Eo_circle_purple_white_letter-r.svg/2048px-Eo_circle_purple_white_letter-r.svg.png" alt="">
+                    </div>
+                    <div class="video-about">
+                      <p class="title">${snippet.title}</p>
+                      <p class="channelTitel">${snippet.channelTitle}</p>
+                      <p class="video-description">${snippet.description}</p>
+                     </div>
                     </div>
       `
     videoCon.appendChild(vCard);
@@ -174,7 +179,7 @@ document.getElementById('home').addEventListener('click', () => {
 const smSideBar = document.getElementById('small-left-container');
 const bgSideBar = document.getElementById('bg-side-bar');
 const barBtn = document.getElementById('barLeft');
-bgSideBar.style.display = 'block';
+// bgSideBar.style.display = 'block';
 barBtn.addEventListener('click', () => {
 
   if (bgSideBar.style.display == 'block') {
