@@ -1,7 +1,7 @@
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
 //this is youtube v3 base url
-const apiKey = 'AIzaSyAO_6L4BeLNTAxFaJLKuVmijX0NUflft9E';
+const apiKey = 'AIzaSyBJ_jhWVh5pvnuNwtx739sncUqu1rAPkNk';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const rightContainer = document.getElementById('right-container');
 
@@ -176,21 +176,21 @@ document.getElementById('home').addEventListener('click', () => {
 
 // make the side bar small and big when bar is pressed 
 
-const smSideBar = document.getElementById('small-left-container');
-const bgSideBar = document.getElementById('bg-side-bar');
-const barBtn = document.getElementById('barLeft');
-// bgSideBar.style.display = 'block';
-barBtn.addEventListener('click', () => {
+// const smSideBar = document.getElementById('small-left-container');
+// const bgSideBar = document.getElementById('bg-side-bar');
+// const barBtn = document.getElementById('barLeft');
+// // bgSideBar.style.display = 'block';
+// barBtn.addEventListener('click', () => {
 
-  if (bgSideBar.style.display == 'block') {
-    bgSideBar.style.display = 'none';
-    smSideBar.style.display = 'block'
-  }
-  else {
-    bgSideBar.style.display = 'block';
-    smSideBar.style.display = 'none'
-  }
-})
+//   if (bgSideBar.style.display == 'block') {
+//     bgSideBar.style.display = 'none';
+//     smSideBar.style.display = 'block'
+//   }
+//   else {
+//     bgSideBar.style.display = 'block';
+//     smSideBar.style.display = 'none'
+//   }
+// })
 
 //make the default search on the top bar
 // when user click that tab then search for the results getSearchResults
@@ -211,4 +211,32 @@ for (let i = 0; i < defaultItemBox.length; i++) {
   })
 }
 
+
+// side nav bar when cliked
+const barIcon = document.getElementById('barLeft');
+const SideBar = document.getElementById('left-container-side-bar');
+const innerBar = document.getElementById('innerBar');
+
+// barIcon.addEventListener('click', () => {
+//     SideBar.style.transform = "translate(0px)"
+//     document.getElementById('Innerbody').style.opacity = '0.4';
+// })
+// innerBar.addEventListener('click', () => {
+//     SideBar.style.transform = "translate(-300px)"
+//     document.getElementById('Innerbody').style.opacity = '1';
+// })
+//apply that only in the 800px mobile and tab view
+let mobileQuary = window.matchMedia('(max-width:800px)')
+
+barIcon.addEventListener('click', () => {
+  SideBar.style.transform = "translate(0px)"
+  if(mobileQuary.matches){
+    document.getElementById('Innerbody').style.opacity = '0.4';
+
+  }
+})
+innerBar.addEventListener('click', () => {
+  SideBar.style.transform = "translate(-300px)"
+  document.getElementById('Innerbody').style.opacity = '1';
+})
 

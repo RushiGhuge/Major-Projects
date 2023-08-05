@@ -85,7 +85,9 @@ body{
   gap: 20px;
 
 }
-
+.boxs a{
+  text-decoration: none;
+}
 #subscriber{
   border: none;
   background: white;
