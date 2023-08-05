@@ -167,6 +167,6 @@
 }
   @media(min-width:800px) {
     #left-container-side-bar {
-      display: none;
+      /* display: none; */
     }
   }

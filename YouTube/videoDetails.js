@@ -215,10 +215,10 @@ const barIcon = document.getElementById('barIcon');
 const SideBar = document.getElementById('left-container-side-bar');
 const innerBar = document.getElementById('innerBar');
 
-
+let mobileQuary = window.matchMedia('(max-width:800px)')
 barIcon.addEventListener('click', () => {
     SideBar.style.transform = "translate(0px)"
-    document.getElementById('Innerbody').style.opacity = '0.5';
+    document.getElementById('Innerbody').style.opacity = '0.4';
 })
 innerBar.addEventListener('click', () => {
     SideBar.style.transform = "translate(-300px)"

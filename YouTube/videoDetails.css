@@ -340,7 +340,6 @@ iframe{
   background: #0F0F0F;
   width: 230px;
   color: white;
-
   transform: translate(-300px);
   transition: 0.2s;
   padding: 0 10px;
