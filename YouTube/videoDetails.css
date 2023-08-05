@@ -13,32 +13,30 @@ body{
 }
 .nav-bar{
   z-index: 100;
+  height: 50px;
+}
+.nav-bar > img{
+  width: 60px;
 }
 .video-frame{
-  /* margin-top: 60px; */
-  margin-left: 20px;
-  /* padding: 0 20px; */
-  width: 900px;
-  /* border:1px solid red; */
+  min-width: 100%;
+  max-width: 700px;
+  margin: auto;
   box-shadow: rgba(83, 107, 110, 0.56) 0px 22px 70px 4px;
 }
 #videoContainer{
   display: flex;
   flex-direction: row;
-  margin-top: 80px;
+  align-items: start;
+  margin-top: 50px;
 }
 #container-left{
-  width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* background: red; */
-  /* justify-content: center; */
+  max-width: 900px;
+  padding: 20px;
 }
-/* .container-left iframe
-  width: 100%;
-  margin: auto;
-} */
 .iframe-embed {
   position: absolute;
   top: 0;
@@ -59,13 +57,11 @@ body{
   padding-bottom: 56.25%;
 }
 .video-card-details{
-  /* background: red; */
   display: flex;
+  flex-wrap: wrap ;
   flex-direction: column;
   gap: 20px;
-  padding: 0 20px;
-  /* width: 800px; */
-  margin-left: 20px;
+  /* padding: 0 0 0 20px ; */
 }
 .Channel-details-container{
   display: flex;
@@ -85,7 +81,6 @@ body{
 .right-channel-details{
   display: flex;
   align-items: center;
-  /* background: purple; */
   padding: 10px;
   gap: 20px;
 
@@ -162,12 +157,16 @@ body{
   flex-direction: column;
   gap: 5px;
 }
-
+#video-title{
+  padding: 0 5px;
+}
 #description-container{
-  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  width: 95vw;
   height: 160px;
   background: rgb(24, 24, 24);
-  border-radius: 20px;
+  border-radius: 20px;  
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -215,6 +214,18 @@ body{
   flex-direction: column;
   gap: 0px;
   font-size: 1em;
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  width: 95vw;
+  height: 160px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+  transition:1s;
 }
 .comment-box{
   display: flex;
@@ -243,10 +254,20 @@ body{
   color: rgb(0, 174, 255);
   font-weight: 500;
 }
+#commentArrow{
+  margin-left: auto;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3em;
+  padding-bottom: 5px;
+}
 
 #container-right{
-  /* height: 100vh; */
   width: fit-content;
+  padding-top: 20px;
 }
 
 #container-right{
@@ -340,8 +361,9 @@ iframe{
   align-items: center;
   justify-content: center;
   background: #0F0F0F;
-
-
+  height: 40px;
+  justify-content: start;
+  padding: 8px 30px;
 }
 .menu-box{
   margin-top: 3px;

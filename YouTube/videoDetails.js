@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyDYL40DQerBv1Pzvwv88MiCiPSK2fkShvc';
+const apiKey = 'AIzaSyAO_6L4BeLNTAxFaJLKuVmijX0NUflft9E';
 const baseUrl = `https://www.googleapis.com/youtube/v3`;
 const searchString = document.getElementById('searchString');
 const searchBtn = document.getElementById('searchBtn');
@@ -73,10 +73,10 @@ function likeViewAppend(obj) {
         <div class="right-channel-details">
           <div class='likeDeslike'>
           <div class="like"><span id='likeIcon' class="material-symbols-outlined">thumb_up </span><p id='like'>${statistics.likeCount}</p></div>
-          <div class="deslike"> <span class="material-symbols-outlined">thumb_down</span> </div>
+          <div class="deslike x"> <span class="material-symbols-outlined">thumb_down</span> </div>
            </div>
-          <div class="share"><span class="material-symbols-outlined">forward</span>Share</div>
-          <div class="download"><span class="material-symbols-outlined">download</span>download</div>
+          <div class="share x"><span class="material-symbols-outlined">forward</span>Share</div>
+          <div class="download x"><span class="material-symbols-outlined">download</span>download</div>
         </div>
     </div>
 
@@ -102,7 +102,6 @@ function likeViewAppend(obj) {
         showMax.style.height = 'auto';
         showMore.style.display = 'none'
         showLess.style.display = 'block'
-
     })
     showLess.addEventListener('click', () => {
         showMax.style.height = '160px';
@@ -148,23 +147,30 @@ function relatadeVideos(arr) {
 
 
 }
-function appendCommentBox(array) {
 
+let commentContainer = document.createElement('div');
+const commentArrow = document.createElement('div');
+
+function appendCommentBox(array) {
+    commentArrow.innerHTML = `<p>Comment</p><span id='commentArrowIcon' class="material-symbols-outlined">expand_more</span>`
+    commentArrow.id = 'commentArrow';
+    commentContainer.appendChild(commentArrow)
     let profileImg = array[0].snippet.topLevelComment.snippet.authorProfileImageUrl
     let profile = document.getElementById('profileImgC');
     profile.src = profileImg;
-    let commentContainer = document.createElement('div');
+
     commentContainer.id = 'comment-container';
     array.forEach(arr => {
         let authorDisplayName = arr.snippet.topLevelComment.snippet.authorDisplayName;
         let comment = arr.snippet.topLevelComment.snippet.textOriginal;
         let likeCount = arr.snippet.topLevelComment.snippet.likeCount
-
         let commentBox = document.createElement('div');
+
         commentBox.className = 'comment-box';
+
         commentBox.innerHTML = `
         <p class="c-user-name">@${authorDisplayName}</p>
-            <p class="c-comment">${comment}</p>
+        <p>${comment}</p>
             <div class="like-dlike">
               <span class="material-symbols-outlined">thumb_up</span>
               <span>${likeCount}</span>
@@ -179,14 +185,30 @@ function appendCommentBox(array) {
         commentContainer.appendChild(commentBox)
     })
     leftContainer.appendChild(commentContainer)
+
+    //this is comment drop down sections-->
+    commentContainer.style.height = '160px'
+    commentArrow.addEventListener('click', () => {
+        if (commentContainer.style.height == '160px') {
+            commentContainer.style.height = 'auto'
+        }
+        else {
+            commentContainer.style.height = '160px'
+        }
+    })
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+    // Check if the media query is true
+    if (mediaQuery.matches) {
+        commentArrow.click();
+    }
 }
+
 function removeElements(item) {
     if (item === null) {
         return;
     }
     item.remove();
 }
-
 
 // side nav bar when cliked
 const barIcon = document.getElementById('barIcon');
@@ -206,6 +228,6 @@ innerBar.addEventListener('click', () => {
 
 //loding bar ----> hide after 2s;
 let lodingBar = document.getElementById('lodingBar');
-setTimeout(()=>{
-  lodingBar.style.display = 'none'
-},1000)
+setTimeout(() => {
+    lodingBar.style.display = 'none'
+}, 1000)

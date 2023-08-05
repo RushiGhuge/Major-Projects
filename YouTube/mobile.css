@@ -3,7 +3,7 @@
 
 @media (max-width:900px){
   .menu-box > p{
-    display: none;
+    /* display: none; */
   }
   .left-container{
     width: 70px;
@@ -38,11 +38,18 @@
 @media (max-width:500px){
   body{
     font-size: 14px;
+    background: black;
   }
-  .right-container {
+  #right-container {
     padding: 10px 0;
   }
-  
+  .nav-items {
+    top: 40px;
+    padding: 0 5px;
+}
+  .thumb-img > img {
+    border-radius: 0px;
+}
   .video-description{
     display: none;
   }
@@ -55,9 +62,6 @@
   }
   #profile-none{
     display: block;
-  }
-  .menu-box > p{
-    display: none;
   }
   .left-container{
     width: 50px;
@@ -114,6 +118,14 @@
   #bg-side-bar{
     display: none;
   }
+  .home-card{
+    padding: 0px 0;
+  }
+  .cardDetails {
+    display: flex;
+    gap: 10px;
+    padding-top: 0;
+}
 }
 
 @media (max-width:400px){ 
