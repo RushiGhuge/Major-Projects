@@ -1,8 +1,4 @@
-@media(min-width:800px) {
-    #left-container-side-bar {
-      display: block;
-    }
-  }
+
 @media (max-width:700px) {
     .Channel-details-container {
         display: flex;

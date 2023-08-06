@@ -232,7 +232,6 @@ barIcon.addEventListener('click', () => {
   SideBar.style.transform = "translate(0px)"
   if(mobileQuary.matches){
     document.getElementById('Innerbody').style.opacity = '0.4';
-
   }
 })
 innerBar.addEventListener('click', () => {

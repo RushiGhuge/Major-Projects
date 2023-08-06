@@ -148,7 +148,7 @@ body {
 .hero-img {
     width: 25rem;
     height: 25rem;
-    background: #858080;
+    background: #816f91;
     background-image: url(./Rushi-removebg-preview.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -156,7 +156,7 @@ body {
     border: 3px solid black;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     -webkit-animation: morfh  8s ease-in-out infinite;
-
+    filter: drop-shadow(10px 10px 10px rgb(27, 27, 27));
 }
 
 
@@ -198,7 +198,7 @@ body {
 }
 
 .logos li {
-    box-shadow: 0 0 10px rgba(0, 0, 0, .09);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
     cursor: pointer;
     border-radius: 50%;
     background: white;
@@ -244,7 +244,7 @@ body {
 .about-text p {
     margin-top: 20px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #aboutme {
@@ -321,25 +321,25 @@ body {
 .project-card {
     padding: 15px;
     background: white;
-    background: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
     width: 950px;
     margin: 50px auto;
     height: 420px;
     border-radius: 15px;
     font-size: 1.1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
 .project-img {
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     height: 400px;
-    /* max-width: 600px; */
+    max-width: 100%;
     width: 580px;
-    /* min-width: auto; */
+    min-width: auto;
     overflow-y: scroll;
     position: relative;
 }
@@ -349,7 +349,7 @@ body {
 }
 
 .project-img img {
-    width:520px;
+    width: 100%;
     border-radius: 10px;
 }
 
