@@ -97,4 +97,11 @@ function scrollNow(x, y) {
     window.scrollTo(x, y);
 }
 
+window.addEventListener('scroll',()=>{
+    console.log(window.scrollY);
+    if(window.scrollY >= 730){
+        document.getElementsByClassName('timeLine-container')[0].style.display = 'block'
+    }
+})
+
 

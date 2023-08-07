@@ -127,6 +127,38 @@
     }
 }
 
+@media screen and (max-width : 600px){
+    .timeLine{
+        margin: 50px auto;
+    }
+    .timeLine::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box{
+        font-size: 13px;
+    }
+    .text-box > small{
+        margin-bottom: 10px;
+    }
+    .right-amc{
+        left: 0;
+    }
+    .right-amc img, .left-amc img{
+        left: 10px;
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid white;
+        border-left: 0;
+        left: -15px;
+    }
+
+}
+
 /* nav bar responsive */
 @media(max-width:500px) {
     .hero-text>p {
