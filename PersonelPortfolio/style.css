@@ -71,6 +71,10 @@ body {
 
 }
 
+input:checked{
+    padding: 20px;
+}
+
 #mobile-nav-menu {
     display: flex;
     flex-direction: column;
@@ -117,7 +121,6 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 120px;
-
 
 }
 
@@ -228,6 +231,7 @@ body {
     align-items: center;
     width: 100%;
     gap: 100px;
+
 }
 
 /* .about-img{
@@ -321,7 +325,14 @@ body {
 
 
 /* projects sections  */
-.projects-container {}
+.projects-container {
+    background: rgba(0, 0, 255, 0.438);
+    background-image: url('https://developer.spotify.com/images/home/mobile-banner-confetti.svg');
+    background-position: center center;
+    background-size: cover;
+    padding: 30px 0;
+
+}
 
 .project-head {
     width: 900px;
@@ -484,10 +495,20 @@ body {
     animation: movedown 1s linear forwards;
     opacity: 0;
 }
-@keyframes movedown{
+@keyframes moveLeft{
     0%{
         opacity: 0;
-        transform: translateX(-30%);
+        transform: translateX(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(50%);
     }
     100%{
         opacity: 1;
@@ -498,19 +519,19 @@ body {
     animation-delay: 0s;
 }
 .container:nth-child(2){
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 .container:nth-child(3){
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 .container:nth-child(4){
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 }
 .container:nth-child(5){
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 .container:nth-child(6){
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 }
 
 
@@ -533,9 +554,11 @@ body {
 }
 .left-amc{
     left: 0;
+    animation: moveLeft 1s linear forwards;
 }
 .right-amc{
     left: 50%;
+    animation: moveRight 1s linear forwards;
 }
 .container > img {
     width: 40px;
@@ -562,7 +585,7 @@ body {
     left: 50%;
     margin-left: -3px;
     z-index:-1;
-    animation: moveline 5s linear forwards;
+    animation: moveline 3s linear forwards;
 }
 @keyframes moveline{
     0%{

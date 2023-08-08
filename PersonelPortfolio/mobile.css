@@ -46,14 +46,16 @@
     }
     .odd{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .project-head {
         width: auto;
         text-align: center;
         margin: 40px auto;
     }
-
+    .project-img{
+        height: 300px;
+    }
     .project-img img {
         width: 100%;
         border-radius: 15px;
@@ -221,6 +223,6 @@
     }
     .odd{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
