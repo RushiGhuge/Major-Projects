@@ -39,6 +39,7 @@ themes.forEach((theme) => {
            document.getElementById('footer').style.background = "white"
            document.getElementById('footer').style.color = "black"
 
+
         }
         else if (theme.value === 'DARK') {
 
@@ -72,7 +73,8 @@ themes.forEach((theme) => {
             }
             document.getElementById('footer').style.background = "black"
             document.getElementById('footer').style.color = "white"
- 
+            
+            
         }
     })
 
@@ -101,6 +103,9 @@ window.addEventListener('scroll',()=>{
     console.log(window.scrollY);
     if(window.scrollY >= 730){
         document.getElementsByClassName('timeLine-container')[0].style.display = 'block'
+    }
+    else {
+        document.getElementsByClassName('timeLine-container')[0].style.display = 'none'
     }
     if(window.scrollY >= 2300){
         

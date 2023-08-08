@@ -453,14 +453,14 @@ body {
 /* animation time line more details  about me.---> */
 .timeLine-container{
     width: 100%;
-   background: rgba(18, 241, 175, 0.479);
+   background: rgba(241, 18, 241, 0.363);
     background-image: url('./pngwing.com\ \(2\).png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 50px 0;
     display: none;
-    animation: tran 1s linear;
+    animation: tran 0.3s linear;
     position: relative;
 }
 @keyframes tran{
