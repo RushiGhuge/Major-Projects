@@ -102,6 +102,9 @@ window.addEventListener('scroll',()=>{
     if(window.scrollY >= 730){
         document.getElementsByClassName('timeLine-container')[0].style.display = 'block'
     }
+    if(window.scrollY >= 2300){
+        
+    }
 })
 
 

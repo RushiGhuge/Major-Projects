@@ -221,6 +221,7 @@ body {
 /* about section  */
 .about-section {
     background: white;
+    background-repeat: no-repeat;
     padding: 100px 0;
     display: flex;
     justify-content: center;
@@ -452,7 +453,7 @@ body {
 /* animation time line more details  about me.---> */
 .timeLine-container{
     width: 100%;
-    background: #f0f0f0;
+   background: rgba(18, 241, 175, 0.479);
     background-image: url('./pngwing.com\ \(2\).png');
     background-repeat: no-repeat;
     background-position: center;
@@ -514,8 +515,8 @@ body {
 
 
 .text-box{
-    background:rgb(46, 46, 46);
-    color: white;
+    background: white;   
+    color: black;
     padding: 20px 30px;
     position: relative;
     border-radius: 6px;
@@ -586,7 +587,7 @@ body {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid rgb(46, 46, 46);
+    border-left: 15px solid white;
     right: -15px;
 }
 
@@ -598,7 +599,7 @@ body {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid rgb(46, 46, 46);
+    border-right: 15px solid white;
     left: -15px;
 }
 .timeLine img{
