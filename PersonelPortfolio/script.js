@@ -32,13 +32,16 @@ function theme(event){
         document.getElementById('para-ab').style.color = '#767676'
         document.getElementById('aboutme').style.color = 'rgb(0, 102, 255)'
         document.getElementById('ProHead').style.color = "black"
-
         for (let i = 0; i < projectCard.length; i++) {
             projectCard[i].style.background = "white"
             projectCard[i].style.color = "black"
         }
         document.getElementById('footer').style.background = "white"
         document.getElementById('footer').style.color = "black"
+        document.querySelectorAll('.project-cart-demo  a').forEach(element => {
+            element.style.color = 'black'
+        });
+
 
 
     }
@@ -73,7 +76,9 @@ function theme(event){
         }
         document.getElementById('footer').style.background = "black"
         document.getElementById('footer').style.color = "white"
-
+        document.querySelectorAll('.project-cart-demo  a').forEach(element => {
+            element.style.color = 'white'
+        });
 
     }
 }
@@ -84,13 +89,13 @@ function theme(event){
 function DisplayNavBar() {
     const handBergerIcon = document.getElementById('hand-burger-icon');
     const mobileNav = document.getElementById('mobileNav');
-    mobileNav.style.transform = "translate(0px) ";
+    mobileNav.style.transform = "translate(0px)";
 }
 //close the mobile nav button
 function closeNav() {
     const mobileNav = document.getElementById('mobileNav');
     // mobileNav.style.display = 'none'
-    mobileNav.style.transform = "translate(-1000px) ";
+    mobileNav.style.transform = "translate(-100%) ";
 }
 //scroll Functions
 function scrollNow(x, y) {

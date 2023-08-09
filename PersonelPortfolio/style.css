@@ -14,11 +14,12 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-
+.left-nav > h2{
+    cursor: pointer;
+}
 .navbar {
     position: fixed;
     top: 0;
-    cursor: pointer;
     width: 100%;
     height: 75px;
     display: flex;
@@ -27,11 +28,11 @@ body {
     justify-content: space-between;
     font-weight: 600;
     z-index: 200;
-
-    /* letter-spacing: px; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.navMenu{
+   cursor:pointer;
+}
 .right-nav {
     display: flex;
     padding-right: 60px;
@@ -68,9 +69,8 @@ body {
     left: 0;
     right: 0;
     z-index: 300;
-    transform: translate(-1000px);
-    transition: all 0.4s ease-in-out;
-
+    transform: translate(-100%);
+    transition: all 0.2s ease-out   ;
 }
 
 
@@ -404,7 +404,7 @@ body {
 }
 
 .project-card {
-    padding: 15px;
+    padding: 10px;
     background: white;
     display: flex;
     justify-content: space-between;
@@ -413,7 +413,7 @@ body {
     width: 950px;
     margin: 50px auto;
     height: 420px;
-    border-radius: 15px;
+    border-radius: 17px;
     font-size: 1.1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 
@@ -430,7 +430,7 @@ body {
 }
 
 .project-img {
-    border-radius: 10px;
+    border-radius: 17px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     height: 400px;
     max-width: 100%;
@@ -438,6 +438,7 @@ body {
     min-width: auto;
     overflow-y: scroll;
     position: relative;
+    background-color: hsla(0,0%,46%,.2);
 }
 
 .project-img::-webkit-scrollbar {
@@ -446,7 +447,6 @@ body {
 
 .project-img img {
     width: 100%;
-    border-radius: 10px;
 }
 
 .project-content {
@@ -481,7 +481,16 @@ body {
     text-decoration: none;
     color: black;
 }
+#youtube {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
 
+#youtube > img{
+    width: 40px;
+}
 .footerHeading {
     font-size: 1.5rem;
 
