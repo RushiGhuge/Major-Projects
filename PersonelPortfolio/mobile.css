@@ -1,4 +1,12 @@
 @media(max-width: 900px) {
+    body{
+        position: relative;
+        overflow-x: hidden;
+    }
+    .timeLine-container{
+        position: relative;
+        overflow: hidden;
+    }
     #mobileNav {
         display: block;
         position: fixed;

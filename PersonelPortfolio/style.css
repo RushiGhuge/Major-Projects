@@ -11,6 +11,8 @@ html {
 
 body {
     background: #F9F9F9;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -71,9 +73,7 @@ body {
 
 }
 
-input:checked{
-    padding: 20px;
-}
+
 
 #mobile-nav-menu {
     display: flex;
@@ -94,6 +94,70 @@ input:checked{
     font-size: 2rem;
 }
 
+/* slider button of themes change here 
+ */
+:root {
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 70px;
+  }
+  .toggle-switch2 {
+    position: relative;
+    width: 70px;
+  }
+  
+  label {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: var(--dark);
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  input {
+    position: absolute;
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  input:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: inset 6px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.2s;
+  }
+  
+  input:checked ~ .slider::before {
+    transform: translateX(20px);
+    background-color: var(--dark);
+    box-shadow: none;
+  }
+  
+/* bus  */
 #Themes {
     border: none;
     background: transparent;
@@ -231,7 +295,6 @@ input:checked{
     align-items: center;
     width: 100%;
     gap: 100px;
-
 }
 
 /* .about-img{
@@ -276,7 +339,6 @@ input:checked{
     /* width: 100%; */
     display: flex;
     flex-direction: column;
-    /* margin-inline:150px ; */
     padding: 100px 0;
     background: white;
     padding-left: 100px;
@@ -331,7 +393,9 @@ input:checked{
     background-position: center center;
     background-size: cover;
     padding: 30px 0;
-
+    position: relative;
+    overflow-x: hidden;
+    /* display: none; */
 }
 
 .project-head {
@@ -352,17 +416,19 @@ input:checked{
     border-radius: 15px;
     font-size: 1.1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    
+
 }
 
 @keyframes projectCardAnimate {
-    0%{
+    0% {
         transform: translateX(-100%);
     }
-    100%{
+
+    100% {
         transform: translateX(0%);
     }
 }
+
 .project-img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
@@ -416,12 +482,6 @@ input:checked{
     color: black;
 }
 
-/* .project-img:hover{
-    transform: translateY(100px);
-    transition: transform 10s ease-in-out 0s;
-} */
-
-
 .footerHeading {
     font-size: 1.5rem;
 
@@ -433,17 +493,15 @@ input:checked{
     animation: textShodow 2s linear infinite alternate;
 }
 
-@keyframes textShodow{
-    0%{
+@keyframes textShodow {
+    0% {
         text-shadow: -5px 0 0 red, 5px 0 0 blue;
     }
-    100%{
+
+    100% {
         text-shadow: 3px 0 0 red, -3px 0 0 blue;
     }
 }
-   
-
-
 .about-btn>button {
     font-size: 1rem;
     font-weight: 700;
@@ -462,81 +520,83 @@ input:checked{
 
 
 /* animation time line more details  about me.---> */
-.timeLine-container{
+.timeLine-container {
     width: 100%;
-   background: rgba(241, 18, 241, 0.363);
+    background: rgba(241, 18, 241, 0.363);
     background-image: url('./pngwing.com\ \(2\).png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 50px 0;
-    display: none;
-    animation: tran 0.3s linear;
     position: relative;
+    overflow-x: hidden;
 }
-@keyframes tran{
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(0%);
-    }
-}
-.timeLine{
+
+.timeLine {
     position: relative;
     max-width: 1200px;
-    margin:  auto;
+    margin: auto;
     z-index: 1;
 }
-.container{
+
+.container {
     padding: 10px 50px;
     position: relative;
     width: 50%;
-    animation: movedown 1s linear forwards;
-    opacity: 0;
+    /* opacity: 0; */
 }
-@keyframes moveLeft{
-    0%{
+
+@keyframes moveLeft {
+    0% {
         opacity: 0;
         transform: translateX(-50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
 }
-@keyframes moveRight{
-    0%{
+
+@keyframes moveRight {
+    0% {
         opacity: 0;
         transform: translateX(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
 }
-.container:nth-child(1){
+
+.container:nth-child(1) {
     animation-delay: 0s;
 }
-.container:nth-child(2){
+
+.container:nth-child(2) {
     animation-delay: 0.5s;
 }
-.container:nth-child(3){
+
+.container:nth-child(3) {
     animation-delay: 1s;
 }
-.container:nth-child(4){
+
+.container:nth-child(4) {
     animation-delay: 1.5s;
 }
-.container:nth-child(5){
+
+.container:nth-child(5) {
     animation-delay: 2s;
 }
-.container:nth-child(6){
+
+.container:nth-child(6) {
     animation-delay: 2.5s;
 }
 
 
-.text-box{
-    background: white;   
+.text-box {
+    background: white;
     color: black;
     padding: 20px 30px;
     position: relative;
@@ -549,18 +609,21 @@ input:checked{
     transition: 0.4s;
 }
 
-.text-box:hover{
+.text-box:hover {
     transform: scale(1.03);
 }
-.left-amc{
+
+.left-amc {
     left: 0;
-    animation: moveLeft 1s linear forwards;
+    /* animation: moveLeft 1s linear forwards; */
 }
-.right-amc{
+
+.right-amc {
     left: 50%;
-    animation: moveRight 1s linear forwards;
+    /* animation: moveRight 1s linear forwards; */
 }
-.container > img {
+
+.container>img {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -571,10 +634,12 @@ input:checked{
     box-shadow: 0 0px 15px rgb(49, 49, 49);
 
 }
-.right-amc > img{
+
+.right-amc>img {
     left: -20px;
 }
-.timeLine::after{
+
+.timeLine::after {
     content: '';
     position: absolute;
     width: 8px;
@@ -584,25 +649,30 @@ input:checked{
     background: rgb(33, 164, 182);
     left: 50%;
     margin-left: -3px;
-    z-index:-1;
+    z-index: -1;
     animation: moveline 3s linear forwards;
 }
-@keyframes moveline{
-    0%{
+
+@keyframes moveline {
+    0% {
         height: 0%;
     }
-    100%{
+
+    100% {
         height: 99%;
     }
 }
-.text-box > h2{
+
+.text-box>h2 {
     font-weight: 600;
 }
-.text-box > small{
+
+.text-box>small {
     display: inline-block;
     margin-bottom: 15px;
 }
-.left-container-arrow{
+
+.left-container-arrow {
     height: 0;
     width: 0;
     position: absolute;
@@ -614,7 +684,7 @@ input:checked{
     right: -15px;
 }
 
-.right-container-arrow{
+.right-container-arrow {
     height: 0;
     width: 0;
     position: absolute;
@@ -625,11 +695,16 @@ input:checked{
     border-right: 15px solid white;
     left: -15px;
 }
-.timeLine img{
+
+.timeLine img {
     z-index: 210;
     transition: 0.3s;
     background: white;
 }
-.timeLine img:hover{
+
+/* .timeLine img:hover{
     transform: scale(3);
-}
+} */
+/* .project-card:nth-child(2){
+    background: red;
+} */

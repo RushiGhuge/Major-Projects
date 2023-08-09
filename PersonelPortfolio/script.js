@@ -1,84 +1,82 @@
-const themes = document.querySelectorAll("#Themes");
-const lightDarkModeBtn = document.querySelector('#Themes option');
-console.log(lightDarkModeBtn.innerHTML);
 const mNav = document.getElementById("mobileNav");
 const aboutSec = document.getElementById("aboutSec");
 
 const projectCard = document.getElementsByClassName('project-card');
 // ---------------------------------------
 //change the themes to light and dark modes
-themes.forEach((theme) => {
-    theme.addEventListener('click', () => {
-        console.log(theme.value);
-        if (theme.value === 'LIGHT') {
-            //for Light Moode Default----->
-            theme.style.color = "black"
-            document.body.style.background = "#F9F9F9"
-            document.getElementById("textColor").style.color = '#2d2e32'
+let toggleSwitch = document.querySelector('.toggle-switch input');
+toggleSwitch.addEventListener('click', theme)
 
-            const paraText = document.querySelectorAll(".ParaTxtColorDark");
-            for (let i = 0; i < paraText.length; i++) {
-                paraText[i].style.color = '#838383'
-            }
-            const navbar = document.getElementById('navBar');
-            navbar.style.background = 'white';
-            navbar.style.color = 'black'
-            mNav.style.background = "white"
-            mNav.style.color = "black"
-            aboutSec.style.background = "white";
-            aboutSec.style.color = "#767676";
-            document.getElementById('head-ab').style.color = '#2D2E32'
-            document.getElementById('para-ab').style.color = '#767676'
-            document.getElementById('aboutme').style.color = 'rgb(0, 102, 255)'
-            document.getElementById('ProHead').style.color = "black"
+let toggleSwitch2 = document.querySelector('.toggle-switch2 input');
+toggleSwitch2.addEventListener('click', theme)
 
-            for(let i = 0;i<projectCard.length;i++){
-                projectCard[i].style.background = "white"
-                projectCard[i].style.color = "black"
-            }
-           document.getElementById('footer').style.background = "white"
-           document.getElementById('footer').style.color = "black"
+function theme(event){
+    // console.log(event);
+    if (!event.target.checked) {
+        //for Light Mode Default----->
+        document.body.style.background = "#F9F9F9"
+        document.getElementById("textColor").style.color = '#2d2e32'
 
-
+        const paraText = document.querySelectorAll(".ParaTxtColorDark");
+        for (let i = 0; i < paraText.length; i++) {
+            paraText[i].style.color = '#838383'
         }
-        else if (theme.value === 'DARK') {
+        const navbar = document.getElementById('navBar');
+        navbar.style.background = 'white';
+        navbar.style.color = 'black'
+        mNav.style.background = "white"
+        mNav.style.color = "black"
+        aboutSec.style.background = "white";
+        aboutSec.style.color = "#767676";
+        document.getElementById('head-ab').style.color = '#2D2E32'
+        document.getElementById('para-ab').style.color = '#767676'
+        document.getElementById('aboutme').style.color = 'rgb(0, 102, 255)'
+        document.getElementById('ProHead').style.color = "black"
 
-            //For Dark Mode  -------->
-            theme.style.color = "white"
-
-            document.body.style.background = "rgb(20, 20, 20)";
-            document.getElementById("textColor").style.color = 'white'
-
-            const paraText = document.querySelectorAll(".ParaTxtColorDark");
-            for (let i = 0; i < paraText.length; i++) {
-                paraText[i].style.color = 'rgb(221, 221, 221)'
-            }
-            const navbar = document.getElementById('navBar');
-            navbar.style.background = 'black';
-            navbar.style.color = 'white'
-            mNav.style.background = "rgb(20, 20, 20)"
-            mNav.style.color = "white"
-            aboutSec.style.background = "black";
-            aboutSec.style.color = "red";
-            document.getElementById('head-ab').style.color = 'white'
-            document.getElementById('para-ab').style.color = 'white'
-            document.getElementById('aboutme').style.color = 'white'
-            document.getElementById('aboutme').style.color = 'rgb(0, 96, 175)'
-            document.getElementById('ProHead').style.color = "white"
-
-            // console.log(projectCard);
-            for(let i = 0;i<projectCard.length;i++){
-                projectCard[i].style.background = "black"
-                projectCard[i].style.color = "white"
-            }
-            document.getElementById('footer').style.background = "black"
-            document.getElementById('footer').style.color = "white"
-            
-            
+        for (let i = 0; i < projectCard.length; i++) {
+            projectCard[i].style.background = "white"
+            projectCard[i].style.color = "black"
         }
-    })
+        document.getElementById('footer').style.background = "white"
+        document.getElementById('footer').style.color = "black"
 
-})
+
+    }
+    else {
+
+        //For Dark Mode  -------->
+
+        document.body.style.background = "rgb(20, 20, 20)";
+        document.getElementById("textColor").style.color = 'white'
+
+        const paraText = document.querySelectorAll(".ParaTxtColorDark");
+        for (let i = 0; i < paraText.length; i++) {
+            paraText[i].style.color = 'rgb(221, 221, 221)'
+        }
+        const navbar = document.getElementById('navBar');
+        navbar.style.background = 'black';
+        navbar.style.color = 'white'
+        mNav.style.background = "rgb(20, 20, 20)"
+        mNav.style.color = "white"
+        aboutSec.style.background = "black";
+        aboutSec.style.color = "red";
+        document.getElementById('head-ab').style.color = 'white'
+        document.getElementById('para-ab').style.color = 'white'
+        document.getElementById('aboutme').style.color = 'white'
+        document.getElementById('aboutme').style.color = 'rgb(0, 96, 175)'
+        document.getElementById('ProHead').style.color = "white"
+
+        // console.log(projectCard);
+        for (let i = 0; i < projectCard.length; i++) {
+            projectCard[i].style.background = "black"
+            projectCard[i].style.color = "white"
+        }
+        document.getElementById('footer').style.background = "black"
+        document.getElementById('footer').style.color = "white"
+
+
+    }
+}
 
 //navbar sections---->
 
@@ -99,17 +97,103 @@ function scrollNow(x, y) {
     window.scrollTo(x, y);
 }
 
-window.addEventListener('scroll',()=>{
-    console.log(window.scrollY);
-    if(window.scrollY >= 730){
-        document.getElementsByClassName('timeLine-container')[0].style.display = 'block'
-    }
-    else {
-        document.getElementsByClassName('timeLine-container')[0].style.display = 'none'
-    }
-    if(window.scrollY >= 2300){
-        
-    }
+
+// animation part starts -----> 
+// nav bar animat 
+
+//about section and page 1 animation is here : --->
+gsap.from(".left-nav, .right-nav > div, #Themes , #label-dark", {
+    y: -400,
+    duration: 1,
+    stagger: 0.2
+})
+gsap.from(".hero-text>div, .hero-text>p", {
+    x: -1000,
+    duration: 1,
+    stagger: 0.2
 })
 
+gsap.from(".hero-img", {
+    x: 1000,
+    duration: 1,
+    stagger: 0.2
+})
+
+gsap.from(".ParaTxtColorDark, .logos li", {
+    y: 100,
+    duration: 1,
+    stagger: 0.2
+})
+
+gsap.from(".about-img", {
+    x: -1000,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".about-img"
+    },
+    stagger: 3
+})
+
+//time line animations is here : --->
+
+gsap.from(".right-amc", {
+    x: 1000,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".right-amc"
+    },
+    stagger: 1
+})
+gsap.from(".left-amc", {
+    x: -1000,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".left-amc"
+    },
+    stagger: 1
+})
+
+//projects card animation is here : ---->
+gsap.from(".project-card:nth-child(2)", {
+    x: -2000,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".project-card:nth-child(2)",
+        marker: "true",
+    },
+})
+gsap.from(".project-card:nth-child(3)", {
+    x: 2000,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".project-card:nth-child(3)",
+        marker: "true",
+
+    },
+})
+gsap.from(".project-card:nth-child(4)", {
+    x: -2000,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".project-card:nth-child(4)",
+        marker: "true",
+
+    },
+})
+gsap.from(".project-card:nth-child(5)", {
+    x: 2000,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".project-card:nth-child(5)",
+        marker: "true",
+    },
+})
 

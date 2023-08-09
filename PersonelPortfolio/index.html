@@ -22,17 +22,20 @@
                 <h2>Rushi.dev</h2>
             </div>
             <div class="right-nav">
-                <div onclick="scrollNow(0,0)" >Home</div>
-                <div onclick="scrollNow(0,600)" >About</div>
-                <div onclick="scrollNow(0,1200)" >Projects</div>
-                <div onclick="scrollNow(0,2500)" >Contacts</div>
-                <label id="label-dark" for="Theme"><i class="fa-solid fa-circle-half-stroke"></i></label>
-                <select id="Themes" name="Theme">
-                    <option value="LIGHT">Light <i
-                            class="fa-solid fa-circle-half-stroke"></i></option>
-                    <option value="DARK">Dark <i
-                            class="fa-solid fa-circle-half-stroke"></i></option>
-                </select>
+                <div   onclick="scrollNow(0,0)" >Home</div>
+                <div  onclick="scrollNow(0,600)" >About</div>
+                <div  onclick="scrollNow(0,1200)" >Projects</div>
+                <div  onclick="scrollNow(0,2500)" >Contacts</div>
+                <!-- <label id="label-dark" for="Theme"><i class="fa-solid fa-circle-half-stroke"></i></label> -->
+
+                    <div class = 'toggle-switch'>
+                        <label>
+                            <input type = 'checkbox'>
+                            <span class = 'slider'></span>
+                        </label>
+                        <a href = 'https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
+                        </a>
+                    </div>
             </div>
 
             <div onclick="DisplayNavBar()" id="hand-burger-icon"
@@ -50,12 +53,14 @@
                 <div onclick="scrollNow(0,2100),closeNav()" >Projects</div>
                 <div onclick="scrollNow(0,4300),closeNav()" >Contacts</div>
 
-                <select id="Themes" name="Theme">
-                    <option value="LIGHT">Light <i
-                            class="fa-solid fa-circle-half-stroke"></i></option>
-                    <option value="DARK">Dark <i
-                            class="fa-solid fa-circle-half-stroke"></i></option>
-                </select>
+                <div class = 'toggle-switch2'>
+                    <label>
+                        <input type = 'checkbox'>
+                        <span class = 'slider'></span>
+                    </label>
+                    <a href = 'https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -366,7 +371,8 @@
 
             </div>
         </footer>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="./script.js">
 
         </script>
