@@ -62,7 +62,7 @@ async function getSearchResults(searchString) {
 async function getHomeVideos(reletedStr) {
   // let url = `${baseUrl}/search?key=${apiKey}&q=${searchString}&part=snippet&maxResults=10`
   // let url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCQ7IdKd1FP19xlomz_tKb6Urrp01Jy0i4&q=java'
-  let url = `${baseUrl}/search?key=${apiKey}&q=FrontEndDeveloper&part=snippet&maxResults=50`
+  let url = `${baseUrl}/search?key=${apiKey}&q=frontenddeveloper&part=snippet&maxResults=50`
   // console.log(url);
   const response = await fetch(url, { method: 'GET' });
   const result = await response.json();

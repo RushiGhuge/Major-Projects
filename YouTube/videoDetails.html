@@ -20,7 +20,7 @@
 
 <body>
   <div id="lodingBar">
-        
+
   </div>
 
   <div id="left-container-side-bar">
@@ -32,7 +32,9 @@
       <div id="home" class="menu-box"> <span class="material-symbols-outlined">
           home
         </span>
-       <a href="./index.html"><p>Home</p></a> 
+        <a href="./index.html">
+          <p>Home</p>
+        </a>
       </div>
       <div class="menu-box"> <span class="material-symbols-outlined">
           play_circle
@@ -144,16 +146,54 @@
         <div class="video-frame">
           <div class="iframe-embed-wrapper iframe-embed-responsive-16by9">
             <iframe class="iframe-embed" allowfullscreen></iframe>
-        </div>
+          </div>
         </div>
       </div>
-
+    
       <div id="container-right">
+        <div class="share-page-container">
+          <div class="share-page-box">
+            <div class="share-close">
+              <p>Share</p>
+              <i onclick="closeShare()" class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="share-icons">
+              <a class="share-icon-box" target="_blank">
+                <img src="./svg/icons8-whatsapp.svg" alt="">
+                <p>Whatsapp</p>
+              </a>
 
+              <a class="share-icon-box" target="_blank">
+                <img src="./svg/icons8-facebook.svg" alt="">
+                <p>facebook</p>
+              </a>
+
+              <a class="share-icon-box" target="_blank">
+                <img src="./svg/icons8-mail-48.png" alt="">
+                <p>mail</p>
+              </a>
+
+              <a class="share-icon-box" target="_blank">
+                <img src="./svg/icons8-twitter.svg" alt="">
+                <p>twitter</p>
+              </a>
+            </div>
+            <div class="share-link-container">
+              <p id="shareLink">link</p>
+              <button onclick="copyText()">Copy</button>
+            </div>
+          </div>
+
+
+          <div class="copyTextAlertContainer">
+            <div class="copiedMassageBox">
+              <p>Link copied to clipboard</p>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
-  </section>
+  </section>  
 
 
   <script src="./videoDetails.js"></script>

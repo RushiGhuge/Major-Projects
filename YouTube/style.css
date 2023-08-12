@@ -36,9 +36,10 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 30px;
+  padding: 4px 28px;
   position: fixed;
   top: 0;
+  z-index: 500;
 }
 .bars{
   cursor: pointer;
@@ -182,7 +183,8 @@ body{
   overflow-x:auto;
   position: fixed;
   background:#0F0F0F;
-  
+  top: 45px;
+  z-index: 200;
 }
 .nav-items::-webkit-scrollbar {
   display: none;
@@ -230,11 +232,15 @@ body{
   grid-template-columns: 1fr 2fr;
 }
 .thumb-img {
-  /* width: 100%; */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: none;
+  border-radius: 20px;
+  clip-path: polygon(0 13%, 100% 13%, 100% 86%, 0 86%);
 }
 .thumb-img > img{
   width: 100%;
-  /* height: 100%; */
   border-radius: 15px;
 }
 .video-details{
@@ -259,28 +265,32 @@ body{
   font-size: 1.1em;
 }
 .title{
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
 }
 #home-video-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
+  row-gap: 40px;
   /* padding: 15px; */
-  margin-top: 0px;
+  margin-top: 20px;
 }
 .cardDetails{
   /* background: pink; */
-  padding: 10px 5px;
+  padding: 10px 0px;
   display: flex;
   gap: 10px;
+  position: absolute;
+  bottom: -40px;
 }
 .profile-image >img{
   width: 35px;
   border-radius: 50%;
 }
 .home-card{
-  padding: 10px;
+  padding: 5px;
+  position: relative;
 }
 .htitle{
   font-size: 1.1em;

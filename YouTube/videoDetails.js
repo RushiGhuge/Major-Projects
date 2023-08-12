@@ -35,6 +35,7 @@ async function getCommentsOfVideo() {
     let getUrl = await fetch(apiUrl, { method: 'GET' })
     let result = await getUrl.json();
     appendCommentBox(result.items);
+    console.log(result.items    );
 }
 
 async function getRelatedVideos(relatedTitle) {
@@ -49,15 +50,15 @@ async function getRelatedVideos(relatedTitle) {
 getLikeViewCount();
 getCommentsOfVideo();
 
-
-
 const leftContainer = document.getElementById('container-left');
 
 function likeViewAppend(obj) {
+    console.log(obj);
     let snippet = obj[0].snippet;
     let statistics = obj[0].statistics;
     const videoCardDetails = document.createElement('div');
     videoCardDetails.className = 'video-card-details';
+    let str = snippet.description.replace(/\n/g, '<br>');
     videoCardDetails.innerHTML = `
     <p id="video-title">${snippet.localized.title}</p>
     <div class="Channel-details-container">
@@ -72,26 +73,26 @@ function likeViewAppend(obj) {
 
         <div class="right-channel-details">
           <div class='likeDeslike'>
-          <div class="like"><span id='likeIcon' class="material-symbols-outlined">thumb_up </span><p id='like'>${statistics.likeCount}</p></div>
+          <div  class="like"><span id='likeIcon' class="material-symbols-outlined">thumb_up </span><p id='like'>${statistics.likeCount}</p></div>
           <div class="deslike x"> <span class="material-symbols-outlined">thumb_down</span> </div>
-           </div>
-          <div class="share x"><span class="material-symbols-outlined">forward</span>Share</div>
+           </div>   
+          <div onclick="share()" id="shareBtn" class="share x"><span class="material-symbols-outlined">forward</span>Share</div>
           <div class="download x"><span class="material-symbols-outlined">download</span>download</div>
         </div>
     </div>
 
     <div id="description-container">
           <div id="descreption">
-            <p id="views ">${statistics.viewCount} views</p>
-            <p id="descreption-details">${snippet.description}</p>
+            <p id="views">${statistics.viewCount} views</p>
+            <p id="descreption-details">${str}</p>
           </div>
         
           <p id='showMORE'>Show More</p>
           <p id='showLESS'>Show Less</p>
-
-        </div>
-
+        </div>  
     `
+   
+    // document.getElementById('descreption-details').innerHTML = snippet.description;
     leftContainer.appendChild(videoCardDetails)
 
     const showMore = document.getElementById('showMORE');
@@ -108,6 +109,21 @@ function likeViewAppend(obj) {
         showMore.style.display = 'block'
         showLess.style.display = 'none'
     })
+
+    let like = document.getElementsByClassName('like')[0];
+    let likeFlag = true;
+    like.addEventListener('click',()=>{
+        if(likeFlag){
+            document.getElementById('like').innerText =  ++statistics.likeCount;
+            likeFlag = false;
+        }
+        else{
+            document.getElementById('like').innerText =  --statistics.likeCount;
+            likeFlag = true;
+        }
+    })
+
+    
 }
 function relatadeVideos(arr) {
     console.log(arr);
@@ -142,10 +158,6 @@ function relatadeVideos(arr) {
 
     })
 
-
-
-
-
 }
 
 let commentContainer = document.createElement('div');
@@ -162,7 +174,7 @@ function appendCommentBox(array) {
     commentContainer.id = 'comment-container';
     array.forEach(arr => {
         let authorDisplayName = arr.snippet.topLevelComment.snippet.authorDisplayName;
-        let comment = arr.snippet.topLevelComment.snippet.textOriginal;
+        let comment = arr.snippet.topLevelComment.snippet.textDisplay;
         let likeCount = arr.snippet.topLevelComment.snippet.likeCount
         let commentBox = document.createElement('div');
 
@@ -225,6 +237,35 @@ innerBar.addEventListener('click', () => {
     document.getElementById('Innerbody').style.opacity = '1';
 })
 
+// share button click --->
+function share(){
+    document.getElementsByClassName('share-page-container')[0].style.display = 'flex'
+    let shareLink = document.getElementById('shareLink');
+    shareLink.innerText = `https://youtu.be/${videoID}`
+    let ancorTags = document.querySelectorAll('.share-icons > a')
+    ancorTags[0].href = `https://api.whatsapp.com/send/?text=https://youtu.be/${videoID}%2F9S0Ws-lQJsI&type=custom_url&app_absent=0` //whatsapp
+    ancorTags[1].href = `https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/${videoID}&t=TITLE` //feacbook
+    ancorTags[2].href = `mailto:?subject=YouTube&amp;body=Check out this site https://youtu.be/${videoID}` //mail
+    ancorTags[3].href = `https://twitter.com/share?url=URLENCODED_URL&via=https://youtu.be/${videoID}&text=TEXT` //twitter
+
+}
+function closeShare(){
+    document.getElementsByClassName('share-page-container')[0].style.display = 'none'
+}
+ async function copyText(){
+    let copyText = document.getElementById('shareLink').innerText;
+    try {
+        await navigator.clipboard.writeText(copyText);
+        console.log("copied!");
+        document.querySelector('.copiedMassageBox > p').style.transform = "translateY(0)"
+        setTimeout(()=>{
+            document.querySelector('.copiedMassageBox > p').style.transform = "translateY(100px)"
+        },2000)
+    } catch (error) {
+    }
+}
+
+// ---------------------->
 
 //loding bar ----> hide after 2s;
 let lodingBar = document.getElementById('lodingBar');
