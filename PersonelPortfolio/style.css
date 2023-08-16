@@ -396,7 +396,7 @@ body {
 
 /* projects sections  */
 .projects-container {
-    background: rgba(139, 95, 165, 0.438);
+    background: rgba(95, 120, 165, 0.438);
     background-image: url('https://developer.spotify.com/images/home/mobile-banner-confetti.svg');
     background-position: center center;
     background-size: cover;
@@ -438,15 +438,16 @@ body {
 }
 
 .project-img {
-    border-radius: 17px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     height: 400px;
     max-width: 100%;
     width: 580px;
     min-width: auto;
-    overflow-y: scroll;
+    overflow-y: hidden;
     position: relative;
     background-color: hsla(0,0%,46%,.2);
+    transition: 1s;
 }
 
 .project-img::-webkit-scrollbar {
@@ -455,6 +456,14 @@ body {
 
 .project-img img {
     width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    transition: 8s all ease;
+    cursor: pointer;
+    &:hover {
+      object-position: bottom;
+    }
 }
 
 .project-content {

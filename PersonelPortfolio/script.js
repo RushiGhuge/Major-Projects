@@ -103,6 +103,17 @@ function scrollNow(x, y) {
 }
 
 
+
+// //scroll of img project--->
+// let projectImg = document.querySelectorAll('.project-img');
+// projectImg.forEach(img =>{
+//    img.addEventListener('mouseenter',(event)=>{
+//     console.log(event.target);
+//     event.target.scrollTo(0,1000)
+//    })
+// })
+
+
 // animation part starts -----> 
 // nav bar animat 
 
@@ -158,47 +169,4 @@ gsap.from(".left-amc", {
     stagger: 1
 })
 
-//projects card animation is here : ---->
-gsap.from(".project-card:nth-child(2)", {
-    x: -2000,
-    opacity: 0,
-    delay: 0.1,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".project-card:nth-child(2)",
-        marker: "true",
-    },
-})
-gsap.from(".project-card:nth-child(3)", {
-    x: 2000,
-    opacity: 0,
-    delay: 0.1,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".project-card:nth-child(3)",
-        marker: "true",
-
-    },
-})
-gsap.from(".project-card:nth-child(4)", {
-    x: -2000,
-    opacity: 0,
-    delay: 0.1,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".project-card:nth-child(4)",
-        marker: "true",
-
-    },
-})
-gsap.from(".project-card:nth-child(5)", {
-    x: 2000,
-    opacity: 0,
-    delay: 0.1,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".project-card:nth-child(5)",
-        marker: "true",
-    },
-})
 

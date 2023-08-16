@@ -21,7 +21,11 @@
         display: none;
     }
 
-
+    #textColor {
+        font-weight: 800;
+        font-size: 2.2em;
+    }
+    
 
     .footer {
         display: flex;
@@ -105,7 +109,9 @@
         display: flex;
         gap: 10px;
     }
-
+    .project-content > p{
+        font-size: 0.9em;
+    }
     .box {
         width: 300px;
         display: flex;
@@ -162,7 +168,7 @@
         left: 10px;
     }
     .left-container-arrow, .right-container-arrow{
-        border-right: 15px solid white;
+        border-right: 15px solid rgba(0, 0, 0, 0.815);
         border-left: 0;
         left: -15px;
     }
