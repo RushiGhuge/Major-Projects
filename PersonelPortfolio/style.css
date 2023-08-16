@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -181,11 +183,11 @@ body {
     gap: 130px;
     display: flex;
     margin: auto;
-    width: 80%;
+    max-width: 80%;
     justify-content: center;
     align-items: center;
     margin-top: 120px;
-
+    
 }
 
 .hero-text {
@@ -220,19 +222,24 @@ body {
     text-decoration: none;
     color: black;
 }
-
+.hero-container-main{
+    width: 100vw;
+    /* height: 100vh; */
+    padding-top:30px ;
+}
 .hero-img {
-    width: 25rem;
-    height: 25rem;
-    background: #816f91;
+    width: 22rem;
+    height: 22rem;
+    background: #BDB9B6;
     background-image: url(./Rushi-removebg-preview.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border: 3px solid black;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    -webkit-animation: morfh 8s ease-in-out infinite;
-    filter: drop-shadow(10px 10px 10px rgb(27, 27, 27));
+    -webkit-animation: morfh 7s ease-in-out infinite;
+    filter:grayscale(5%);
+    /* filter: drop-shadow(10px 10px 10px rgb(27, 27, 27)); */
 }
 
 
@@ -294,6 +301,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    /* height: 100vh; */
     gap: 100px;
 }
 
@@ -388,7 +396,7 @@ body {
 
 /* projects sections  */
 .projects-container {
-    background: rgba(0, 0, 255, 0.438);
+    background: rgba(139, 95, 165, 0.438);
     background-image: url('https://developer.spotify.com/images/home/mobile-banner-confetti.svg');
     background-position: center center;
     background-size: cover;
@@ -497,20 +505,10 @@ body {
 }
 
 #textColor {
-    transition: 0.2s;
-    cursor: pointer;
-    animation: textShodow 2s linear infinite alternate;
+    font-weight: 800;
+    font-size: 3.2em;
 }
 
-@keyframes textShodow {
-    0% {
-        text-shadow: -5px 0 0 red, 5px 0 0 blue;
-    }
-
-    100% {
-        text-shadow: 3px 0 0 red, -3px 0 0 blue;
-    }
-}
 .about-btn>button {
     font-size: 1rem;
     font-weight: 700;
@@ -531,7 +529,7 @@ body {
 /* animation time line more details  about me.---> */
 .timeLine-container {
     width: 100%;
-    background: rgba(241, 18, 241, 0.363);
+    background:#f9f9f971;
     background-image: url('./pngwing.com\ \(2\).png');
     background-repeat: no-repeat;
     background-position: center;
@@ -539,6 +537,7 @@ body {
     padding: 50px 0;
     position: relative;
     overflow-x: hidden;
+    
 }
 
 .timeLine {
@@ -605,21 +604,24 @@ body {
 
 
 .text-box {
-    background: white;
-    color: black;
+    background: rgba(0, 0, 0, 0.89);
+    color: white;
     padding: 20px 30px;
     position: relative;
     border-radius: 6px;
     font-size: 15px;
     transform: translate(-0%);
-    box-shadow: 5px 0px 15px rgb(49, 49, 49);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
     cursor: pointer;
     z-index: 200;
     transition: 0.4s;
+
+    font-weight: 500;
+
 }
 
 .text-box:hover {
-    transform: scale(1.03);
+    transform: scale(1.06);
 }
 
 .left-amc {
@@ -655,7 +657,7 @@ body {
     height: 100%;
     border-radius: 50px;
     top: 0;
-    background: rgb(33, 164, 182);
+    background: rgba(0, 0, 0, 0.815);
     left: 50%;
     margin-left: -3px;
     z-index: -1;
@@ -689,7 +691,7 @@ body {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
+    border-left: 15px solid rgba(0, 0, 0, 0.815);
     right: -15px;
 }
 
@@ -701,7 +703,7 @@ body {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid white;
+    border-right: 15px solid rgba(0, 0, 0, 0.815);
     left: -15px;
 }
 

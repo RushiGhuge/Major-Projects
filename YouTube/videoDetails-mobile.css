@@ -20,7 +20,7 @@
         overflow: auto;
     }
 
-    #videoContainer {
+    #videoContainer { 
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -28,7 +28,6 @@
     }
 
     #container-left {
-
         padding: 0px;
     }
 

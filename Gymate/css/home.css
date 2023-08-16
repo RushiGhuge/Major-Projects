@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    font-size: 16px;
+}
+
+.banner-page1 {
+    width: 100%;
+    height: 110vh;
+    background-image: url('https://gymate-iota.vercel.app/static/media/hero-img.40c8355a31f73340b733.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.mobileNav{
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    transform: translate(0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    transform: translate(-100%);
+}
+.navbar-list-mob ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.navbar-list-mob li{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: black;
+    list-style: none;
+   position: relative;
+   overflow: hidden;
+   transition: 0.3s;
+}
+.navbar-list-mob li:hover{
+    color:#FF0336;
+}
+.mobileNav > .fa-xmark{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5em;
+    transition: 0.2s;
+}
+.mobileNav > .fa-xmark:hover{
+    color: #FF0336;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 20px 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background: transparent;
+    z-index: 100;
+    transition: 0.1s;
+}
+
+.navbar-list ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.navbar-list ul>a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.navbar-list ul>a:hover {
+    color: #FF0336;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right-nav>i {
+    font-size: 1.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.right-nav>i:hover {
+    color: #FF0336;
+}
+
+.right-nav>.fa-bars {
+    display: none;
+}
+
+.joinbtn {
+    border: 2px solid rgb(71, 71, 71);
+    background: black;
+    color: white;
+    font-weight: 900;
+    padding: 4px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.joinbtn>i {
+    background: #FF0336;
+    padding: 10px;
+    color: white;
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin-right: 8px;
+    transition: transform 1s;
+}
+
+.joinbtn>i:hover {
+    animation: rotate360 0.7s ease-out;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* main  */
+.banner-page1 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10%;
+    padding-right: 40px;
+}
+
+.main-heading-container {
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    color: white;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.whiteBg {
+    color: white;
+    font-size: 1.3em;
+}
+
+.main-heading-container>h1 {
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.main-heading-container>h2 {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.mtBtn {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 0.9em;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.mtBtn::after {
+    content: '';
+    width: 177px;
+    height: 49px;
+    border: 1px solid gray;
+    position: absolute;
+    z-index: -1;
+    margin-top: -20px;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.mtBtn:hover::after {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.mtBtn>i {
+    color: rgb(255, 0, 43);
+}
+
+.virticalShareMenu {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.virticalShareMenu>h2 {
+    transform: rotate(-90deg);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.line {
+    width: 3px;
+    height: 40px;
+    background: #FF0336;
+}
+
+.vertical-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.2em;
+    /* background: pink; */
+}
+
+.vertical-icon i {
+    transition: 0.3s;
+}
+
+.vertical-icon i:hover {
+    color: #FF0336;
+}
+
+.home-card-section {
+    /* overflow: hidden; */
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+.card-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    flex-direction: column;
+    /* width: 28%; */
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.card-item h1 {
+    font-size: 1.5em;
+}
+
+.card-item>i {
+    font-size: 2.5em;
+    color: #FF0336;
+}
+
+.card-item>p {
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.card-item:hover {
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hA41odHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplNGJiYzEzNi02MGQyLTAzNGMtYjViMS05NDhiODhlZjEzOGYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NENCNEE3OTA4MDJCMTFFQzlCNTlGNTUxRjJBMjNERDQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NENCNEE3OEY4MDJCMTFFQzlCNTlGNTUxRjJBMjNERDQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZTk3ZTdhZDUtM2E2Yy1mNjQyLWFkY2YtN2Y4MzQwMzNmNGExIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZWUzN2JiZjMtM2FhOC0xMWViLWE2NGMtYjYwZGU3YzM4ZTg4Ii8+IDwvcmRm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);
+    color: white;
+}
+
+.second-page-container {
+    position: relative;
+    top: -80px;
+}
+
+.second-page-info {
+    width: 90%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin: 80px auto;
+    /* padding: 50px; */
+}
+
+.left-side {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.left-side>h3 {
+    position: relative;
+    width: 200px;
+    background: purple;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.1em;
+}
+
+.left-side>h3>img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.left-side span {
+    position: absolute;
+    left: 40px;
+    top: 7px;
+}
+
+.box-list {
+    display: flex;
+}
+
+.box {
+    /* border-right: 1px solid black; */
+    max-width: 200px;
+    padding: 20px;
+    font-size: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.bright {
+    border-right: 1px solid gray;
+}
+
+.box>img {
+    width: 50px;
+}
+
+.box>h1 {
+    font-size: 1.5em;
+}
+
+.right-img {}
+
+.right-img>img {
+    width: 100%;
+}
+
+.takeATour {
+    background: rgb(48, 48, 48);
+    color: white;
+    transition: 0.2s;
+}
+
+.takeATour>i {
+    color: white;
+}
+
+.takeATour:hover {
+    background: #FF0336;
+}
+
+.h1Bolder {
+    font-weight: 800;
+    padding: 10px 0;
+}
+
+.left-side>p {
+    font-weight: 500;
+    color: gray;
+    line-height: 1.5em;
+}
+
+.pink-heading span {
+    position: absolute;
+    top: 8px;
+    left: 23px;
+    font-weight: 700;
+    font-size: 0.8em;
+}
+
+.pink-heading {
+    position: relative;
+    width: 220px;
+    background: purple;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.1em;
+    margin: auto;
+}
+
+.pink-heading img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+/* gallery page starting  */
+.gallery-page {
+    margin-top: 80px;
+}
+
+.container-pink-heading {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.g-heading>h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.gallery-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 20px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.gallery-box {
+    overflow: hidden;
+    position: relative;
+}
+
+.i0 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/cycling.8e0327a83191c3bd1fab.jpg);
+}
+
+.i1 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/karate.c3c74df4caede1f2bf0a.jpg);
+}
+
+.i2 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/power.0d38659a6a6bcec678dd.jpg);
+}
+
+.i3 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/meditation.50b69e8e1cf2d83b5849.jpg);
+}
+
+.i4 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/mma.d0336aa6e7ec6b55c9f5.jpg);
+}
+
+.i5 {
+    background-image: url(https://gymate-iota.vercel.app/static/media/workout.7862f3caad74194917b6.jpg);
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.4s cubic-bezier(.4, 0, 1, 1);
+    filter: grayscale(100%);
+    box-shadow: inset 2px 2px 8px 160px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: scale(1.3);
+    filter: grayscale(0%);
+    box-shadow: inset 2px 2px 8px 160px transparent
+}
+.item:hover ~ .side-bar-icon>i{
+    color: #FF0336;
+}
+.item:hover ~ .side-bar-icon{
+    background: white;
+}
+.item-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    color: #ffffff;
+    bottom: 10px;
+    left: 20px;
+    z-index: 10;
+}
+
+.item-title>span {
+    background: #FF0336;
+    padding: 5px;
+    word-wrap: break-word;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.item-title>h2 {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+/* side bar icons  */
+.side-bar-icon{
+    background: rgba(255, 255, 255, 0.363);
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    z-index: 2;
+    width: 130px;
+    height: 70px;
+    border-radius: 80px;
+    transform: rotate(30deg);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    transition: 0.3s;
+}
+.side-bar-icon > i {
+    font-size: 2em;
+    transform: rotate(-30deg);
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: white;
+    transition: 0.3s;
+
+}
