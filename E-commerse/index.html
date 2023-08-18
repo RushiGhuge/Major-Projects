@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://kit.fontawesome.com/a6a0cd4ae6.js"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./imgs/logo.png" alt>
+            </div>
+
+            <div class="search">
+                <input id="searching" type="text" placeholder="Search">
+                <i id="searchClick" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="right-nav">
+                <div> Catagies <i class="fa-solid fa-chevron-down"></i></div>
+                <div> <i class="fa-regular fa-user"></i></div>
+                <div class="cart">
+                    Cart <span class="material-symbols-outlined">
+                        add_shopping_cart
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="slides-container">
+            <div class="carousel-container">
+                <img class="slide"
+                    src="https://assets.tatacliq.com/medias/sys_master/images/48173136412702.jpg"
+                    alt>
+                <img class="slide"
+                    src="https://assets.tatacliq.com/medias/sys_master/images/48161066942494.jpg"
+                    alt>
+                <img class="slide"
+                    src="https://assets.tatacliq.com/medias/sys_master/images/48173864976414.jpg"
+                    alt>
+                <img class="slide"
+                    src="https://assets.tatacliq.com/medias/sys_master/images/48161066811422.jpg"
+                    alt>
+            </div>
+            
+                <button class="btns-slide" id="prev" onclick="goPrev()"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btns-slide" id="next" onclick="goNext()"><i class="fa-solid fa-chevron-right"></i></button>
+           
+        </div>
+
+        <div class="page1">
+            <giv class="gallery-container">
+              
+                <div class="gitem">
+                    <img src="./imgs/headphone.jpg" alt="">
+                </div>
+
+            </giv>
+        </div>
+
+        <!-- <link rel="stylesheet" href="./searchPage/search.html"> -->
+
+        <script src="./main.js"></script>
+    </body>
+</html>
