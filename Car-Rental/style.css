@@ -344,30 +344,36 @@ body{
 .question{
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 15px 10px;
-    transition: .15s ease;
+    transition: .3s ease;
+}
+.q{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
 }
 .ans{
     display: none;
-    position: absolute;
     background: white;
     padding: 20px;
     width: 700px;
     color: #878585;
     box-shadow: 0 10px 15px 0 rgba(0,0,0,.1);
+    transition: 1s;
 
 }
 .question:hover{
     background:#FA4226;
     color: white;
 }
-.ans:hover{
+/* .ans:hover{
     display: block;
-}
-.question:hover + .ans{
+} */
+/* .question:hover + .ans{
     display: block;
-}
+} */
 
 /* download-section starts */
 
@@ -421,4 +427,97 @@ body{
     border: none;
     width: 100%;
     padding: 15px 10px;
+}
+
+/* car selection page is hear  */
+.carSelectionPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    background: white;
+}
+.imgAndDetails{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+.carSelect{
+    width: 30%;
+}
+.carDetails{
+    width: 30%;
+}
+.carImg{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carImg  img{
+    object-fit: cover;
+    width: 100%;
+}
+.carnNameBox{
+    background: #E9E9E9;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+        background: #FF4D30;
+        color: white;
+    }
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /* justify-content: space-around; */
+    margin: 0px 0;
+    border: 1px solid black;
+    border-top: none;
+    padding: 8px 10px;
+}
+.col{
+    width: 50%;
+    text-align: center;
+}
+.crb{
+    border-right: 1px solid black;
+}
+.btn-res{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0;
+    background:#FF4D30;
+    color: white;
+    text-align: center;
+    border:none;
+    font-weight: 700;
+    font-size: 1.3em;
+    cursor: pointer;
+    &:hover{
+        background:#d42d13;
+    }
+}
+.default{
+    background:#FF4D30;
+    color: white;
+}
+.carPrice{
+    /* border-bottom: 1px solid black; */
+    padding: 10px 0;
+    background:#FF4D30;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+}
+.carPrice > span{
+    font-size: 0.8em;
+    font-weight: 400;
 }
