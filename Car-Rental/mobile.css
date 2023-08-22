@@ -168,7 +168,7 @@
     }
 
     .ans {
-        width: 80%;
+        width: 100%;
     }
 
     .download-section {
@@ -279,9 +279,7 @@
         margin: 100px auto
     }
 
-    .ans {
-        width: 90%;
-    }
+   
 }
 
 /* mobile view  */

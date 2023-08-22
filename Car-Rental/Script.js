@@ -149,34 +149,59 @@ for (let i = 0; i < carnNameBox.length; i++) {
 
 // quation FAQ 
 
-let q = document.getElementsByClassName('question');
-for (let j = 0; j < 3; j++) {
-    q[j].children[1].style.display = 'none'
-}
+let q = document.querySelectorAll('.question');
+// for (let j = 0; j < 3; j++) {
+//     q[j].children[1].style.display = 'none'
+// }
+
 for (let i = 0; i < q.length; i++) {
     q[i].addEventListener('click', (event) => {
-        if(i == 0){
-            q[1].children[1].style.display = 'none'
-            q[2].children[1].style.display = 'none'
+        let ans = q[i].childNodes[3];
+   
+        if (ans.style.maxHeight == '400px') {
+            ans.style.maxHeight = '0'
         }
-        else if(i == 1){
-            q[0].children[1].style.display = 'none'
-            q[2].children[1].style.display = 'none'
-        }
-        else if(i == 2){
-            q[1].children[1].style.display = 'none'
-            q[0].children[1].style.display = 'none'
+        else {
+            ans.style.maxHeight = '400px';
         }
 
-        if (q[i].children[1].style.display == 'none') {
-            q[i].children[1].style.display = 'block'
-            q[i].children[1].style.opacity = '1'
-        }
-        else if (q[i].children[1].style.display == 'block') {
-            q[i].children[1].style.display = 'none'
-            q[i].children[1].style.opacity = '0'
+        // if(i == 0){
+        //     q[1].children[1].style.display = 'none'
+        //     q[2].children[1].style.display = 'none'
+        // }
+        // else if(i == 1){
+        //     q[0].children[1].style.display = 'none'
+        //     q[2].children[1].style.display = 'none'
+        // }
+        // else if(i == 2){
+        //     q[1].children[1].style.display = 'none'
+        //     q[0].children[1].style.display = 'none'
+        // }
 
-        }
-        
+        // if (q[i].children[1].style.display == 'none') {
+        //     q[i].children[1].style.display = 'block'
+        //     q[i].children[1].style.opacity = '1'
+        // }
+        // else if (q[i].children[1].style.display == 'block') {
+        //     q[i].children[1].style.display = 'none'
+        //     q[i].children[1].style.opacity = '0'
+        // }
+
+
+
     })
 }
+
+// var expandableElement = document.querySelector('.expandable3');
+// q[0].addEventListener('click',()=>{
+//     expandableElement.classList.toggle('open');
+//     console.log('hii');
+// })
+// q[1].addEventListener('click',()=>{
+//     expandableElement.classList.toggle('open');
+//     console.log('hii');
+// })
+// q[2].addEventListener('click',()=>{
+//     expandableElement.classList.toggle('open');
+//     console.log('hii');
+// })
