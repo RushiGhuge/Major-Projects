@@ -190,7 +190,7 @@ for (let i = 0; i < q.length; i++) {
 
 
     })
-}
+}   
 
 // var expandableElement = document.querySelector('.expandable3');
 // q[0].addEventListener('click',()=>{

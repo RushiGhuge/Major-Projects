@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500,600,700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F8F8F8;
+    font-size: 16px;
+}   
+
+/* main hero section starts */
+.bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 20px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.btn-register {
+    padding: 10px 15px;
+    background-color: #ff4d30;
+    border-radius: 3px;
+    box-shadow: 0 10px 15px 0 rgba(255, 83, 48, .35);
+    color: #fff;
+    transition: all .3s;
+    border: none;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+.btn-register:hover {
+    background: #FA4226;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+
+.navbar a:hover {
+    transition: all .3s;
+    color: #ff4d30;
+}
+
+.navbar img {
+    width: 150px;
+}
+
+.hand-burger {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
