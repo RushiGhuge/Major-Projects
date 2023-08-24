@@ -11,7 +11,8 @@
 body {
     background: #F8F8F8;
     font-size: 16px;
-}   
+    position: relative;
+}
 
 /* main hero section starts */
 .bg-shape {
@@ -167,7 +168,8 @@ body {
     gap: 10px;
 }
 
-.box>input, .box>select {
+.box>input,
+.box>select {
     width: 100%;
     padding: 12px;
     border-radius: 3px;
@@ -393,7 +395,7 @@ body {
     background-color: #fff;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .1);
     color: #010103;
- 
+
     /* cursor: pointer; */
 }
 
@@ -410,13 +412,15 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    
+
 }
-.q p{
+
+.q p {
     cursor: pointer;
     /* width: 100%; */
 
 }
+
 .ans {
     /* display: none;
      */
@@ -427,7 +431,8 @@ body {
     transition: 1s;
 
 }
-.ans > p{
+
+.ans>p {
     padding: 15px;
 }
 
@@ -606,14 +611,76 @@ body {
     font-weight: 400;
 }
 
-
-
 .expandable {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.4s ease-in;
 }
 
-/* .expandable1.open {
-    max-height: 200px;
-} */
+/* this code is for a search result when user is click on the search btn  */
+main{
+opacity: 0.2;
+}
+#searchInfo{
+    background: white;
+    max-width: 850px;
+    margin: auto;
+    position: fixed;
+    height: 100vh;
+    top: 30px;
+    left: -50%;
+    right:-50%;
+    overflow-y: scroll;
+    padding: 2px;
+    box-shadow: 0 0 20px gray;
+}
+.carImg > img{
+    width: 100%;
+}
+.heading-result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background:#FF4D30;
+    color: white;
+}
+.heading-result i{
+    font-size: 1.5em;
+}
+.info{
+    padding: 20px 30px;
+    background:rgba(255, 99, 71, 0.158);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info> h2{
+    color: #FF4D30;
+    font-size: 1.2em;
+}
+.info > p{
+        font-size: 1em;
+    color: gray;
+    font-weight: 500;
+}
+.userDetails{
+    display: flex;
+    width: 100%;    
+    padding: 30px;
+    /* justify-content: center; */
+}
+.userDetails  h3{
+    color: #FA4226;
+}
+.leftUserDetails{
+    background: blue;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.rightUserDetails{
+    background: pink;
+    width: 50%;
+}
