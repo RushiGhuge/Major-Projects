@@ -619,7 +619,7 @@ body {
 
 /* this code is for a search result when user is click on the search btn  */
 main{
-opacity: 0.2;
+/* opacity: 0.2; */
 }
 #searchInfo{
     background: white;
@@ -633,7 +633,9 @@ opacity: 0.2;
     overflow-y: scroll;
     padding: 2px;
     box-shadow: 0 0 20px gray;
-}
+    scale: 0;
+    transition: 0.2s;
+}   
 .carImg > img{
     width: 100%;
 }
