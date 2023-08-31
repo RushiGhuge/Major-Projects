@@ -25,6 +25,7 @@
         flex-direction: column;
         align-items: start;
         margin-top: 50px;
+        padding: 0;
     }
 
     #container-left {
