@@ -5,6 +5,13 @@
     .right-nav > .fa-bars{
         display: block;
     }
+    .review > img{
+    display: none;
+    }
+    .review-text{
+        padding: 10px;
+        overflow: auto;
+    }
 }
 
 @media(min-width:1000px){
@@ -103,6 +110,10 @@
     }
     .navbar{
         padding: 20px 10px;
+    }
+    .rev-cont{
+        width: 98%;
+        padding: 10px;
     }
 }
 

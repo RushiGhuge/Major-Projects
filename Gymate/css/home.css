@@ -673,22 +673,107 @@ body {
     bottom: 110px;
     right: 10px;
     border-top-right-radius: 50%;
-    
 }
 .review-text{
     background: black;
     color: white;
     display: flex;
+    padding: 20px;
     flex-direction: column;
     gap: 10px;
-    padding: 20px 80px;
     justify-content: center;
     line-height: 1.4em;
+    font-size: 1.1em;
 }
 .rev-cont{
     padding: 30px;
     width: 80%;
     margin: auto;
     border: 10px solid rgb(238, 238, 238);
+    margin-top: 70px;
+}
 
+/* logo rows */
+.logo-row{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+    flex-wrap: wrap;
+}
+.logo-row > img{
+    width: 200px;
+}
+
+
+/* workspace-gallery starts hear  */
+.workspace-gallery{
+    margin: 40px 0;
+}
+.h-gallery{
+    padding-top: 50px;
+}
+.para{
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.4em;
+}
+
+
+
+/* BMI  */
+.bmi-cal{
+    background: #121212;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.input{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.output
+{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+.output > p {
+    width: 220px;
+}
+.bmi-cal input{
+    max-width: 200px;
+    padding: 12px ;
+    background: transparent;
+    border: 2px solid gray;
+    color: white;
+    font-size: 1.1em;
+}
+#calculate{
+    max-width: 200px;
+    padding: 12px 0px;
+    font-size: 1em;
+    font-weight: 600;
+    background: rgb(44, 44, 44);
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+#calculate:hover{
+    background:#FF0336;
+}
+.pink{
+    color: #FF0336;
+}
+.gray-text{
+    color: gray;
+}
+#bmiCal, #weightCal{
+    color: #FF0336;
+    font-weight: 600;
+    font-size: 1.1em;
 }
