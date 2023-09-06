@@ -35,43 +35,6 @@
     font-weight: 500;
 }
 
-.mtBtn {
-    width: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    font-size: 0.9em;
-    font-weight: bolder;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.mtBtn::after {
-    content: '';
-    width: 177px;
-    height: 49px;
-    border: 1px solid gray;
-    position: absolute;
-    z-index: -1;
-    margin-top: -20px;
-    margin-left: 20px;
-    transition: 0.3s;
-}
-
-.mtBtn:hover::after {
-    margin-top: 0px;
-    margin-left: 0px;
-}
-
-.mtBtn>i {
-    color: rgb(255, 0, 43);
-}
 
 .virticalShareMenu {
     color: white;
@@ -260,37 +223,7 @@
     line-height: 1.5em;
 }
 
-.pink-heading span {
-    position: absolute;
-    top: 8px;
-    left: 23px;
-    font-weight: 700;
-    font-size: 0.8em;
-    width: 80%;
-    text-align: center;
-}
 
-.pink-heading {
-    position: relative;
-    width: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: purple;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 1.1em;
-    margin: auto;
-}
-
-.pink-heading img {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-}
 
 /* gallery page starting  */
 .gallery-page {

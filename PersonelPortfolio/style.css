@@ -624,9 +624,8 @@ body {
     cursor: pointer;
     z-index: 200;
     transition: 0.4s;
-
     font-weight: 500;
-
+    
 }
 
 .text-box:hover {
