@@ -25,21 +25,25 @@ async function fetchData(cityName) {
     cityNotFount();
   } else {
     // this is emd point of population data
-    const populationUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${responce.coord.lat}&lon=${responce.coord.lon}&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
+    const populationUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${responce.coord.lat}&lon=${responce.coord.lon}&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
     let populationData = await fetch(populationUrl);
     let responcePopulationData = await populationData.json();
+    let nextData = await fetchData3Hours()
+    console.log(nextData);
     appendData(responce, responcePopulationData);
+
+    
   }
 }
 fetchData("Risod"); // by default display
 
-async function fetchData3Hours(){
-  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=19.9667&lon=76.7833&cnt=10&appid=5eae25aa1751da0dbad4a7960ec7f00d`
-  let data = await fetch(url)
+async function fetchData3Hours() {
+  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=19.9667&lon=76.7833&cnt=10&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
+  let data = await fetch(url);
   let res = await data.json();
-  console.log(res.list);
+  return res;
 }
-fetchData3Hours();
+
 //search
 document.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
@@ -78,103 +82,146 @@ function appendData(wheatherinfo, populationInfo) {
       }</p>
   </div>
 </div>
-<div class="container-right">
-  <div class="highlight-today-container">
-      <p>Today Highlights</p>
-      <div class="today-highlight-boxs">
+    <div class="container-right">
+      <div class="highlight-today-container">
+          <p>Today Highlights</p>
+          <div class="today-highlight-boxs">
 
-          <div class="today-box">
-              <div class="row">
-                  <p>Air Quality Index</p>
-                  <span class="airQuality" id="Good">Very Poor</span>
-              </div>
-              <div class="airData">
-                  <i class="fa-solid fa-wind"></i>
-                  <div class="air-item">
-                      <span>PM25</span>
-                      <h1>${populationInfo.list[0].components.co}</h1>
+              <div class="today-box">
+                  <div class="row">
+                      <p>Air Quality Index</p>
+                      <span class="airQuality" id="Good">Very Poor</span>
                   </div>
-                  <div class="air-item">
-                      <span>SO2</span>
-                      <h1>${populationInfo.list[0].components.so2}</h1>
-                  </div>
-                  <div class="air-item">
-                      <span>NO2</span>
-                      <h1>${populationInfo.list[0].components.no2}</h1>
-                  </div>
-                  <div class="air-item">
-                      <span>O3</span>
-                      <h1>${populationInfo.list[0].components.o3}</h1>
-                  </div>
-              </div>
-          </div>
-
-          <div class="today-box">
-              <div class="row">
-                  <p>Sunrise & Sunset</p>
-              </div>
-
-              <div class="sunrise-set">
-                  <div class="sunrise">
-                      <i class="fa-regular fa-sun"></i>
-                      <div class="col-time">
-                          <p>Sunrise</p>
-                          <h1>${convertUnixTimestampToTimeAMPM(
-                            wheatherinfo.sys.sunrise
-                          )}</h1>
+                  <div class="airData">
+                      <i class="fa-solid fa-wind"></i>
+                      <div class="air-item">
+                          <span>PM25</span>
+                          <h1>${populationInfo.list[0].components.co}</h1>
                       </div>
-                  </div>
-                  <div class="sunset">
-                      <i class="fa-regular fa-moon"></i>
-                      <div class="col-time">
-                          <p>Sunset</p>
-                          <h1>${convertUnixTimestampToTimeAMPM(
-                            wheatherinfo.sys.sunset
-                          )}</h1>
+                      <div class="air-item">
+                          <span>SO2</span>
+                          <h1>${populationInfo.list[0].components.so2}</h1>
+                      </div>
+                      <div class="air-item">
+                          <span>NO2</span>
+                          <h1>${populationInfo.list[0].components.no2}</h1>
+                      </div>
+                      <div class="air-item">
+                          <span>O3</span>
+                          <h1>${populationInfo.list[0].components.o3}</h1>
                       </div>
                   </div>
               </div>
 
+              <div class="today-box">
+                  <div class="row">
+                      <p>Sunrise & Sunset</p>
+                  </div>
+
+                  <div class="sunrise-set">
+                      <div class="sunrise">
+                          <i class="fa-regular fa-sun"></i>
+                          <div class="col-time">
+                              <p>Sunrise</p>
+                              <h1>${convertUnixTimestampToTimeAMPM(
+                                wheatherinfo.sys.sunrise
+                              )}</h1>
+                          </div>
+                      </div>
+                      <div class="sunset">
+                          <i class="fa-regular fa-moon"></i>
+                          <div class="col-time">
+                              <p>Sunset</p>
+                              <h1>${convertUnixTimestampToTimeAMPM(
+                                wheatherinfo.sys.sunset
+                              )}</h1>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="today-box temp-detail-box">
+                  <div class="mini-box">
+                      <p>Humidity</p>
+                      <div class="mini-box-row">
+                          <i class="fa-solid fa-droplet"></i>
+                          <h1>${wheatherinfo.main.humidity}%</h1>
+                      </div>
+                  </div>
+
+                  <div class="mini-box">
+                      <p>Pressur</p>
+                      <div class="mini-box-row">
+                          <i class="fa-solid fa-water"></i>
+                          <h1>${wheatherinfo.main.pressure}hPa</h1>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="today-box temp-detail-box">
+                  <div class="mini-box">
+                      <p>Visibility</p>
+                      <div class="mini-box-row">
+                          <i class="fa-regular fa-eye"></i>
+                          <h1>2.5km</h1>
+                      </div>
+                  </div>
+
+                  <div class="mini-box">
+                      <p>Feels Like</p>
+                      <div class="mini-box-row">
+                          <i class="fa-solid fa-temperature-low"></i>
+                          <h1>${feelLike}°c</h1>
+                      </div>
+                  </div>
+              </div>
           </div>
 
-          <div class="today-box temp-detail-box">
-              <div class="mini-box">
-                  <p>Humidity</p>
-                  <div class="mini-box-row">
-                      <i class="fa-solid fa-droplet"></i>
-                      <h1>${wheatherinfo.main.humidity}%</h1>
-                  </div>
-              </div>
+      
+    </div>
 
-              <div class="mini-box">
-                  <p>Pressur</p>
-                  <div class="mini-box-row">
-                      <i class="fa-solid fa-water"></i>
-                      <h1>${wheatherinfo.main.pressure}hPa</h1>
-                  </div>
-              </div>
-          </div>
+        <p class="todayAt">Today At</p>
 
-          <div class="today-box temp-detail-box">
-              <div class="mini-box">
-                  <p>Visibility</p>
-                  <div class="mini-box-row">
-                      <i class="fa-regular fa-eye"></i>
-                      <h1>2.5km</h1>
-                  </div>
-              </div>
+        <div class="next-temp-container">
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+        <div class="next-temp-item">
+            <p>3 AM</p>
+            <img src="./Photos/icons8-snow-96.png" alt="">
+            <h3>23</h3>
+        </div>
+    </div>
 
-              <div class="mini-box">
-                  <p>Feels Like</p>
-                  <div class="mini-box-row">
-                      <i class="fa-solid fa-temperature-low"></i>
-                      <h1>${feelLike}°c</h1>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-    </div>`;
+</div>`;
 
   let container = document.getElementsByClassName("container")[0];
   container.innerHTML = containerBoxs;

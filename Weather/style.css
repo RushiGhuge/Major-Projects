@@ -421,3 +421,29 @@ body {
 #notFountCity > img{
     width: 100%;
 }
+
+/* next-temp-container starts  */
+.next-temp-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin: 20px 0;
+}
+.next-temp-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: var(--radius-16);
+    background: var(--surface);
+}
+.todayAt{
+    margin: 10px 0;
+    font-size: 1em;
+    font-weight: 800;
+    color: var(--on-surface);
+}
