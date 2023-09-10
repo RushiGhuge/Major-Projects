@@ -34,7 +34,7 @@ async function fetchData(cityName) {
     let nextdata = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${responce.coord.lat}&lon=${responce.coord.lon}&cnt=8&appid=5eae25aa1751da0dbad4a7960ec7f00d`
     );
-    
+
     let nextDataRes = await nextdata.json();
     loaderAnimationStop();
     appendData(responce, responcePopulationData, nextDataRes);
@@ -44,13 +44,58 @@ fetchData("Risod"); // by default display
 
 async function fetchData3Hours() {}
 
+//get the location live... cordinates and call to tue successCallback with lat and lon
+function getLiveLocation() {
+  // get cordinates
+  if ("geolocation" in navigator) {
+    // Geolocation is available
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log("Latitude: " + latitude);
+        console.log("Longitude: " + longitude);
+        successCallback(latitude,longitude)
+      },
+      function (error) {
+        // Handle any errors that occur while getting the location
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            console.error("User denied the request for Geolocation.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            console.error("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            console.error("The request to get user location timed out.");
+            break;
+          case error.UNKNOWN_ERROR:
+            console.error("An unknown error occurred.");
+            break;
+        }
+      }
+    );
+  } else {
+    // Geolocation is not available in this browser
+    console.error("Geolocation is not available in your browser.");
+  }
+}
+
+async function successCallback(lat, lon) {
+  let url = `https://us1.locationiq.com/v1/reverse?key=pk.d7c2cfa8f69195f2d1c1f80eff1dece7&lat=${lat}&lon=${lon}&format=json`;
+  let data = await fetch(url);
+  let res = await data.json();
+  fetchData(res.address.city)
+}
+
 //search
 document.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     let searchIn = document.querySelector(".search > input");
     let searchINVal = searchIn.value;
-    searchIn.value = ''
-    searchIn.blur();
+    searchIn.value = "";
+    blur();
+    searchIn.foc;
     if (searchINVal.length >= 1) {
       fetchData(searchINVal);
     }
@@ -61,7 +106,7 @@ document.querySelector(".search > i").addEventListener("click", search);
 function search() {
   let searchIn = document.querySelector(".search > input");
   let searchINVal = searchIn.value;
-  searchIn.value = ''
+  searchIn.value = "";
   searchIn.blur();
   if (searchINVal.length >= 1) {
     fetchData(searchINVal);
@@ -332,11 +377,10 @@ function cityNotFount() {
   `;
 }
 
-
 //animation loader function...
-function loaderAnimationStart(){
-  document.getElementById('loading-animation-container').style.display = 'flex'
+function loaderAnimationStart() {
+  document.getElementById("loading-animation-container").style.display = "flex";
 }
-function loaderAnimationStop(){
-  document.getElementById('loading-animation-container').style.display = 'none'
+function loaderAnimationStop() {
+  document.getElementById("loading-animation-container").style.display = "none";
 }
