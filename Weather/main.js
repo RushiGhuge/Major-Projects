@@ -55,7 +55,7 @@ function getLiveLocation() {
         const longitude = position.coords.longitude;
         console.log("Latitude: " + latitude);
         console.log("Longitude: " + longitude);
-        successCallback(latitude,longitude)
+        successCallback(latitude, longitude);
       },
 
       function (error) {
@@ -63,23 +63,22 @@ function getLiveLocation() {
         switch (error.code) {
           case error.PERMISSION_DENIED:
             console.error("User denied the request for Geolocation.");
-            alert('user denied')
+            alert("user denied");
             break;
           case error.POSITION_UNAVAILABLE:
             console.error("Location information is unavailable.");
-            alert('user denied')
+            alert("user denied");
             break;
           case error.TIMEOUT:
             console.error("The request to get user location timed out.");
-            alert('user denied')
+            alert("user denied");
             break;
           case error.UNKNOWN_ERROR:
             console.error("An unknown error occurred.");
-            alert('user denied')
+            alert("user denied");
             break;
         }
       }
-
     );
   } else {
     // Geolocation is not available in this browser
@@ -91,8 +90,12 @@ async function successCallback(lat, lon) {
   let url = `https://us1.locationiq.com/v1/reverse?key=pk.d7c2cfa8f69195f2d1c1f80eff1dece7&lat=${lat}&lon=${lon}&format=json`;
   let data = await fetch(url);
   let res = await data.json();
-  alert(res.address.city)
-  fetchData(res.address.city)
+  if (res.address.city == undefined) {
+    alert(res.address.city);
+  } else {
+    alert(res.address.city);
+    fetchData(res.address.city);
+  }
 }
 
 //search
