@@ -28,21 +28,18 @@ async function fetchData(cityName) {
     const populationUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${responce.coord.lat}&lon=${responce.coord.lon}&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
     let populationData = await fetch(populationUrl);
     let responcePopulationData = await populationData.json();
-    let nextData = await fetchData3Hours()
-    console.log(nextData);
-    appendData(responce, responcePopulationData);
 
-    
+    let nextdata = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${responce.coord.lat}&lon=${responce.coord.lon}&cnt=8&appid=5eae25aa1751da0dbad4a7960ec7f00d`
+    );
+    let nextDataRes = await nextdata.json();
+
+    appendData(responce, responcePopulationData, nextDataRes);
   }
 }
 fetchData("Risod"); // by default display
 
-async function fetchData3Hours() {
-  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=19.9667&lon=76.7833&cnt=10&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
-  let data = await fetch(url);
-  let res = await data.json();
-  return res;
-}
+async function fetchData3Hours() {}
 
 //search
 document.addEventListener("keyup", (event) => {
@@ -61,7 +58,7 @@ function search() {
 }
 
 // append the data to the DOM;
-function appendData(wheatherinfo, populationInfo) {
+function appendData(wheatherinfo, populationInfo, nextData) {
   console.log(populationInfo);
   // get the wheather temprature-->
   let tempr = Math.floor(wheatherinfo.main.temp - 273.15); // convert into celcius
@@ -183,43 +180,7 @@ function appendData(wheatherinfo, populationInfo) {
 
         <p class="todayAt">Today At</p>
 
-        <div class="next-temp-container">
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-        <div class="next-temp-item">
-            <p>3 AM</p>
-            <img src="./Photos/icons8-snow-96.png" alt="">
-            <h3>23</h3>
-        </div>
-    </div>
+        <div class="next-temp-container">  </div>
 
 </div>`;
 
@@ -232,14 +193,18 @@ function appendData(wheatherinfo, populationInfo) {
   let weatherImg = document.getElementById("weatherImg");
   console.log(wetherCondition);
 
+  //weather img...
   if (wetherCondition == "Haze") {
     weatherImg.src = "./Photos/haze.png";
   } else if (wetherCondition == "Clouds") {
-    weatherImg.src = "./Photos/icons8-rain-96.png";
+    weatherImg.src = "./Photos/icons8-cloud-with-lightning-96.png";
   } else if (wetherCondition == "Clear") {
     weatherImg.src = "./Photos/icons8-sun (1).svg";
+  } else if (wetherCondition == "Rain") {
+    weatherImg.src = "./Photos/icons8-rain-96.png";
   }
 
+  //  air quality...
   let airQuality = document.getElementsByClassName("airQuality")[0];
   let airQI = populationInfo.list[0].main.aqi;
   if (airQI === 1) {
@@ -258,8 +223,35 @@ function appendData(wheatherinfo, populationInfo) {
     airQuality.id = "VeryPoor";
     airQuality.innerHTML = "Very Poor";
   }
-}
 
+  // next days and hours data and temprature...
+  let nextDay = nextData.list;
+  for (let i = 0; i < nextDay.length; i++) {
+    let wetherConditionNext = nextDay[i].weather[0].main;
+    console.log(wetherConditionNext);
+    let nextWeatherImg = "./Photos/icons8-sun (1).svg";
+
+    if (wetherConditionNext == "Haze") {
+      nextWeatherImg = "./Photos/haze.png";
+    } else if (wetherConditionNext == "Clouds") {
+      nextWeatherImg = "./Photos/icons8-cloud-with-lightning-96.png";
+    } else if (wetherConditionNext == "Clear") {
+      nextWeatherImg = "./Photos/icons8-sun (1).svg";
+    } else if (wetherConditionNext == "Rain") {
+      nextWeatherImg = "./Photos/icons8-rain-96.png";
+    }
+
+    let nextTempItem = document.createElement("div");
+    nextTempItem.innerHTML = `
+        <p>${convertUnixTimestampToTime(nextData.list[i].dt)}</p>
+        <img src="${nextWeatherImg}" alt="">
+        <h2>${Math.floor(nextData.list[i].main.temp - 273.15)}°</h3>
+    `;
+    nextTempItem.className = "next-temp-item";
+    let a = document.getElementsByClassName("next-temp-container")[0];
+    a.appendChild(nextTempItem);
+  }
+}
 // Get current data;
 function getCurrentDate() {
   const months = [
@@ -299,6 +291,17 @@ function convertUnixTimestampToTimeAMPM(unixTimestamp) {
   const options = {
     hour: "numeric",
     minute: "numeric",
+    hour12: true, // Include AM or PM
+  };
+
+  return date.toLocaleTimeString("en-US", options);
+}
+
+function convertUnixTimestampToTime(unixTimestamp) {
+  const date = new Date(unixTimestamp * 1000); // Convert Unix timestamp to milliseconds
+
+  const options = {
+    hour: "numeric",
     hour12: true, // Include AM or PM
   };
 

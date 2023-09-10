@@ -228,7 +228,12 @@ body {
     border-radius: var(--radius-16);
     color: var(--on-surface);
 }
-
+#wheatherCondition{
+    color: var(--on-surface-variant);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
 .temp {
     display: flex;
     gap: 20px;
@@ -266,8 +271,10 @@ body {
 }
 
 .container-right {
-    height: 400px;
+    /* height: 400px; */
     width: 100%;
+    /* overflow-y: auto; */
+
 }
 
 .highlight-today-container {
@@ -426,10 +433,11 @@ body {
 .next-temp-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content:space-between; */
     width: 100%;
     gap: 10px;
     margin: 20px 0;
+
 }
 .next-temp-item{
     display: flex;
@@ -440,8 +448,14 @@ body {
     padding: 10px;
     border-radius: var(--radius-16);
     background: var(--surface);
+    font-weight: 800;
+    min-width: 80px;
+}
+.next-temp-item > img{
+    width: 55px;
 }
 .todayAt{
+    padding-top: 10px;
     margin: 10px 0;
     font-size: 1em;
     font-weight: 800;
