@@ -41,13 +41,13 @@
 
         justify-content: space-between;
 
-    }
+    }*/
 
     .next-temp-item {
 
         flex-grow: 1;
 
-    } */
+    }
 }
 
 @media(max-width:350px) {

@@ -15,6 +15,7 @@ thats it
 // fetch data from server;
 async function fetchData(cityName) {
   // this is end point of weather information
+  loaderAnimationStart();
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=5eae25aa1751da0dbad4a7960ec7f00d`;
   let data = await fetch(url);
   let responce = await data.json();
@@ -22,6 +23,7 @@ async function fetchData(cityName) {
   if (responce.cod == 404) {
     //city not fount----> // do some work
     console.log("city not founds");
+    loaderAnimationStop();
     cityNotFount();
   } else {
     // this is emd point of population data
@@ -32,8 +34,9 @@ async function fetchData(cityName) {
     let nextdata = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${responce.coord.lat}&lon=${responce.coord.lon}&cnt=8&appid=5eae25aa1751da0dbad4a7960ec7f00d`
     );
+    
     let nextDataRes = await nextdata.json();
-
+    loaderAnimationStop();
     appendData(responce, responcePopulationData, nextDataRes);
   }
 }
@@ -191,7 +194,7 @@ function appendData(wheatherinfo, populationInfo, nextData) {
   // change the wheather img with the condition
   let wetherCondition = wheatherinfo.weather[0].main;
   let weatherImg = document.getElementById("weatherImg");
-  console.log(wetherCondition);
+  // console.log(wetherCondition);
 
   //weather img...
   if (wetherCondition == "Haze") {
@@ -228,7 +231,7 @@ function appendData(wheatherinfo, populationInfo, nextData) {
   let nextDay = nextData.list;
   for (let i = 0; i < nextDay.length; i++) {
     let wetherConditionNext = nextDay[i].weather[0].main;
-    console.log(wetherConditionNext);
+    // console.log(wetherConditionNext);
     let nextWeatherImg = "./Photos/icons8-sun (1).svg";
 
     if (wetherConditionNext == "Haze") {
@@ -319,4 +322,13 @@ function cityNotFount() {
   </div>
   
   `;
+}
+
+
+//animation loader function...
+function loaderAnimationStart(){
+  document.getElementById('loading-animation-container').style.display = 'flex'
+}
+function loaderAnimationStop(){
+  document.getElementById('loading-animation-container').style.display = 'none'
 }
