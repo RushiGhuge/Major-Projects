@@ -47,7 +47,6 @@ async function fetchData3Hours() {}
 //get the location live... cordinates and call to tue successCallback with lat and lon
 function getLiveLocation() {
   // get cordinates
-  document.getElementsByClassName('location')[0]
   if ("geolocation" in navigator) {
     // Geolocation is available
     navigator.geolocation.getCurrentPosition(
@@ -58,23 +57,29 @@ function getLiveLocation() {
         console.log("Longitude: " + longitude);
         successCallback(latitude,longitude)
       },
+
       function (error) {
         // Handle any errors that occur while getting the location
         switch (error.code) {
           case error.PERMISSION_DENIED:
             console.error("User denied the request for Geolocation.");
+            alert('user denied')
             break;
           case error.POSITION_UNAVAILABLE:
             console.error("Location information is unavailable.");
+            alert('user denied')
             break;
           case error.TIMEOUT:
             console.error("The request to get user location timed out.");
+            alert('user denied')
             break;
           case error.UNKNOWN_ERROR:
             console.error("An unknown error occurred.");
+            alert('user denied')
             break;
         }
       }
+
     );
   } else {
     // Geolocation is not available in this browser
@@ -86,6 +91,7 @@ async function successCallback(lat, lon) {
   let url = `https://us1.locationiq.com/v1/reverse?key=pk.d7c2cfa8f69195f2d1c1f80eff1dece7&lat=${lat}&lon=${lon}&format=json`;
   let data = await fetch(url);
   let res = await data.json();
+  alert(res.address.city)
   fetchData(res.address.city)
 }
 
@@ -104,6 +110,7 @@ document.addEventListener("keyup", (event) => {
 });
 document.querySelector(".search > i").addEventListener("click", search);
 // this is search function that take the input value and search
+
 function search() {
   let searchIn = document.querySelector(".search > input");
   let searchINVal = searchIn.value;
@@ -113,7 +120,6 @@ function search() {
     fetchData(searchINVal);
   }
 }
-
 // append the data to the DOM;
 function appendData(wheatherinfo, populationInfo, nextData) {
   console.log(populationInfo);
