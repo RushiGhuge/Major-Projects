@@ -47,16 +47,24 @@ async function fetchData3Hours() {}
 //search
 document.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
-    let searchIn = document.querySelector(".search > input").value;
-    fetchData(searchIn);
+    let searchIn = document.querySelector(".search > input");
+    let searchINVal = searchIn.value;
+    searchIn.value = ''
+    searchIn.blur();
+    if (searchINVal.length >= 1) {
+      fetchData(searchINVal);
+    }
   }
 });
 document.querySelector(".search > i").addEventListener("click", search);
 // this is search function that take the input value and search
 function search() {
-  let searchIn = document.querySelector(".search > input").value;
-  if (searchIn.length >= 1) {
-    fetchData(searchIn);
+  let searchIn = document.querySelector(".search > input");
+  let searchINVal = searchIn.value;
+  searchIn.value = ''
+  searchIn.blur();
+  if (searchINVal.length >= 1) {
+    fetchData(searchINVal);
   }
 }
 
