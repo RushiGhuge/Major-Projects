@@ -91,9 +91,7 @@ async function successCallback(lat, lon) {
   let data = await fetch(url);
   let res = await data.json();
   if (res.address.city == undefined) {
-    alert(res.address.city);
   } else {
-    alert(res.address.city);
     fetchData(res.address.city);
   }
 }
