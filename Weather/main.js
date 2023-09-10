@@ -47,6 +47,7 @@ async function fetchData3Hours() {}
 //get the location live... cordinates and call to tue successCallback with lat and lon
 function getLiveLocation() {
   // get cordinates
+  document.getElementsByClassName('location')[0]
   if ("geolocation" in navigator) {
     // Geolocation is available
     navigator.geolocation.getCurrentPosition(
