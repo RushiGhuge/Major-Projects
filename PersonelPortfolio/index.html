@@ -1,381 +1,412 @@
 <!DOCTYPE html>
-<html lang="en" >
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rushikes Ghuge | Front-End dev</title>
-        <link rel="icon" href="./Rushi-removebg-preview.png">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./mobile.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <script src="https://kit.fontawesome.com/a6a0cd4ae6.js"
-            crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <!-- nav bar section  -->
-        <nav class="navbar" id="navBar">
-            <div class="left-nav">
-                <h2 onclick="scrollNow(0,0)">Rushi.dev</h2>
-            </div>
-            <div class="right-nav">
-                <div class="navMenu" onclick="scrollNow(0,0)" >Home</div>
-                <div class="navMenu" onclick="scrollNow(0,600)" >About</div>
-                <div class="navMenu" onclick="scrollNow(0,2400)" >Projects</div>
-                <div class="navMenu" onclick="scrollNow(0,4500)" >Contacts</div>
-                <!-- <label id="label-dark" for="Theme"><i class="fa-solid fa-circle-half-stroke"></i></label> -->
+<html lang="en">
 
-                    <div class = 'toggle-switch'>
-                        <label>
-                            <input type = 'checkbox' >
-                            <span class = 'slider'></span>
-                        </label>
-                        <a href = 'https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
-                        </a>
-                    </div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikes Ghuge | Front-End dev</title>
+    <link rel="icon" href="./Rushi-removebg-preview.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a6a0cd4ae6.js" crossorigin="anonymous"></script>
+</head>
 
-            <div onclick="DisplayNavBar()" id="hand-burger-icon"
-                class="hand-burger">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+<body>
+    <!-- nav bar section  -->
+    <nav class="navbar" id="navBar">
+        <div class="left-nav">
+            <h2 onclick="scrollNow(0,0)">Rushi.dev</h2>
+        </div>
+        <div class="right-nav">
+            <div class="navMenu" onclick="scrollNow(0,0)">Home</div>
+            <div class="navMenu" onclick="scrollNow(0,600)">About</div>
+            <div class="navMenu" onclick="scrollNow(0,2400)">Projects</div>
+            <div class="navMenu" onclick="scrollNow(0,4500)">Contacts</div>
+            <!-- <label id="label-dark" for="Theme"><i class="fa-solid fa-circle-half-stroke"></i></label> -->
 
-        </nav>
-
-        <div id="mobileNav">
-            <i onclick="closeNav()" class="fa-solid fa-xmark"></i>
-            <div id="mobile-nav-menu">
-                <div onclick="scrollNow(0,0),closeNav()" >Home</div>
-                <div onclick="scrollNow(0,1100),closeNav()" >About</div>
-                <div onclick="scrollNow(0,2100),closeNav()" >Projects</div>
-                <div onclick="scrollNow(0,4300),closeNav()" >Contacts</div>
-
-                <div class = 'toggle-switch2'>
-                    <label>
-                        <input type = 'checkbox'>
-                        <span class = 'slider'></span>
-                    </label>
-                    <a href = 'https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
-                    </a>
-                </div>
+            <div class='toggle-switch'>
+                <label>
+                    <input type='checkbox'>
+                    <span class='slider'></span>
+                </label>
+                <a href='https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
+                </a>
             </div>
         </div>
 
-        <!-- this is hero section  -->
-        <div class="hero-container-main">
-            <div class="hero-main">
-                <div class="hero-text">
-                    <div class="hero-heading">
-                        <h1 id="textColor">Front-End Developer <span id="hand-shake">🖐️</span>
-                        </h1>
-    
-                    </div>
-                    <p class="ParaTxtColorDark">Hi, I'm Rushikesh Ghuge. A
-                        passionate Front-end Developer. 📍</p>
-                    <div class="share-icon">
-                        <a class="ParaTxtColorDark"
-                            href="https://www.linkedin.com/in/rushikeshghuge/"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a class="ParaTxtColorDark" href="#"> <i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
-              
-                    <div class="hero-img">
-                    </div>
-                
-            </div>
-    
-            <div class="techStack">
-                <h3 class="ParaTxtColorDark">Tech Stack | </h3>
-                <div class="logos">
-                    <ul>
-                        <li><img
-                                src="https://stefantopalovicdev.vercel.app/static/media/html.6e7b1b463015c056aeb9a624c8dc2876.svg"
-                                alt></li>
-                        <li><img
-                                src="https://stefantopalovicdev.vercel.app/static/media/css3.9cecabbf6ce67609c48bc4f280a11002.svg"
-                                alt></li>
-                        <li><img
-                                src="https://stefantopalovicdev.vercel.app/static/media/javascript.de4c2594613e34b15666206bbede7327.svg"
-                                alt></li>
-                        <li><img
-                                src="https://stefantopalovicdev.vercel.app/static/media/react.afac9c43724070bf6674f2692b7356a9.svg"
-                                alt></li>
-                    </ul>
-                </div>
-            </div>
+        <div onclick="DisplayNavBar()" id="hand-burger-icon" class="hand-burger">
+            <i class="fa-solid fa-bars"></i>
         </div>
 
-        <!-- this is about me section  -->
-        <div id="aboutSec" class="about-section">
-            <div class="about-img">
-                <img src="./7040859.jpg" alt="">
-            </div>
-            <div class="about-text">
-                <h3 id="aboutme">ABOUT ME</h3>
-                <h3 id="head-ab">A dedicated Front-end Developer😎</h3>
-                <p id="para-ab">As a Front-End Developer, I possess an impressive arsenal of
-                    skills in HTML, CSS and JavaScript. I excel in designing and
-                    maintaining responsive websites that offer a smooth user
-                    experience. My expertise lies in crafting dynamic, engaging
-                    interfaces through writing clean and optimized code and
-                    utilizing cutting-edge development tools and techniques. I
-                    am also a team player who thrives in collaborating with
-                    cross-functional teams to produce outstanding web
-                    applications.</p>
+    </nav>
+
+    <!-- this is mobile nav use when user is in mobile view  -->
+    <div id="mobileNav">
+        <i onclick="closeNav()" class="fa-solid fa-xmark"></i>
+        <div id="mobile-nav-menu">
+            <div onclick="scrollNow(0,0),closeNav()">Home</div>
+            <div onclick="scrollNow(0,1100),closeNav()">About</div>
+            <div onclick="scrollNow(0,2100),closeNav()">Projects</div>
+            <div onclick="scrollNow(0,4300),closeNav()">Contacts</div>
+
+            <div class='toggle-switch2'>
+                <label>
+                    <input type='checkbox'>
+                    <span class='slider'></span>
+                </label>
+                <a href='https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y'>
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- ************************* -->
-        <section class="timeLine-container">
-            <section class="timeLine">
-                <div class="container left-amc">
-                    <img src="./rushi-cartoon-removebg-preview (1).png" alt="">
-    
-                    <div class="text-box">
-                        <h2>About me</h2>
-                        <!-- <small>2019 - 2020</small> -->
-                        <p>Hello! I am Rushikesh Ghuge, a passionate frontend developer and recent engineering graduate with a keen interest in web development and user interface design. I am enthusiastic about creating engaging and visually appealing web experiences that enhance user interactions.
-                        </p>
-                        <span class="left-container-arrow"></span>
-                    </div>
+    <!-- this is hero section  -->
+    <div class="hero-container-main">
+        <div class="hero-main">
+            <div class="hero-text">
+                <div class="hero-heading">
+                    <h1 id="textColor">Front-End Developer <span id="hand-shake">🖐️</span>
+                    </h1>
+
                 </div>
-                
-                <div class="container right-amc">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-5cRHp-gF-wEY4WpsMWUujM_Wama1d2GXSA" alt="">
-                    <div class="text-box">
-                        <h2>12th Standard</h2>
-                        <small>2016 - 2018</small>
-                        <p>Completed 12th standard at Shiv Chatrapati College in Aurangabad, India, showcasing academic excellence and a strong foundation for further studies.
-                        </p>
-                        <span class="right-container-arrow"></span>
-                    </div>
+                <p class="ParaTxtColorDark">Hi, I'm Rushikesh Ghuge. A
+                    passionate Front-end Developer. 📍</p>
+                <div class="share-icon">
+                    <a class="ParaTxtColorDark" href="https://www.linkedin.com/in/rushikeshghuge/"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a class="ParaTxtColorDark" href="#"> <i class="fa-brands fa-github"></i></a>
                 </div>
-    
-                <div class="container  left-amc">
-                    <img src="https://gpabad.ac.in/wp-content/uploads/2021/01/logo-1.png" alt="">
-    
-                    <div class="text-box">
-                        <h2>Diploma in ETC</h2>
-                        <small>2018 - 2020</small>
-                        <p>Pursued a diploma in Electronics and Telecommunication Engineering at the Government College of Aurangabad—an autonomous university, gaining specialized knowledge in the field of ETC.
-                        </p>
-                        <span class="left-container-arrow"></span>
-                    </div>
+            </div>
+
+            <div class="hero-img">
+            </div>
+
+        </div>
+
+        <div class="techStack">
+            <h3 class="ParaTxtColorDark">Tech Stack | </h3>
+            <div class="logos">
+                <ul>
+                    <li><img src="https://stefantopalovicdev.vercel.app/static/media/html.6e7b1b463015c056aeb9a624c8dc2876.svg"
+                            alt></li>
+                    <li><img src="https://stefantopalovicdev.vercel.app/static/media/css3.9cecabbf6ce67609c48bc4f280a11002.svg"
+                            alt></li>
+                    <li><img src="https://stefantopalovicdev.vercel.app/static/media/javascript.de4c2594613e34b15666206bbede7327.svg"
+                            alt></li>
+                    <li><img src="https://stefantopalovicdev.vercel.app/static/media/react.afac9c43724070bf6674f2692b7356a9.svg"
+                            alt></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- this is about me section  -->
+    <div id="aboutSec" class="about-section">
+        <div class="about-img">
+            <img src="./7040859.jpg" alt="">
+        </div>
+        <div class="about-text">
+            <h3 id="aboutme">ABOUT ME</h3>
+            <h3 id="head-ab">A dedicated Front-end Developer😎</h3>
+            <p id="para-ab">As a Front-End Developer, I possess an impressive arsenal of
+                skills in HTML, CSS and JavaScript. I excel in designing and
+                maintaining responsive websites that offer a smooth user
+                experience. My expertise lies in crafting dynamic, engaging
+                interfaces through writing clean and optimized code and
+                utilizing cutting-edge development tools and techniques. I
+                am also a team player who thrives in collaborating with
+                cross-functional teams to produce outstanding web
+                applications.</p>
+        </div>
+    </div>
+
+    <!-- ************************* -->
+    <section class="timeLine-container">
+        <section class="timeLine">
+            <div class="container left-amc">
+                <img src="./rushi-cartoon-removebg-preview (1).png" alt="">
+
+                <div class="text-box">
+                    <h2>About me</h2>
+                    <!-- <small>2019 - 2020</small> -->
+                    <p>Hello! I am Rushikesh Ghuge, a passionate frontend developer and recent engineering graduate with
+                        a keen interest in web development and user interface design. I am enthusiastic about creating
+                        engaging and visually appealing web experiences that enhance user interactions.
+                    </p>
+                    <span class="left-container-arrow"></span>
                 </div>
-    
-                <div class="container right-amc">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcz6C3lJBaYM7aq4T1pvmid0eM1WUM1llfog" alt="">
-                    <div class="text-box">
-                        <h2>B.E. in ETC</h2>
-                        <small>2020 - 2023</small>
-                        <p>Successfully completed a Bachelor's in Electronics and Telecommunication Engineering from JSPM ICoER, Pune, India, demonstrating dedication and proficiency in engineering concepts and practices.
-                        </p>
-                        <span class="right-container-arrow"></span>
-    
-                    </div>
+            </div>
+
+            <div class="container right-amc">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-5cRHp-gF-wEY4WpsMWUujM_Wama1d2GXSA"
+                    alt="">
+                <div class="text-box">
+                    <h2>12th Standard</h2>
+                    <small>2016 - 2018</small>
+                    <p>Completed 12th standard at Shiv Chatrapati College in Aurangabad, India, showcasing academic
+                        excellence and a strong foundation for further studies.
+                    </p>
+                    <span class="right-container-arrow"></span>
                 </div>
-    
-                <div class="container  left-amc">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9H5qD-5Ay9jvtEOEk0jOqAVjE4Z7hUSqK8YLK_qVsA&s" alt="">
-                    <div class="text-box">
-                        <h2>Acciojob Course (DSA & Frontend):</h2>
-                        <small>2023 - now</small>
-                        <p>Currently enrolled in the Acciojob course, which focuses on learning Data Structures and Algorithms (DSA) and frontend skills. The course reflects a commitment to enhancing technical expertise and staying updated with industry-relevant skills.
-                        </p>
-                        <span class="left-container-arrow"></span>
-                    </div>
+            </div>
+
+            <div class="container  left-amc">
+                <img src="https://gpabad.ac.in/wp-content/uploads/2021/01/logo-1.png" alt="">
+
+                <div class="text-box">
+                    <h2>Diploma in ETC</h2>
+                    <small>2018 - 2020</small>
+                    <p>Pursued a diploma in Electronics and Telecommunication Engineering at the Government College of
+                        Aurangabad—an autonomous university, gaining specialized knowledge in the field of ETC.
+                    </p>
+                    <span class="left-container-arrow"></span>
                 </div>
-          </section>
+            </div>
+
+            <div class="container right-amc">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcz6C3lJBaYM7aq4T1pvmid0eM1WUM1llfog"
+                    alt="">
+                <div class="text-box">
+                    <h2>B.E. in ETC</h2>
+                    <small>2020 - 2023</small>
+                    <p>Successfully completed a Bachelor's in Electronics and Telecommunication Engineering from JSPM
+                        ICoER, Pune, India, demonstrating dedication and proficiency in engineering concepts and
+                        practices.
+                    </p>
+                    <span class="right-container-arrow"></span>
+
+                </div>
+            </div>
+
+            <div class="container  left-amc">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9H5qD-5Ay9jvtEOEk0jOqAVjE4Z7hUSqK8YLK_qVsA&s"
+                    alt="">
+                <div class="text-box">
+                    <h2>Acciojob Course (DSA & Frontend):</h2>
+                    <small>2023 - now</small>
+                    <p>Currently enrolled in the Acciojob course, which focuses on learning Data Structures and
+                        Algorithms (DSA) and frontend skills. The course reflects a commitment to enhancing technical
+                        expertise and staying updated with industry-relevant skills.
+                    </p>
+                    <span class="left-container-arrow"></span>
+                </div>
+            </div>
         </section>
-     
-        <!-- projects sections  put your projects hear -->
+    </section>
 
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
+    <!-- projects sections  put your projects hear -->
 
-        <section class="projects-container">
-            <div id="ProHead" class="project-head">
-                <h3>PORTFOLIO</h3>
-                <h1>Each project is a unique piece of development 🧩</h1>
-            </div>
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
 
-            <!-- projects card 
+    <section class="projects-container">
+        <div id="ProHead" class="project-head">
+            <h3>PORTFOLIO</h3>
+            <h1>Each project is a unique piece of development 🧩</h1>
+        </div>
+
+        <!-- projects card 
                 add projects hear in projects card class only........
                 first 1:
             -->
-            
-           <!-- projects lists -->  
 
-           <!-- 1 -->
-            <div class="project-card odd">
+        <!-- projects lists -->
 
-                <div class="project-img">
-                    <img src="./youtube2 (1).jpg" alt>
-                </div>
-
-                <div class="project-content">
-                    <h2 id="youtube">YouTube Clone <img src="./svg/icons8-youtube.svg" alt=""></h2>
-                    <p>One of my recent accomplishments is the creation of a dynamic YouTube integration function. This function seamlessly integrates with the YouTube API to enhance user experiences and deliver real-time content.
-                    </p>
-                    <div class="project-card-buttons">
-                        <p>HTML5</p>
-                        <p>CSS3</p>
-                    </div>
-
-                    <div class="project-cart-demo">
-                        <a target="_blank"
-                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/YouTube">Code
-                            <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank"
-                            href="https://rushighuge.github.io/Major-Projects/YouTube/index.html">Live
-                            Demo <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
+        <!-- 1 -->
+        <div class="project-card odd">
+            <div class="project-img">
+                <img src="./youtube2 (1).jpg" alt>
             </div>
 
-            <!-- 2 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h2>Car Rental 🚗</h2>
-                    <p>Through my expertise in web development, I've crafted a
-                        visually appealing and user-friendly online pizza
-                        restaurant website, providing a delightful browsing
-                        experience and making ordering your favorite pizzas a
-                        breeze.</p>
-                    <div class="project-card-buttons">
-                        <p>HTML5</p>
-                        <p>CSS3</p>
-                    </div>
-
-                    <div class="project-cart-demo">
-                        <a target="_blank"
-                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Car-Rental"
-                            target="_blank">Code <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank"
-                            href="https://rushighuge.github.io/Major-Projects/Car-Rental/index.html"
-                            target="_blank">Live Demo <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
+            <div class="project-content">
+                <h2 id="youtube">YouTube Clone <img src="./svg/icons8-youtube.svg" alt=""></h2>
+                <p>One of my recent accomplishments is the creation of a dynamic YouTube integration function. This
+                    function seamlessly integrates with the YouTube API to enhance user experiences and deliver
+                    real-time content.
+                </p>
+                <div class="project-card-buttons">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
+                    <p>Vanilla JS</p>
                 </div>
 
-                <div class="project-img">
-                    <img
-                        src="./screencapture-rushighuge-github-io-Major-Projects-Car-Rental-index-html-2023-07-11-10_14_50.png"
-                        alt>
+                <div class="project-cart-demo">
+                    <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/YouTube">Code
+                        <i class="fa-brands fa-github"></i></a>
+                    <a target="_blank" href="https://rushighuge.github.io/Major-Projects/YouTube/index.html">Live
+                        Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
 
-            <!-- 3 -->
-            <div class="project-card odd">
+        </div>
 
-                <div class="project-img">
-                    <img src="./amazon-clone.png" alt>
+        <!-- 2 -->
+        <div class="project-card">
+            <div class="project-content">
+                <h2>Car Rental 🚗</h2>
+                <p>Through my expertise in web development, I've crafted a
+                    visually appealing and user-friendly online pizza
+                    restaurant website, providing a delightful browsing
+                    experience and making ordering your favorite pizzas a
+                    breeze.</p>
+                <div class="project-card-buttons">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
                 </div>
 
-                <div class="project-content">
-                    <h2>Amozon Clone 🛒</h2>
-                    <p>I've crafted a unique Amazon replica that captures the
-                        essence of online shopping, delivering a seamless user
-                        experience through modern technology</p>
-                    <div class="project-card-buttons">
-                        <p>HTML5</p>
-                        <p>CSS3</p>
-                    </div>
-
-                    <div class="project-cart-demo">
-                        <a target="_blank"
-                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Amazone">Code
-                            <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank"
-                            href="https://rushighuge.github.io/Major-Projects/Amazone/index.html">Live
-                            Demo <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- 4 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h2>Pizza Hut 🍕</h2>
-                    <p>Through my expertise in web development, I've crafted a
-                        visually appealing and user-friendly online pizza
-                        restaurant website, providing a delightful browsing
-                        experience and making ordering your favorite pizzas a
-                        breeze.</p>
-                    <div class="project-card-buttons">
-                        <p>HTML5</p>
-                        <p>CSS3</p>
-                    </div>
-
-                    <div class="project-cart-demo">
-                        <a target="_blank"
-                            href="https://github.com/RushiGhuge/Major-Projects/tree/main/Pizza-Restauarant-Cotext">Code
-                            <i class="fa-brands fa-github"></i></a>
-                        <a target="_blank"
-                            href="https://rushighuge.github.io/Major-Projects/Pizza-Restauarant-Cotext/index.html">Live
-                            Demo <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-img">
-                    <img
-                        src="./screencapture-rushighuge-github-io-Projects-Pizza-Restauarant-Cotext-index-html-2023-07-09-20_45_18.png"
-                        alt>
+                <div class="project-cart-demo">
+                    <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Car-Rental"
+                        target="_blank">Code <i class="fa-brands fa-github"></i></a>
+                    <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Car-Rental/index.html"
+                        target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
 
-            
-
-        </section>
-
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
-        <!-- ********************************************************************************************************* -->
-
-        <!-- this is footer section  -->
-        <footer id="footer">
-            <div class="contact-head">
-                <h3>Contact</h3>
-                <h1  class="center footerHeading">Don't be shy! Hit me up! 👇</h1>
+            <div class="project-img">
+                <img src="./screencapture-rushighuge-github-io-Major-Projects-Car-Rental-index-html-2023-07-11-10_14_50.png"
+                    alt>
             </div>
-            <div class="locationn-mail">
-                <div class="box">
-                    <div class="circle">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="rows">
-                        <h3>Location</h2>
+        </div>
+
+        <!-- 3 -->
+        <div class="project-card odd">
+            <div class="project-img notFull">
+                <img src="./img/screencapture-rushighuge-github-io-Major-Projects-Weather-index-html-2023-09-11-20_31_55.jpg"
+                    alt>
+            </div>
+
+            <div class="project-content">
+                <h2>Weather App ☀️ </h2>
+                <p>I created a dynamic weather app using the OpenWeather API, offering real-time weather data for global
+                    cities with search, air quality, and sunrise/sunset features. Demonstrating skills in HTML, CSS,
+                    JavaScript, and API integration, it ensures users stay weather-informed.</p>
+                <div class="project-card-buttons">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
+                    <p>Vanilla JS</p>
+                </div>
+
+                <div class="project-cart-demo">
+                    <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Weather"
+                        target="_blank">Code <i class="fa-brands fa-github"></i></a>
+                    <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Weather/index.html#"
+                        target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="project-card">
+            <div class="project-content">
+                <h2>Pizza Hut 🍕</h2>
+                <p>Through my expertise in web development, I've crafted a
+                    visually appealing and user-friendly online pizza
+                    restaurant website, providing a delightful browsing
+                    experience and making ordering your favorite pizzas a
+                    breeze.</p>
+                <div class="project-card-buttons">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
+                </div>
+
+                <div class="project-cart-demo">
+                    <a target="_blank"
+                        href="https://github.com/RushiGhuge/Major-Projects/tree/main/Pizza-Restauarant-Cotext">Code
+                        <i class="fa-brands fa-github"></i></a>
+                    <a target="_blank"
+                        href="https://rushighuge.github.io/Major-Projects/Pizza-Restauarant-Cotext/index.html">Live
+                        Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="project-img">
+                <img src="./screencapture-rushighuge-github-io-Projects-Pizza-Restauarant-Cotext-index-html-2023-07-09-20_45_18.png"
+                    alt>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="project-card odd">
+
+            <div class="project-img">
+                <img src="./amazon-clone.png" alt>
+            </div>
+
+            <div class="project-content">
+                <h2>Amozon Clone 🛒</h2>
+                <p>I've crafted a unique Amazon replica that captures the
+                    essence of online shopping, delivering a seamless user
+                    experience through modern technology</p>
+                <div class="project-card-buttons">
+                    <p>HTML5</p>
+                    <p>CSS3</p>
+                </div>
+
+                <div class="project-cart-demo">
+                    <a target="_blank" href="https://github.com/RushiGhuge/Major-Projects/tree/main/Amazone">Code
+                        <i class="fa-brands fa-github"></i></a>
+                    <a target="_blank" href="https://rushighuge.github.io/Major-Projects/Amazone/index.html">Live
+                        Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
+    <!-- ********************************************************************************************************* -->
+
+    <!-- this is footer section  -->
+    <footer id="footer">
+        <div class="contact-head">
+            <h3>Contact</h3>
+            <h1 class="center footerHeading">Don't be shy! Hit me up! 👇</h1>
+        </div>
+        <div class="locationn-mail">
+            <div class="box">
+                <div class="circle">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="rows">
+                    <h3>Location</h2>
                         <p>Pune, India</p>
-                    </div>
                 </div>
-
-                <div class="box">
-                    <div class="circle">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div class="rows">
-                        <h3>Mail</h2>
-                        <p id="mail">rushikeshghuge993@gmail.com</p>
-                    </div>
-                </div>
-
             </div>
-        </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="./script.js">
 
-        </script>
+            <div class="box">
+                <div class="circle">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="rows">
+                    <h3>Mail</h2>
+                        <p id="mail">rushikeshghuge993@gmail.com</p>
+                </div>
+            </div>
 
-    </body>
+        </div>
+    </footer>
+
+    <!-- close the body  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js">
+
+    </script>
+
+</body>
+
 </html>

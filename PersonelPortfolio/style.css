@@ -461,6 +461,7 @@ body {
     height: 100%;
     transition: 8s all ease;
     cursor: pointer;
+
     &:hover {
       object-position: bottom;
     }
