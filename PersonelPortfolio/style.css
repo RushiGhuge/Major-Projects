@@ -224,8 +224,7 @@ body {
 }
 .hero-container-main{
     width: 100vw;
-    /* height: 100vh; */
-    padding-top:30px ;
+    padding-top:0px ;
 }
 .hero-img {
     width: 22rem;
@@ -392,7 +391,9 @@ body {
     display: flex;
     align-items: center;
 }
-
+.box img{
+    width: 35px;
+}
 
 /* projects sections  */
 .projects-container {
@@ -743,3 +744,17 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #7c7c7c;
   }
+
+  /* copyright section at footer  */
+  .copy-right-section{
+    background: #2D2E32;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+.copy-right-section i{
+    color: white;
+}
