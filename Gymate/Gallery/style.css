@@ -13,3 +13,40 @@ body{
     align-items: end;
     justify-content: center;
 }
+
+.gallery-container{
+    width: 90%;
+    /* background: red; */
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}   
+.gallery-container > img{
+    width: 30%
+}
+#img-slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+#img-slider > button{
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+    background: transparent;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    transition: 0.3s;
+
+    &:hover{
+        background:#FF0336;
+        color: white;
+        border: none;
+    }
+}
