@@ -16,7 +16,6 @@ body{
 
 .gallery-container{
     width: 90%;
-    /* background: red; */
     margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +24,7 @@ body{
     align-items: center;
 }   
 .gallery-container > img{
-    width: 30%
+    width: 350px
 }
 #img-slider{
     width: 100%;
@@ -48,5 +47,12 @@ body{
         background:#FF0336;
         color: white;
         border: none;
+    }
+}
+
+
+@media(max-width:400px){
+    .gallery-container > img{
+        width: 100%
     }
 }
