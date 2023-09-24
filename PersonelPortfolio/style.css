@@ -16,9 +16,11 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-.left-nav > h2{
+
+.left-nav>h2 {
     cursor: pointer;
 }
+
 .navbar {
     position: fixed;
     top: 0;
@@ -32,9 +34,11 @@ body {
     z-index: 200;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.navMenu{
-   cursor:pointer;
+
+.navMenu {
+    cursor: pointer;
 }
+
 .right-nav {
     display: flex;
     padding-right: 60px;
@@ -72,7 +76,7 @@ body {
     right: 0;
     z-index: 300;
     transform: translate(-100%);
-    transition: all 0.2s ease-out   ;
+    transition: all 0.2s ease-out;
 }
 
 
@@ -108,39 +112,40 @@ body {
 .toggle-switch {
     position: relative;
     width: 70px;
-  }
-  .toggle-switch2 {
+}
+
+.toggle-switch2 {
     position: relative;
     width: 70px;
-  }
-  
-  label {
+}
+
+label {
     position: absolute;
     width: 50px;
     height: 30px;
     background-color: var(--dark);
     border-radius: 100px;
     cursor: pointer;
-  }
-  
-  input {
+}
+
+input {
     position: absolute;
     display: none;
-  }
-  
-  .slider {
+}
+
+.slider {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50px;
     transition: 0.3s;
-  }
-  
-  input:checked ~ .slider {
+}
+
+input:checked~.slider {
     background-color: var(--light);
-  }
-  
-  .slider::before {
+}
+
+.slider::before {
     content: "";
     position: absolute;
     top: 5px;
@@ -151,14 +156,14 @@ body {
     box-shadow: inset 6px -4px 0px 0px var(--light);
     background-color: var(--dark);
     transition: 0.2s;
-  }
-  
-  input:checked ~ .slider::before {
+}
+
+input:checked~.slider::before {
     transform: translateX(20px);
     background-color: var(--dark);
     box-shadow: none;
-  }
-  
+}
+
 /* bus  */
 #Themes {
     border: none;
@@ -219,13 +224,15 @@ body {
 
 .share-icon a {
     text-decoration: none;
-    color: black;
+    color: rgb(69, 69, 69);
 }
-.hero-container-main{
+
+.hero-container-main {
     width: 100vw;
     padding-bottom: 50px;
-    padding-top:0px ;
+    padding-top: 0px;
 }
+
 .hero-img {
     width: 22rem;
     height: 22rem;
@@ -237,7 +244,7 @@ body {
     border: 3px solid black;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     -webkit-animation: morfh 7s ease-in-out infinite;
-    filter:grayscale(5%);
+    filter: grayscale(5%);
     /* filter: drop-shadow(10px 10px 10px rgb(27, 27, 27)); */
 }
 
@@ -391,7 +398,8 @@ body {
     display: flex;
     align-items: center;
 }
-.box img{
+
+.box img {
     width: 35px;
 }
 
@@ -447,7 +455,7 @@ body {
     min-width: auto;
     overflow-y: hidden;
     position: relative;
-    background-color: hsla(0,0%,46%,.2);
+    background-color: hsla(0, 0%, 46%, .2);
     transition: 1s;
 }
 
@@ -464,7 +472,7 @@ body {
     cursor: pointer;
 
     &:hover {
-      object-position: bottom;
+        object-position: bottom;
     }
 }
 
@@ -500,6 +508,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
 #youtube {
     display: flex;
     align-items: center;
@@ -507,9 +516,10 @@ body {
     gap: 15px;
 }
 
-#youtube > img{
+#youtube>img {
     width: 40px;
 }
+
 .footerHeading {
     font-size: 1.5rem;
 
@@ -540,7 +550,7 @@ body {
 /* animation time line more details  about me.---> */
 .timeLine-container {
     width: 100%;
-    background:#f9f9f971;
+    background: #f9f9f971;
     background-image: url('./pngwing.com\ \(2\).png');
     background-repeat: no-repeat;
     background-position: center;
@@ -548,7 +558,7 @@ body {
     padding: 50px 0;
     position: relative;
     overflow-x: hidden;
-    
+
 }
 
 .timeLine {
@@ -627,7 +637,7 @@ body {
     z-index: 200;
     transition: 0.4s;
     font-weight: 500;
-    
+
 }
 
 .text-box:hover {
@@ -727,26 +737,26 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #a953ca;
-    border-radius: 20px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #7c7c7c;
-  }
+}
 
-  /* copyright section at footer  */
-  .copy-right-section{
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6d6d6d;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7c7c7c;
+}
+
+/* copyright section at footer  */
+.copy-right-section {
     background: #2D2E32;
     color: white;
     padding: 40px 60px;
@@ -754,7 +764,22 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-.copy-right-section i{
+}
+
+.copy-right-section i {
     color: white;
+}
+
+
+.linkedIn,
+.gitHub {
+    transition: 0.3s;
+}
+
+.linkedIn:hover {
+    color: rgb(0, 73, 169);
+}
+
+.gitHub:hover {
+    color:black;
 }

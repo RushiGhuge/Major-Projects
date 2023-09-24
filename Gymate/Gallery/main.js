@@ -19,7 +19,8 @@ const imgs = [
 ];
 let now = 0;
 
-const galleryContainer =document.getElementsByClassName("gallery-container")[0];
+const galleryContainer =
+  document.getElementsByClassName("gallery-container")[0];
 const pageNum = document.getElementById("pageNum");
 
 // there are a two function prev and next
@@ -32,7 +33,7 @@ function prev() {
     return;
   } else {
     now--;
-    pageNum.innerHTML = `Page ${now+1}`
+    pageNum.innerHTML = `Page ${now + 1}`;
     console.log(now);
     let currentPage = imgs[now];
     console.log(currentPage);
@@ -44,6 +45,10 @@ function prev() {
       galleryContainer.appendChild(photo);
     });
   }
+  window.scrollTo({
+    top: 200,
+    behavior: "smooth",
+  });
 }
 
 function next() {
@@ -52,7 +57,7 @@ function next() {
     return;
   } else {
     now++;
-    pageNum.innerHTML = `Page ${now+1}`
+    pageNum.innerHTML = `Page ${now + 1}`;
     console.log(now);
     let currentPage = imgs[now];
     console.log(currentPage);
@@ -64,4 +69,8 @@ function next() {
       galleryContainer.appendChild(photo);
     });
   }
+  window.scrollTo({
+    top: 200,
+    behavior: "smooth",
+  });
 }

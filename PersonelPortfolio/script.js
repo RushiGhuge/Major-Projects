@@ -136,7 +136,8 @@ gsap.from(".hero-img", {
 })
 
 gsap.from(".ParaTxtColorDark, .logos li", {
-    y: 100,
+    y: 200,
+    opacity:0,
     duration: 1,
     stagger: 0.2
 })

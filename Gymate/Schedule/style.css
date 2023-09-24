@@ -1,0 +1,47 @@
+body{
+    overflow-x: hidden;
+}
+.banner {
+    width: 100vw;
+    height: 45vh;
+    background: black;
+    background-image: url(../About/banner.6fee27339c0374683aa5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: white;
+}
+
+#center-baner{
+    margin-bottom: 20px;
+}
+.main-container{
+    margin: 40px 0;
+}
+.day-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.day-container > button{
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-weight: 500;
+    color: black;
+    font-weight: bold;
+    font-size: 0.95em;
+
+    &:hover{
+        background:rgb(255, 1, 77);
+        color: white;
+        border: none;
+    }
+}
