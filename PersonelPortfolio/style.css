@@ -783,3 +783,11 @@ input:checked~.slider::before {
 .gitHub:hover {
     color:black;
 }
+.resume{
+    color: black;
+    text-decoration: none;
+}
+.resume:hover{
+    color: rgb(0, 162, 190);
+    transition: 0.3s;
+}

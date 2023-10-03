@@ -42,7 +42,7 @@ function theme(event){
             element.style.color = 'black'
         });
 
-
+        document.getElementsByClassName('resume')[0].style.color = 'black'
 
     }
     else {
@@ -79,6 +79,8 @@ function theme(event){
         document.querySelectorAll('.project-cart-demo  a').forEach(element => {
             element.style.color = 'white'
         });
+        document.getElementsByClassName('resume')[0].style.color = 'white'
+
 
     }
 }
