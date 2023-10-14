@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* reset ---------------------> */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* home container css --------------------------------------------> */
+.container {}
+
+.home-container {
+    width: 100%;
+    /* height: 100vh; */
+    height: 912px;
+    background: black;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 70px;
+}
+
+.mid-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* --------------------------------- */
+
+/* search bar css  */
+.search-bar {
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    width: 848px;
+    margin: auto;
+    border-radius: 50px;
+    padding: 8px 8px 8px 32px;
+}
+
+.search-item {
+    cursor: pointer;
+}
+
+.gray {
+    color:
+        #6B7280;
+    font-size: 1em;
+}
+
+/* home img container css ----------> */
+.home-img {
+    /* width: 80vw */
+}
+
+.home-img>img {
+    width: 100%;
+    width: Fill (1, 280px);
+    height: Fixed (640px);
+    padding: 80px;
+    border-radius: 8px;
+    gap: 24px;
+}
+
+/* discover-container atarts */
+.discover-container {
+    padding: 80px;
+}
+
+/* card-container css */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+}
+
+.cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    align-self: stretch;
+}
+.card-item{
+    color: white;
+    width: 270px;
+}
+.card-item > img{
+    width: 100%;
+}
+.card-item-info {
+    display: flex;
+    padding: 24px 16px 96px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+.card-item:nth-child(1){
+    background: #CC2D4A;
+}
+.card-item:nth-child(2){
+    background: #BC1A6E;
+}
+.card-item:nth-child(3){
+    background: #DE3151;
+}
+.card-item:nth-child(4){
+    background: #D93B30;
+}
+
+
+/* discover-airbnb css */
+
+.discover-airbnb{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.discover-airbnb-imgs{
+    display: flex;
+    gap: 20px;
+}
+.discover-img{
+    width: 50%;
+}
+.discover-img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* gift contianer start  css */
+.gift-container{
+    margin-top: 80px;
+    /* background: red; */
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.gift-info{
+    width: 25%;
+}
+.gift-info> h2{
+    font-size: 2.5em;
+    font-weight: 500;
+}
+.gift-info > button{
+    background: black;
+    color: white;
+    padding: 10px 20px ;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+.gift-img{
+    width: 60%
+}
+.gift-img > img{
+    width: 100%;
+    object-fit: cover;
+}
