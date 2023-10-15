@@ -1,0 +1,28 @@
+@media(max-width:1000px) {
+    .mid-nav {
+        display: none;
+    }
+}
+
+
+@media(max-width:900px) {}
+
+
+@media(max-width:800px) {
+    .home-container {
+        padding: 10px 30px 30px 30px;
+    }
+}
+
+
+@media(max-width:700px) {
+    .search-bar {
+        width: 100%;
+    }
+}
+
+
+@media(max-width:500px) {}
+
+
+@media(max-width:400px) {}

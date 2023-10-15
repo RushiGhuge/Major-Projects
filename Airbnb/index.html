@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airbnb</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mobile.css">
 </head>
 
 <body>
@@ -36,19 +37,19 @@
             <div class="search-bar">
                 <div class="search-item">
                     <h5>Location</h5>
-                    <span class="gray">Where are you going?</span>
+                    <input type="text" placeholder="Where are you going?">
                 </div>
                 <div class="search-item">
                     <h5>Check in</h5>
-                    <span class="gray">Add dates</span>
+                    <input type="text" placeholder="Add dates">
                 </div>
                 <div class="search-item">
                     <h5>Check out</h5>
-                    <span class="gray">Add dates</span>
+                    <input type="text" placeholder="Add dates">
                 </div>
                 <div class="search-item">
                     <h5>Guests</h5>
-                    <span class="gray">Add guests</span>
+                    <input type="text" placeholder="Add guests">
                 </div>
                 <img src="./img/Icon Button Base.svg" alt="">
             </div>
@@ -64,7 +65,7 @@
             <div class="card-container">
 
                 <div class="card-heading">
-                    <h2>Inspiration for your next trip</h2>
+                    <h2 class="heading">Inspiration for your next trip</h2>
                 </div>
 
                 <div class="cards">
@@ -105,7 +106,7 @@
 
             <div class="discover-airbnb">
 
-                <h2>Discover Airbnb Experiences</h2>
+                <h2 class="heading">Discover Airbnb Experiences</h2>
 
                 <div class="discover-airbnb-imgs">
                     <div class="discover-img">
@@ -120,17 +121,138 @@
             <!-- This is gift card section -->
             <div class="gift-container">
                 <div class="gift-info">
-                    <h2>Shop Airbnb gift cards</h2>
+                    <h2 class="heading">Shop Airbnb gift cards</h2>
                     <button>Learn</button>
                 </div>
                 <div class="gift-img">
                     <img src="./img/e0a70df6eb554b492d0b7d2633a1ecb1.jpeg" alt="">
                 </div>
             </div>
+
+            <div class="inspiration-container">
+                <h2 class="heading">Inspiration for future getaways</h2>
+
+                <div class="lables">
+                    <label class="activeLable" for="">Destinations for arts & culture</label>
+                    <label for="">Destinations for outdoor adventure</label>
+                    <label for="">Mountain cabins</label>
+                    <label for="">Beach destinations</label>
+                    <label for="">Popular destinations</label>
+                    <label for="">Unique Stays</label>
+                </div>
+
+                <div class="title-subtitle-container">
+                    <div class="title-sub-box">
+                        <h3>Phoenix</h3>
+                        <sub>Arizona</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Hot Springs</h3>
+                        <sub>Arkansas</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Los Angeles</h3>
+                        <sub>California</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>San Diego</h3>
+                        <sub>California</sub>
+                    </div>
+
+                    <div class="title-sub-box">
+                        <h3>San Francisco</h3>
+                        <sub>California</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Barcelona</h3>
+                        <sub>Catalonia</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Prague</h3>
+                        <sub>Czechia</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Washington</h3>
+                        <sub>District of Columbia</sub>
+                    </div>
+
+                    <div class="title-sub-box">
+                        <h3>Keswick</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>London</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Scarborough</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Show more</h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
     </main>
+
+    <footer class="footer">
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h2 class="heading">Support</h2>
+                <a href="">Help Center</a>
+                <a href="">Safety information</a>
+                <a href="">Cancellation options</a>
+                <a href="">Our COVID-19 Response</a>
+                <a href="">Supporting people with disabilities</a>
+                <a href="">Report a neighborhoood concern</a>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="heading">Community</h2>
+                <a href="">Airbnb.org: disaster relief housing</a>
+                <a href="">Support: Afghan refugees</a>
+                <a href="">Celebrating diversity & belonging</a>
+                <a href="">Combating discriminatino</a>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="heading">Hosting</h2>
+                <a href="">Try hosting</a>
+                <a href="">AirCover: protection for Hosts</a>
+                <a href="">Explore hosting resources</a>
+                <a href="">Visit our community forum</a>
+                <a href="">How to host responsibly</a>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="heading">About</h2>
+                <a href="#">Newsroom</a>
+                <a href="#">Learn about new features</a>
+                <a href="#">Letter from our founders</a>
+                <a href="#">Careers</a>
+                <a href="#">Investors</a>
+                <a href="#">Airbnb Luxe</a>
+            </div>
+        </div>
+
+        <div class="footer-social-container">
+            <div class="left-footer-bottom">
+                <sub>© 2022 Airbnb, Inc.</sub>
+                <sub>Privacy</sub>
+                <sub>Terms</sub>
+                <sub>Sitemap</sub>
+            </div>
+            <div class="right-footer-bottom">
+                <sub>English (US)</sub>
+                <sub>USD</sub>
+            </div>
+        </div>
+
+    </footer>
 
     <script src="./main.js"></script>
 </body>

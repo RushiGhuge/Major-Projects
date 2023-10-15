@@ -18,10 +18,13 @@ a {
 
 .home-container {
     width: 100%;
-    /* height: 100vh; */
-    height: 912px;
+    /* height: 912px; */
     background: black;
     color: white;
+    padding: 10px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .navbar {
@@ -29,13 +32,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 70px;
+    /* padding: 15px 70px; */
 }
 
 .mid-nav {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .right-nav {
@@ -54,14 +57,32 @@ a {
     align-items: center;
     justify-content: space-between;
     color: black;
-    width: 848px;
     margin: auto;
     border-radius: 50px;
-    padding: 8px 8px 8px 32px;
+    gap: 10px;
+    padding: 5px 5px 5px 32px;
 }
 
 .search-item {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.search-item>h5 {
+    font-weight: 500;
+    
+}
+
+.search-item:nth-child(1) {
+    width: 200px;
+}
+
+.search-item>input {
+    width: 100px;
+    border: none;
+    outline: none;
 }
 
 .gray {
@@ -77,9 +98,8 @@ a {
 
 .home-img>img {
     width: 100%;
-    width: Fill (1, 280px);
-    height: Fixed (640px);
-    padding: 80px;
+    /* width: Fill (1, 280px); */
+    /* height: Fixed (640px); */
     border-radius: 8px;
     gap: 24px;
 }
@@ -105,13 +125,16 @@ a {
     gap: 24px;
     align-self: stretch;
 }
-.card-item{
+
+.card-item {
     color: white;
     width: 270px;
 }
-.card-item > img{
+
+.card-item>img {
     width: 100%;
 }
+
 .card-item-info {
     display: flex;
     padding: 24px 16px 96px 16px;
@@ -120,36 +143,43 @@ a {
     gap: 8px;
     align-self: stretch;
 }
-.card-item:nth-child(1){
+
+.card-item:nth-child(1) {
     background: #CC2D4A;
 }
-.card-item:nth-child(2){
+
+.card-item:nth-child(2) {
     background: #BC1A6E;
 }
-.card-item:nth-child(3){
+
+.card-item:nth-child(3) {
     background: #DE3151;
 }
-.card-item:nth-child(4){
+
+.card-item:nth-child(4) {
     background: #D93B30;
 }
 
 
 /* discover-airbnb css */
 
-.discover-airbnb{
+.discover-airbnb {
     padding-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.discover-airbnb-imgs{
+
+.discover-airbnb-imgs {
     display: flex;
     gap: 20px;
 }
-.discover-img{
+
+.discover-img {
     width: 50%;
 }
-.discover-img > img{
+
+.discover-img>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -157,33 +187,127 @@ a {
 
 
 /* gift contianer start  css */
-.gift-container{
+.gift-container {
     margin-top: 80px;
     /* background: red; */
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
-.gift-info{
+
+.gift-info {
     width: 25%;
 }
-.gift-info> h2{
+
+.gift-info>h2 {
     font-size: 2.5em;
     font-weight: 500;
 }
-.gift-info > button{
+
+.gift-info>button {
     background: black;
     color: white;
-    padding: 10px 20px ;
+    padding: 10px 20px;
     border: none;
     border-radius: 6px;
     margin-top: 10px;
 }
-.gift-img{
+
+.gift-img {
     width: 60%
 }
-.gift-img > img{
+
+.gift-img>img {
     width: 100%;
     object-fit: cover;
+}
+
+
+/* inspiration-container  css */
+.heading {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.inspiration-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.lables {
+    display: flex;
+    gap: 20px;
+}
+
+.activeLable {
+    border-bottom: 1px solid black;
+}
+
+.title-subtitle-container {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-sub-box {
+    width: 270px;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title-sub-box>h3 {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.title-sub-box>sub {
+    color: #4B5563;
+    font-size: 0.85em;
+}
+
+
+
+/* footer section css  */
+
+.footer {
+    padding: 80px 80px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.footer-cols {
+    display: flex;
+    align-items: start;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-col>.heading {
+    font-size: 1.2em;
+}
+
+.footer-col>a {
+    color: #4B5563;
+    font-size: 0.85em;
+}
+
+.footer-social-container {
+    color: #4B5563;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
