@@ -5,55 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airbnb</title>
+    <script src="https://kit.fontawesome.com/a6a0cd4ae6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./mobile.css">
 </head>
 
 <body>
 
+
+    <nav class="navbar">
+
+        <div class="left-nav">
+            <img src="./img/Screenshot from 2023-10-16 09-09-56.png" alt="">
+        </div>
+
+        <div class="mid-nav">
+            <a href="#">Places to stay</a>
+            <a href="#">Experiences</a>
+            <a href="#">Online Experiences</a>
+        </div>
+
+        <div class="right-nav">
+            <a href="#"> Become a Host</a>
+            <i class="fa-solid fa-globe"></i>
+            <div id="userBtn">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <div class="search-item">
+                <h5>Location</h5>
+                <input type="text" placeholder="Where are you going?">
+            </div>
+            <div class="search-item">
+                <h5>Check in</h5>
+                <input type="text" placeholder="Add dates">
+            </div>
+            <div class="search-item">
+                <h5>Check out</h5>
+                <input type="text" placeholder="Add dates">
+            </div>
+            <div id="guests" class="search-item">
+                <h5>Guests</h5>
+                <input type="text" placeholder="Add guests">
+            </div>
+            <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+
     <main class="container">
         <!-- this is home main page container  -->
         <div class="home-container">
-            <nav class="navbar">
-
-                <div class="left-nav">
-                    <img src="./img/Vector.png" alt="">
-                </div>
-
-                <div class="mid-nav">
-                    <a href="#">Places to stay</a>
-                    <a href="#">Experiences</a>
-                    <a href="#">Online Experiences</a>
-                </div>
-
-                <div class="right-nav">
-                    <a href="#"> Become a Host</a>
-                    <img src="./img/globe.svg" alt="">
-                    <img src="./img/Profile Dropdown.png" alt="">
-                </div>
-
-            </nav>
-
-            <div class="search-bar">
-                <div class="search-item">
-                    <h5>Location</h5>
-                    <input type="text" placeholder="Where are you going?">
-                </div>
-                <div class="search-item">
-                    <h5>Check in</h5>
-                    <input type="text" placeholder="Add dates">
-                </div>
-                <div class="search-item">
-                    <h5>Check out</h5>
-                    <input type="text" placeholder="Add dates">
-                </div>
-                <div class="search-item">
-                    <h5>Guests</h5>
-                    <input type="text" placeholder="Add guests">
-                </div>
-                <img src="./img/Icon Button Base.svg" alt="">
-            </div>
-
             <div class="home-img">
                 <img src="./img/Big Card.png" alt="">
             </div>

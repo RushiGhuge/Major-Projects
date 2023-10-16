@@ -1,0 +1,64 @@
+  <div class="inspiration-container">
+                <h2 class="heading">Inspiration for future getaways</h2>
+
+                <div class="lables">
+                    <label class="activeLable" for="">Destinations for arts & culture</label>
+                    <label for="">Destinations for outdoor adventure</label>
+                    <label for="">Mountain cabins</label>
+                    <label for="">Beach destinations</label>
+                    <label for="">Popular destinations</label>
+                    <label for="">Unique Stays</label>
+                </div>
+
+                <div class="title-subtitle-container">
+                    <div class="title-sub-box">
+                        <h3>Phoenix</h3>
+                        <sub>Arizona</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Hot Springs</h3>
+                        <sub>Arkansas</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Los Angeles</h3>
+                        <sub>California</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>San Diego</h3>
+                        <sub>California</sub>
+                    </div>
+
+                    <div class="title-sub-box">
+                        <h3>San Francisco</h3>
+                        <sub>California</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Barcelona</h3>
+                        <sub>Catalonia</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Prague</h3>
+                        <sub>Czechia</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Washington</h3>
+                        <sub>District of Columbia</sub>
+                    </div>
+
+                    <div class="title-sub-box">
+                        <h3>Keswick</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>London</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Scarborough</h3>
+                        <sub>England</sub>
+                    </div>
+                    <div class="title-sub-box">
+                        <h3>Show more</h3>
+                    </div>
+                </div>
+            </div>

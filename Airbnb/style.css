@@ -10,7 +10,16 @@
 /* reset ---------------------> */
 a {
     text-decoration: none;
-    color: white;
+    color: gray;
+    transition: 0.3s;
+
+    &:hover {
+        color: black;
+    }
+}
+
+body {
+    /* background: black; */
 }
 
 /* home container css --------------------------------------------> */
@@ -19,8 +28,8 @@ a {
 .home-container {
     width: 100%;
     /* height: 912px; */
-    background: black;
-    color: white;
+    /* background: black; */
+    /* color: white; */
     padding: 10px 80px 80px 80px;
     display: flex;
     flex-direction: column;
@@ -32,7 +41,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    color: black;
+    padding: 17px 30px;
     /* padding: 15px 70px; */
+}
+
+.left-nav>img {
+    width: 150px;
 }
 
 .mid-nav {
@@ -44,14 +63,56 @@ a {
 .right-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+}
+.right-nav>i{
+    color: gray;
+    font-size: 1.2em;
 }
 
+#userBtn {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    border-radius: 30px;
+    display: flex;
+    gap: 10px;
+    color: gray;
+    transition: 0.2s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
 
 /* --------------------------------- */
 
 /* search bar css  */
+#searchBtn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #FF385C;
+    color: white;
+}
+
+.search-container {
+    margin: auto;
+    background: transparent;
+    position: sticky;
+    top: 10px;
+    z-index: 11;
+}
+
 .search-bar {
+    max-width: 650px;
     display: flex;
     background: white;
     align-items: center;
@@ -60,7 +121,11 @@ a {
     margin: auto;
     border-radius: 50px;
     gap: 10px;
-    padding: 5px 5px 5px 32px;
+    margin-bottom: 0px;
+    padding: 9px 9px 9px 32px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: 0.2s;
+
 }
 
 .search-item {
@@ -72,7 +137,7 @@ a {
 
 .search-item>h5 {
     font-weight: 500;
-    
+
 }
 
 .search-item:nth-child(1) {
@@ -91,6 +156,13 @@ a {
     font-size: 1em;
 }
 
+.line {
+    height: 1px;
+    width: 100vw;
+    background: rgb(196, 196, 196);
+    margin-top: 10px;
+}
+
 /* home img container css ----------> */
 .home-img {
     /* width: 80vw */
@@ -98,8 +170,7 @@ a {
 
 .home-img>img {
     width: 100%;
-    /* width: Fill (1, 280px); */
-    /* height: Fixed (640px); */
+    padding-top: 10px;
     border-radius: 8px;
     gap: 24px;
 }
@@ -120,19 +191,23 @@ a {
 
 .cards {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
-    align-self: stretch;
+    flex-wrap: wrap;
 }
 
 .card-item {
     color: white;
     width: 270px;
+    border-radius: 8px;
 }
 
 .card-item>img {
     width: 100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
 }
 
 .card-item-info {
@@ -197,15 +272,16 @@ a {
 }
 
 .gift-info {
-    width: 25%;
+    width: 200px;
 }
 
 .gift-info>h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 500;
 }
 
 .gift-info>button {
+    width: 140px;
     background: black;
     color: white;
     padding: 10px 20px;
@@ -234,12 +310,16 @@ a {
     margin-top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .lables {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
     gap: 20px;
+    text-align: center;
 }
 
 .activeLable {
@@ -255,7 +335,7 @@ a {
 }
 
 .title-sub-box {
-    width: 270px;
+    width: 240px;
     /* background: red; */
     display: flex;
     flex-direction: column;
