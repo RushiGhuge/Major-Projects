@@ -1,0 +1,277 @@
+.navbar {
+    padding: 8px 30px;
+    position: relative;
+}
+
+#searchBtn {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+}
+
+.search-mid-nav {
+    display: flex;
+    border: 1px solid black;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 30px;
+}
+
+main {
+    padding: 15px 40px;
+}
+
+.hotel-short-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left-hotel-short-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.left-hotel-short-info>p {
+    color: #6B7280;
+}
+
+.left-hotel-short-info i {
+    color: #DE3151;
+}
+
+.right-hotel-short-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+
+}
+
+.search-mid-nav>input {
+    border: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+.hotel-name>h3 {
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.hotel-imgs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    grid-template-rows: 1fr;
+    border-radius: 40px;
+    padding-top: 30px;
+}
+
+.hotel-imgs-container>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.wide {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+
+/* hotel-details-container  */
+.hotel-details-container {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+.hotel-details-page {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hotel-details-page>div {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.sleep-img {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    width: 100%;
+}
+
+.sleep-img>img {
+    width: 250px;
+    padding: 20px 0;
+}
+
+/* hotel-price-box */
+.hotel-price {
+    width: 40%;
+    /* background: rgb(236, 148, 236); */
+}
+
+.hotel-price-box {
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 1px 1px 1px black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #E5E7EB);
+    background: var(--white, #FFF);
+    /* shadow-xl */
+    box-shadow: 0px 10px 10px 0px rgba(31, 41, 55, 0.04), 0px 20px 25px 0px rgba(31, 41, 55, 0.10);
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkInOutContainer>div>input {
+    width: 100%;
+}
+
+.checkInOutContainer {
+    display: flex;
+    flex-direction: column;
+    gap: px;
+}
+
+.row-cheakHotelInOut {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkInOutContainer input {
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 10px;
+}
+
+.checkInOutContainer>input {
+    border-top: none;
+}
+
+#reserve {
+    background: #DE3151;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2em;
+    padding: 10px;
+
+}
+
+.price-chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-chart>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#totalPrice {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* details-page-name starts  */
+.details-page-name {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details-page-name-row {}
+
+.details-page-name-col {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.details-page-name-col>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.details-cols {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.row-details h3 {
+    font-weight: 500;
+}
+
+.row-details i {
+    font-size: 1.4em;
+    /* background: red; */
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-details span {
+    color: #6B7280
+}
+
+.text-details {
+    padding: 20px 0;
+}
+
+/* place-offers  */
+.place-offers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.items-offers > div {
+    min-width: 48%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.items-offers>div>i {
+    font-size: 1.3em;
+}
+
+.items-offers {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 20px;
+}
