@@ -106,7 +106,16 @@ body {
     background: #FF385C;
     color: white;
 }
-
+#searchBtnNav {
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #FF385C;
+    color: white;
+}
 .search-container {
     margin: auto;
     background: transparent;

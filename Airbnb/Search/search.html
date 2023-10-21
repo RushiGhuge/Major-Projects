@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Airbnb | Hotels</title>
+    <link rel="icon" href="../img/airbnb.svg">
     <script src="https://kit.fontawesome.com/a6a0cd4ae6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./searchStyle.css">
 </head>
 
 <body>
+    <div class="loading-container">
+        <div id="loading-bar-spinner" class="spinner">
+            <div class="spinner-icon"></div>
+        </div>
+    </div>
 
     <nav class="mainNav">
         <nav class="navbar">
@@ -20,10 +26,11 @@
             </div>
 
             <div class="search-container">
-                <p id="location">Bordeaux</p>
-                <p id="date">Feb 19-26</p>
-                <div id="guestsCount">2 guests</div>
-                <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                <input id="location" type="text" name="" id="" value="Pune" placeholder="Location">
+                <input id="checkIn"  type="date">
+                <input id="checkOuut" type="date">
+                <input id="guestCount" type="number" placeholder="Guests">
+                <i id="searchBtnNav" class="fa-solid fa-magnifying-glass"></i>
             </div>
 
             <div class="right-nav">
@@ -190,11 +197,16 @@
         </div>
 
         <div class="hotemLocation">
-            <img src="../img/Big Card.svg" alt="">
+            <!-- <img src="../img/Big Card.svg" alt=""> -->
+            <div id="map"></div>
         </div>
     </main>
 
+
     <script src="./search.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC68YR7wCXulE3yKcUE8SMw77Dz3CZvyUk&map_ids=f9508e6f111977cf&callback=initMap">
+        </script>
 </body>
 
 </html>

@@ -1,17 +1,29 @@
 // get the data from user serches anad put that into the api to fget the server request;
 const searchData = JSON.parse(localStorage.getItem("searchData"));
 console.log(searchData);
-
+// document.getElementsByTagName('title').innerHTML = `${searchData.name} | Airbnb`
 const hotelContainer = document.getElementById("hotelContainer");
+const locationNav = document.getElementById("location");
+const checkIn = document.getElementById("checkIn");
+const checkOuut = document.getElementById("checkOuut");
+const guestCount = document.getElementById("guestCount");
+
+locationNav.value = searchData.location;
+checkIn.value = searchData.checkInDate;
+checkOuut.value = searchData.checkOutDate;
+guestCount.value = searchData.guestsCount;
 
 // appendHotels();
 
-async function fetchSearchData() {
+// fetch the server requast
+async function fetchSearchData(searchData) {
+
+  document.querySelector(".loading-container").style.display = "block";
   const url = `https://airbnb13.p.rapidapi.com/search-location?location=${searchData.location}&checkin=${searchData.checkInDate}&checkout=${searchData.checkOutDate}&adults=${searchData.guestsCount}&children=0&infants=0&pets=0&page=1&currency=IN`;
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "856a334aa5mshd1a198ec96e31c0p132bf9jsn9a9c66ad13a5",
+      "X-RapidAPI-Key": "441a1d97b9msh5675a616d4712eap153470jsn64146b7fc0ea",
       "X-RapidAPI-Host": "airbnb13.p.rapidapi.com",
     },
   };
@@ -21,15 +33,18 @@ async function fetchSearchData() {
     const result = await response.json();
     console.log(result.results);
     appendHotels(result.results);
+    return result.results;
   } catch (error) {
     console.error(error);
   }
 }
 
-fetchSearchData()
+let coordinates = [];
+let mainData = fetchSearchData(searchData);
 
+// add the hotes details in container
 function appendHotels(result) {
-
+  hotelContainer.innerHTML = "";
   result.forEach((hotel) => {
     let hotelBox = document.createElement("div");
     hotelBox.className = "hotel-item";
@@ -52,98 +67,122 @@ function appendHotels(result) {
       </div>`;
     hotelContainer.appendChild(hotelBox);
 
-    hotelBox.addEventListener('click',() => {
+    hotelBox.addEventListener("click", () => {
       localStorage.setItem("detailsOfHotel", JSON.stringify(hotel));
-      window.location.href = "../Listing/listing.html";
-    })
+      // window.location.href = "../Listing/listing.html";
+      const newWindow = window.open("../Listing/listing.html", "_blank");
+    });
+  });
+  document.querySelector(".loading-container").style.display = "none";
+}
+
+// search function
+const searchBtn = document
+  .getElementById("searchBtnNav")
+  .addEventListener("click", () => {
+    console.log("hi");
+    if (locationNav == "") {
+      alert("Fill the Correct Data!");
+    } else {
+      searchData.location = locationNav.value;
+      searchData.checkInDate = checkIn.value;
+      searchData.checkOutDate = checkOuut.value;
+      searchData.guestsCount = guestCount.value;
+      console.log(searchData);
+
+      mainData = fetchSearchData(searchData);
+      initMap()
+    }
+  });
+
+// map function
+async function initMap() {
+  let map;
+
+  // get the all lat and lng obj and add the marker in map
+  mainData.then((data) => {
+    let coordinatesArr = data.map((ele) => {
+      return {
+        lat: ele.lat,
+        lng: ele.lng,
+        name: ele.name,
+        rate: ele.price.priceItems[0].amount,
+        img: ele.images[0],
+      };
+    });
+    coordinates = [...coordinatesArr];
+
+    console.log(coordinates);
+    addMarkers();
+    function addMarkers() {
+      for (var i = 0; i < coordinates.length; i++) {
+        addMarker(
+          coordinates[i],
+          coordinates[i].name,
+          coordinates[i].rate,
+          coordinates[i].img
+        );
+      }
+    }
+
+    function addMarker(position, title, rate, img) {
+      // var strokeWidth = 0;
+      // var cornerRadius = 200;
+      // var width = 50; // Adjust the width as needed
+
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: title,
+        icon: {
+          path: "M -30 -10 L 30 -10 L 30 10 L -30 10 Z", // Rectangular path
+          // path:'M -10 -10 L 10 -10 Q 10 -5 5 0 L 5 0 Q 0 5 -5 0 L -5 0 Q -10 -5 -10 -10 Z',
+
+          scale: 1,
+          fillColor: "white", // Gradient blue color
+          fillOpacity: 1,
+          strokeColor: "black",
+          strokeWeight: 1,
+        },
+        title: "Custom Marker",
+        label: {
+          text: `₹${rate}`, // Text to be displayed on the marker
+          color: "black",
+          fontSize: "16px",
+          fontWeight: "600",
+        },
+      });
+
+      // Create an InfoWindow
+      let contentString = `
+            <div class="mapMarkerCards">
+                <img src="${img}" alt="Image">
+                <b>${title}</b>
+            </div>
+            `;
+      var infoWindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 200,
+        padding: 0,
+      });
+
+      // Add click event listener to show the InfoWindow
+      marker.addListener("click", function () {
+        infoWindow.open(map, marker);
+      });
+      map.setCenter(coordinates[1]);
+      // marker.setIcon("https://cdn-icons-png.flaticon.com/128/9922/9922103.png");
+    }
+  });
+
+  let position = { lat: 20.022382672790155, lng: 76.8030744415391 };
+
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  map = new Map(document.getElementById("map"), {
+    zoom: 10,
+    center: position,
+    mapId: "f9508e6f111977cf",
   });
 }
-
-
-
-function getDetailes(){
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fetchSearchData()
-
-// results: [
-//     {
-//       id: "685327524110717071",
-//       url: "https://www.airbnb.com/rooms/685327524110717071",
-//       deeplink:
-//         "https://www.airbnb.com/rooms/685327524110717071?check_in=2023-10-21&check_out=2023-10-23&adults=1&children=0&infants=0&pets=0",
-//       position: 1,
-//       name: "Cozy By The Breeze III - 1 BHK Off Carter Road",
-//       bathrooms: 2,
-//       bedrooms: 1,
-//       beds: 1,
-//       city: "Mumbai",
-//       images: [
-//         "https://a0.muscache.com/im/pictures/637a6647-0ae1-49b6-bf46-06f3bdc640f8.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/10e76916-e2b9-4f3c-8c3f-c2ccdec60468.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/7ea983e8-e767-447e-bb6b-c40eb476a191.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/6ff6dcfe-7cb6-4b67-bb0e-17752499af55.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/4811892e-c374-436a-9e65-ef5c7435dca2.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/127e92b5-0b18-4d6c-9eb0-0691178462f6.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/d347164b-8b42-426a-ad41-7d3ca6bbf599.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/4a028f0a-2185-4a5a-aafd-c1a247c525e4.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/3c93fcfc-fb79-4e0b-b85d-b4ac60697265.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/b880a86c-d9ff-4ff2-bedf-5360066c22d9.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/4f8955f7-10fc-4911-9a15-60daecf27069.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/89b390f6-ddbd-4679-8e81-9d275076db69.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/miso/Hosting-685327524110717071/original/ebdbad54-b9f6-4cb7-bd92-9fbd7857b7e1.jpeg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/505178b4-4ff3-43c5-864c-64f62fba25ba.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/5cc07d1e-d316-4b82-ba82-14e760f6611d.jpg?im_w=720",
-//         "https://a0.muscache.com/im/pictures/060e800d-9788-4e3a-a77c-f0443d8249e1.jpg?im_w=720",
-//       ],
-//       hostThumbnail:
-//         "https://a0.muscache.com/im/pictures/user/a2d5a049-0afa-43b2-b9af-e274682fd332.jpg?aki_policy=profile_x_medium",
-//       isSuperhost: true,
-//       rareFind: true,
-//       lat: 19.065565338764802,
-//       lng: 72.8242 3,73782209,
-//       persons:
-//       reviewsCount: 36,
-//       rating: 4.97,
-//       type: "Entire serviced apartment",
-//       userId: 315524152,
-//       address: "Mumbai, Maharashtra, India",
-//       amenityIds: [
-//         1, 4, 5, 8, 137, 139, 77, 21, 23, 89, 91, 93, 94, 671, 96, 33, 674, 100,
-//         103, 167, 40, 104, 107, 44, 46, 47, 51, 308, 54, 57,
-//       ],
-//       previewAmenities: [
-//         "Air conditioning",
-//         "Wifi",
-//         "Kitchen",
-//         "Self check-in",
-//       ],
-//       cancelPolicy: "CANCEL_MODERATE",
-//       price: {
-//         rate: 71,
-//         currency: "USD",
-//         total: 141,
-//         priceItems: [
-//           { title: "$51 x 2 nights", amount: 101 },
-//           { title: "Cleaning fee", amount: 9 },
-//           { title: "Airbnb service fee", amount: 18 },
-//           { title: "Taxes", amount: 13 },
-//         ],
-//       },
-//     },
-// ]

@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Airbnb | Hotel info</title>
+    <link rel="icon" href="../img/airbnb.svg">
     <script src="https://kit.fontawesome.com/a6a0cd4ae6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./listing.css">
 </head>
 
 <body>
+
+    <div class="loading-container">
+        <div id="loading-bar-spinner" class="spinner">
+            <div class="spinner-icon"></div>
+        </div>
+    </div>
+
     <nav class="navbar">
 
         <div class="left-nav">
@@ -33,8 +41,8 @@
 
     </nav>
 
-    <main>
-        <div class="hotel-name">
+    <main id="mainHotelDetailPage">
+        <!-- <div class="hotel-name">
             <h3 class="heading">Bordeaux Getaway</h3>
         </div>
 
@@ -251,10 +259,11 @@
             </div>
         </div>
 
-        
+         -->
 
     </main>
 
+    <div id="map"></div>
 
     <footer class="footer">
         <div class="footer-cols">
@@ -312,6 +321,9 @@
     </footer>
 
     <script src="./listing.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC68YR7wCXulE3yKcUE8SMw77Dz3CZvyUk&map_ids=f9508e6f111977cf&callback=initMap">
+        </script>
 </body>
 
 </html>
