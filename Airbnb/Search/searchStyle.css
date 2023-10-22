@@ -84,6 +84,7 @@
 
 #hotelContainer {
     min-width: 700px;
+    max-width: 700px;
     display: flex;
     /* align-items: center; */
     flex-direction: column;
@@ -99,13 +100,24 @@
     border-bottom: 1px solid #cfcfcf;
     padding: 10px;
     cursor: pointer;
-
+    animation: hotel 0.5s ease-in-out;
+}
+@keyframes hotel{
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 .hotel-img {
     max-width: 300px;
     min-width: 300px;
     height: 200px;
+    overflow: hidden;
 }
 
 .hotel-img>img {
@@ -113,6 +125,11 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: 0.3s;
+
+    &:hover{
+        scale: 1.05;
+    }
 }
 
 .hotel-info {
@@ -210,6 +227,8 @@
 #notFoundImg > img{
     width: 60%;
     object-fit: cover;
+    animation: hotel 0.5s ease-in-out;
+
 }
 
 select {
@@ -236,7 +255,8 @@ select {
 
   .checked{
     background-color: #a7ebb0; /* For example, change the background color of the container */
-
+    background: #d8ebe4;
+    transition: 0.1s ease-in-out;
   }
   input[type="checkbox"] {
     /* Default styles for unchecked checkboxes */
@@ -274,8 +294,10 @@ select {
 
     #hotelContainer {
         min-width: 100%;
-        height: fit-content;
-        overflow: hidden;
+        max-width: auto;
+        /* height: fit-content; */
+        /* overflow: scroll; */
+        /* position: relative; */
         /* background: red; */
     }
 
@@ -315,7 +337,7 @@ select {
         justify-content: center;
         align-items: center;
     }
-
+    
     .hotel-img {
         width: 100%;
     }
@@ -323,6 +345,8 @@ select {
     .hotel-img>img {
         width: 100%;
         object-fit: cover;
+
+      
     }
 
     .hotel-info {

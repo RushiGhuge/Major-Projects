@@ -55,7 +55,7 @@
 
         <div class="filter-section">
             <div class="filter-box">
-                <select onchange="sortByPrice(this)" name="" id="price-filter">
+                <select onchange="filterByPrice(this)" name="" id="price-filter">
                     <!-- {"min":100,"max":1000} -->
                     <option value="{&quot;min&quot;: 0, &quot;max&quot;: 1000000}">All Price</option>
                     <option value="{&quot;min&quot;: 0, &quot;max&quot;: 1000}">Under ₹1000</option>
@@ -110,6 +110,29 @@
                 </select>
             </div>
 
+            <div class="filter-box">
+                <select name="" onchange="sortByPrice(this)" id="sortPrice">
+                    <option value="">Price Sort</option>
+                    <option value="low-high">Low - High</option>
+                    <option value="high-low">High - Low</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <select name="" onchange="sortByRatings(this)" id="sortRating">
+                    <option value="">Sort By Rating</option>
+                    <option value="low-high">Rating (1 - 5)</option>
+                    <option value="high-low">Rating (5 - 1)</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <select name="" onchange="sortByReviews(this)" id="sortRating">
+                    <option value="">Sort By Rating</option>
+                    <option value="low-high">Reviews L-H</option>
+                    <option value="high-low">Reviews H-L</option>
+                </select>
+            </div>
 
             <label class="filter-box" for="WifiCheckbox">
                 <input type="checkbox" id="WifiCheckbox"> Wifi

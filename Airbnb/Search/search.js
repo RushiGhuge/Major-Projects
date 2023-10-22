@@ -4,10 +4,6 @@ const notFoundImg = document.getElementById("notFoundImg");
 
 console.log(searchData);
 
-
-
-
-
 // function wifiFilterFun() {
 //   if (wifiFilter.checked) {
 //     let data = filterData.filter((ele) => {
@@ -228,7 +224,7 @@ let optionPriceF = document.getElementById("price-filter");
 let optionTypeF = document.getElementById("type-filter");
 
 // sort by price function...
-function sortByPrice(price) {
+function filterByPrice(price) {
   const priceObj = JSON.parse(price.value); // str to obj
 
   mainData.then((data) => {
@@ -283,7 +279,6 @@ checkboxes.forEach((checkbox) => {
     const selectedAmenities = Array.from(checkboxes)
       .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.id.replace("Checkbox", ""));
-    console.log(selectedAmenities);
     // filter by the properties...
     filterPropertiesByAmenities(selectedAmenities);
   });
@@ -300,11 +295,48 @@ function filterPropertiesByAmenities(selectedAmenities) {
   console.log(filteredProperties); // Add this line for debugging
 }
 
-
-
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", function (e) {
-    e.target.parentNode.classList.toggle("checked" ,e.target.checked);
+    e.target.parentNode.classList.toggle("checked", e.target.checked);
     console.log();
   });
 });
+
+// make some function that sort the data by the price and ratings
+
+function sortByPrice(priceSort) {
+  if (priceSort.value == "high-low") {
+    // desending order...
+    let ans = filterData.sort((b, a) => a.price.rate - b.price.rate);
+    appendHotels(ans);
+  } else if (priceSort.value == "low-high") {
+    //assending order...
+    let ans = filterData.sort((a, b) => a.price.rate - b.price.rate);
+    appendHotels(ans);
+  }
+}
+
+function sortByRatings(ratingSort) {
+  if (ratingSort.value == "high-low") {
+    // desending order... 
+    let ans = filterData.sort((b, a) => a.rating - b.rating);
+    appendHotels(ans);
+  } else if (ratingSort.value == "low-high") {
+    //assending order...
+    let ans = filterData.sort((a, b) => a.rating - b.rating);
+    appendHotels(ans);
+  }
+}
+
+
+function sortByReviews(reviewSort) {
+  if (reviewSort.value == "high-low") {
+    // desending order... 
+    let ans = filterData.sort((b, a) => a.reviewsCount - b.reviewsCount);
+    appendHotels(ans);
+  } else if (reviewSort.value == "low-high") {
+    //assending order...
+    let ans = filterData.sort((a, b) => a.reviewsCount - b.reviewsCount);
+    appendHotels(ans);
+  }
+}
