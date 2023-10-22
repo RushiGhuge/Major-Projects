@@ -49,8 +49,11 @@
 
 .filter-box {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     text-wrap: nowrap;
-    padding: 8px 16px;
+    padding: 2px 16px;
     border-radius: 19px;
     cursor: pointer;
     border-radius: 100px;
@@ -176,6 +179,7 @@
     left: 0;
     right: 0;
     z-index: 10000;
+    display: none;
 }
 #loading-bar-spinner.spinner {
     left: 50%;
@@ -195,6 +199,58 @@
     border-left-color: #00C8B1 !important;
     border-radius: 50%;
 }
+
+#notFoundImg{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    /* display: none; */
+}
+#notFoundImg > img{
+    width: 60%;
+    object-fit: cover;
+}
+
+select {
+    /* padding: 10px; */
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #2196F3;
+    outline: none;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: border-bottom-color 0.3s ease;
+  }
+
+  select:focus {
+    border-bottom-color: #42A5F5;
+  }
+
+  /* Style for the options */
+  option {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+  }
+
+  .checked{
+    background-color: #a7ebb0; /* For example, change the background color of the container */
+
+  }
+  input[type="checkbox"] {
+    /* Default styles for unchecked checkboxes */
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+  }
+
+  input[type="checkbox"]:checked  label {
+    /* Add your styles for the container when the checkbox is checked */
+    background-color: #e2ca5c; /* For example, change the background color of the container */
+  }
+
+  
 
 @keyframes loading-bar-spinner {
     0% {

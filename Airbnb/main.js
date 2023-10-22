@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
 
 // this is for search...
 function search() {
-  if (locationInput.value == "") {
+  if (locationInput.value == "" || checkInInput.value == "" || guestsInput.value == "" || guestsInput.value == "") {
     alert("Fill the Correct Data!");
   } else {
     const dataObj = {

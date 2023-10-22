@@ -173,7 +173,7 @@ function detailPageAppend(data) {
 <div class="hotel-price">
     <div class="hotel-price-box">
         <div class="price-row">
-            <p>$${data.price.rate}/night</p>
+            <p>₹${data.price.rate}/night</p>
             <div>
                ${data.rating} . ${data.reviewsCount} Reviews
             </div>
@@ -181,11 +181,11 @@ function detailPageAppend(data) {
 
         <div class="checkInOutContainer">
             <div class="row-cheakHotelInOut">
-                <input type="date">
-                <input type="date">
+                <input id='checkInDate' type="date">
+                <input id = 'checkOutDate' type="date">
             </div>
 
-            <input type="number" placeholder="Guests">
+            <input id='guestCount' type="number" placeholder="Guests">
 
         </div>
 
@@ -195,25 +195,25 @@ function detailPageAppend(data) {
         <div class="price-chart">
             <div>
                 <span>${data.price.priceItems[0].title}</span>
-                <span>$${data.price.priceItems[0].amount}</span>
+                <span>₹${data.price.priceItems[0].amount}</span>
             </div>
 
       
 
             <div>
                 <span>${data.price.priceItems[1].title || "NA"}</span>
-                <span>$${data.price.priceItems[1].amount || 0}</span>
+                <span>₹${data.price.priceItems[1].amount || 0}</span>
             </div>
 
             <div>
                 <span>${taxStr}</span>
-                <span>$${tax}</span>
+                <span>₹${tax}</span>
             </div>
         </div>
 
         <div id="totalPrice">
             <span>Total</span>
-            <span>$${data.price.rate}</span>
+            <span>₹${data.price.rate}</span>
         </div>
 
     </div>
@@ -226,6 +226,11 @@ function detailPageAppend(data) {
   document.querySelector('.loading-container').style.display = 'none'
 }
 detailPageAppend(detailsData);
+// document.getElementById('checkInDate').value = detailsData.chec
+// document.getElementById('checkOutDate').value =
+// document.getElementById('guestCount').value =
+
+
 
 async function initMap() {
   let map;

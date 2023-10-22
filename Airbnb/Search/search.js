@@ -1,6 +1,22 @@
 // get the data from user serches anad put that into the api to fget the server request;
 const searchData = JSON.parse(localStorage.getItem("searchData"));
+const notFoundImg = document.getElementById("notFoundImg");
+
 console.log(searchData);
+
+
+
+
+
+// function wifiFilterFun() {
+//   if (wifiFilter.checked) {
+//     let data = filterData.filter((ele) => {
+//       return ele.previewAmenities.includes("Pool");
+//     });
+//     console.log(data);
+//   }
+// }
+
 // document.getElementsByTagName('title').innerHTML = `${searchData.name} | Airbnb`
 const hotelContainer = document.getElementById("hotelContainer");
 const locationNav = document.getElementById("location");
@@ -17,13 +33,12 @@ guestCount.value = searchData.guestsCount;
 
 // fetch the server requast
 async function fetchSearchData(searchData) {
-
   document.querySelector(".loading-container").style.display = "block";
-  const url = `https://airbnb13.p.rapidapi.com/search-location?location=${searchData.location}&checkin=${searchData.checkInDate}&checkout=${searchData.checkOutDate}&adults=${searchData.guestsCount}&children=0&infants=0&pets=0&page=1&currency=IN`;
+  const url = `https://airbnb13.p.rapidapi.com/search-location?location=${searchData.location}&checkin=${searchData.checkInDate}&checkout=${searchData.checkOutDate}&adults=${searchData.guestsCount}&children=0&infants=0&pets=0&page=1&currency=INR`;
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "441a1d97b9msh5675a616d4712eap153470jsn64146b7fc0ea",
+      "X-RapidAPI-Key": "350282f695mshc606b62dc7a7c40p105111jsn3d8942bc4a3e",
       "X-RapidAPI-Host": "airbnb13.p.rapidapi.com",
     },
   };
@@ -40,10 +55,27 @@ async function fetchSearchData(searchData) {
 }
 
 let coordinates = [];
+let filterData = []; //  creats a filter data for a filtering...
+
 let mainData = fetchSearchData(searchData);
+
+mainData.then((data) => {
+  filterData = data;
+});
 
 // add the hotes details in container
 function appendHotels(result) {
+  // base case
+  if (result.length == 0) {
+    console.log(0);
+    hotelContainer.innerHTML = `<div id="notFoundImg">
+                                    <img src="../img/9264885.jpg" alt="">
+                                </div>`;
+    // notFoundImg.style.display = "flex";
+    return;
+  }
+  // notFoundImg.style.display = 'none' // if length not 0
+
   hotelContainer.innerHTML = "";
   result.forEach((hotel) => {
     let hotelBox = document.createElement("div");
@@ -55,13 +87,17 @@ function appendHotels(result) {
       <div class="hotel-info">
           <sub>${hotel.type}</sub>
           <h3>${hotel.name}</h3>
-          <sub>4-6 guests · Entire Home · 5 beds · 3 bath</sub>
-          <sub>Wifi · Kitchen · Free Parking</sub>
+          <sub>${hotel.persons} guests · ${hotel.type} · ${hotel.beds} beds · ${
+      hotel.bedrooms
+    } bedrooms</sub>
+          <sub>${hotel.previewAmenities.join(" . ")}</sub>
       
           <div class="rating-container">
-              <p class="rating"><i class="fa-solid fa-star"></i> ${hotel.rating} (${hotel.reviewsCount} reviews)</p>
+              <p class="rating"><i class="fa-solid fa-star"></i> ${
+                hotel.rating
+              } (${hotel.reviewsCount} reviews)</p>
               <p class="pricePernight">
-                  $${hotel.price.rate} <sub>/night</sub>
+                ₹${hotel.price.rate} <span>/night</span>
               </p>
           </div>
       </div>`;
@@ -80,7 +116,6 @@ function appendHotels(result) {
 const searchBtn = document
   .getElementById("searchBtnNav")
   .addEventListener("click", () => {
-    console.log("hi");
     if (locationNav == "") {
       alert("Fill the Correct Data!");
     } else {
@@ -91,7 +126,7 @@ const searchBtn = document
       console.log(searchData);
 
       mainData = fetchSearchData(searchData);
-      initMap()
+      initMap();
     }
   });
 
@@ -186,3 +221,90 @@ async function initMap() {
     mapId: "f9508e6f111977cf",
   });
 }
+
+// filter section --------------***********************************************************************-----------------
+
+let optionPriceF = document.getElementById("price-filter");
+let optionTypeF = document.getElementById("type-filter");
+
+// sort by price function...
+function sortByPrice(price) {
+  const priceObj = JSON.parse(price.value); // str to obj
+
+  mainData.then((data) => {
+    const priceFilterArr = data.filter((ele) => {
+      if (optionTypeF.value == "All Types") {
+        return ele.price.rate <= priceObj.max && ele.price.rate >= priceObj.min;
+      }
+      return (
+        ele.type == optionTypeF.value &&
+        ele.price.rate <= priceObj.max &&
+        ele.price.rate >= priceObj.min
+      );
+    });
+    // console.log(priceFilterArr);
+    appendHotels(priceFilterArr);
+  });
+}
+
+// sort by type function...
+function sortByType(type) {
+  const priceObj = JSON.parse(optionPriceF.value); // str to obj
+
+  if (type.value == "All Types") {
+    const typeFilterArr = filterData.filter((ele) => {
+      return ele.price.rate <= priceObj.max && ele.price.rate >= priceObj.min;
+    });
+    appendHotels(typeFilterArr);
+    return;
+  }
+  const typeFilterArr = filterData.filter((ele) => {
+    return (
+      ele.type == type.value &&
+      ele.price.rate <= priceObj.max &&
+      ele.price.rate >= priceObj.min
+    );
+  });
+  appendHotels(typeFilterArr);
+}
+
+// mainData.then(() => {
+//   console.log("hi");
+//   for (let i = 0; i < mainData.length; i++) {
+//     console.log(mainData[i].type);
+//   }
+// });
+
+// Attach event listeners to checkboxes
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    const selectedAmenities = Array.from(checkboxes)
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => checkbox.id.replace("Checkbox", ""));
+    console.log(selectedAmenities);
+    // filter by the properties...
+    filterPropertiesByAmenities(selectedAmenities);
+  });
+});
+
+function filterPropertiesByAmenities(selectedAmenities) {
+  const filteredProperties = filterData.filter((property) => {
+    const meetsCriteria = selectedAmenities.every((amenity) =>
+      property.previewAmenities.includes(amenity)
+    );
+    return meetsCriteria;
+  });
+  appendHotels(filteredProperties);
+  console.log(filteredProperties); // Add this line for debugging
+}
+
+
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function (e) {
+    e.target.parentNode.classList.toggle("checked" ,e.target.checked);
+    console.log();
+  });
+});
