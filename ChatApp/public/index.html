@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatr App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <form id="form">
+        <p>Username</p>
+        <input id="inputUsername" type="text" placeholder="username">
+        <button id="newUserBtn" type="submit">Create</button>
+    </form>
+
+    <div id="chat-container">
+        <div class="chat-header">
+            Chat Application
+        </div>
+
+        <div id="massages">
+            <div class="massage">Hi...!</div>
+            <div class="massage-send">How are you</div>
+        </div>
+
+        <div class="input-massage-container">
+            <div class="input-massage">
+                <input type="text" id="inputMassage" placeholder="Send Massage">
+            </div>
+            <div class="send-massage">
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

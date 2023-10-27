@@ -4,15 +4,6 @@ const notFoundImg = document.getElementById("notFoundImg");
 
 console.log(searchData);
 
-// function wifiFilterFun() {
-//   if (wifiFilter.checked) {
-//     let data = filterData.filter((ele) => {
-//       return ele.previewAmenities.includes("Pool");
-//     });
-//     console.log(data);
-//   }
-// }
-
 // document.getElementsByTagName('title').innerHTML = `${searchData.name} | Airbnb`
 const hotelContainer = document.getElementById("hotelContainer");
 const locationNav = document.getElementById("location");
@@ -34,7 +25,7 @@ async function fetchSearchData(searchData) {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "350282f695mshc606b62dc7a7c40p105111jsn3d8942bc4a3e",
+      "X-RapidAPI-Key": "a23fd33d01mshe8e0e6ddde1b884p159bccjsnff391d5477d4",
       "X-RapidAPI-Host": "airbnb13.p.rapidapi.com",
     },
   };
@@ -97,14 +88,26 @@ function appendHotels(result) {
               </p>
           </div>
       </div>`;
+
+    // Add a directions button
+    const directionsButton = document.createElement("button");
+    directionsButton.innerText = "Get Directions";
+    directionsButton.addEventListener("click", function () {
+      openDirections(hotel.lat, hotel.lng);
+    });
+    hotelBox.appendChild(directionsButton);
+
     hotelContainer.appendChild(hotelBox);
 
-    hotelBox.addEventListener("click", () => {
-      localStorage.setItem("detailsOfHotel", JSON.stringify(hotel));
-      // window.location.href = "../Listing/listing.html";
-      const newWindow = window.open("../Listing/listing.html", "_blank");
-    });
+    // hotelBox.addEventListener("click", () => {
+    //   localStorage.setItem("detailsOfHotel", JSON.stringify(hotel));
+    //   // window.location.href = "../Listing/listing.html";
+    //   const newWindow = window.open("../Listing/listing.html", "_blank");
+    // });
   });
+
+  // return listingCard;
+
   document.querySelector(".loading-container").style.display = "none";
 }
 
@@ -218,6 +221,13 @@ async function initMap() {
   });
 }
 
+//openDirections function
+function openDirections(lat, lng) {
+  // console.log(lat,lng);
+    const url = `https://www.google.com/maps/dir//${lat},${lng}`;
+    window.open(url, "_blank");
+}
+
 // filter section --------------***********************************************************************-----------------
 
 let optionPriceF = document.getElementById("price-filter");
@@ -318,7 +328,7 @@ function sortByPrice(priceSort) {
 
 function sortByRatings(ratingSort) {
   if (ratingSort.value == "high-low") {
-    // desending order... 
+    // desending order...
     let ans = filterData.sort((b, a) => a.rating - b.rating);
     appendHotels(ans);
   } else if (ratingSort.value == "low-high") {
@@ -328,10 +338,9 @@ function sortByRatings(ratingSort) {
   }
 }
 
-
 function sortByReviews(reviewSort) {
   if (reviewSort.value == "high-low") {
-    // desending order... 
+    // desending order...
     let ans = filterData.sort((b, a) => a.reviewsCount - b.reviewsCount);
     appendHotels(ans);
   } else if (reviewSort.value == "low-high") {
