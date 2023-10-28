@@ -89,21 +89,14 @@ function appendHotels(result) {
           </div>
       </div>`;
 
-    // Add a directions button
-    const directionsButton = document.createElement("button");
-    directionsButton.innerText = "Get Directions";
-    directionsButton.addEventListener("click", function () {
-      openDirections(hotel.lat, hotel.lng);
-    });
-    hotelBox.appendChild(directionsButton);
 
     hotelContainer.appendChild(hotelBox);
 
-    // hotelBox.addEventListener("click", () => {
-    //   localStorage.setItem("detailsOfHotel", JSON.stringify(hotel));
-    //   // window.location.href = "../Listing/listing.html";
-    //   const newWindow = window.open("../Listing/listing.html", "_blank");
-    // });
+    hotelBox.addEventListener("click", () => {
+      localStorage.setItem("detailsOfHotel", JSON.stringify(hotel));
+      // window.location.href = "../Listing/listing.html";
+      const newWindow = window.open("../Listing/listing.html", "_blank");
+    });
   });
 
   // return listingCard;

@@ -12,10 +12,6 @@ server.listen(PORT, () => {
     console.log(`server started... on http://localhost:${PORT}`)
 })
 
-// app.get('/', (req,res) => {
-//     res.sendFile(public+'index.html')
-// })
-
 const io = new Server(server)  // instense of server class
 
 io.on("connection", (socket)=>{

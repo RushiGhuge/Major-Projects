@@ -194,8 +194,8 @@ function detailPageAppend(data) {
 
         <div class="price-chart">
             <div>
-                <span>${data.price.priceItems[0].title}</span>
-                <span>₹${data.price.priceItems[0].amount}</span>
+                <span>${data.price.priceItems[0].title || "NA"}</span>
+                <span>₹${data.price.priceItems[0].amount || 0}</span>
             </div>
 
       
@@ -213,7 +213,7 @@ function detailPageAppend(data) {
 
         <div id="totalPrice">
             <span>Total</span>
-            <span>₹${data.price.rate}</span>
+            <span>₹${(data.price.priceItems[0].amount) + (data.price.priceItems[1].amount || 0) + (tax)}</span>
         </div>
 
     </div>
