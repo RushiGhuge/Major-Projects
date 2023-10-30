@@ -11,6 +11,8 @@
 body{
   background: #0F0F0F;
   font-size: 14px;
+  -webkit-tap-highlight-color: transparent; /* For iOS */
+  tap-highlight-color: transparent; /* For other mobile browsers */
 }
 #lodingBar{
   animation: lodingBar 0.7s ease-in-out;
@@ -195,6 +197,7 @@ body{
 }
 .material-symbols-outlined{
   cursor: pointer;
+  font-size: 28px;
 }
 .item{
   /* width: 200px; */
@@ -368,4 +371,11 @@ body{
 }
 #Innerbody{
   transition: 0.2s;
+}
+
+
+.video-about{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
